@@ -15,15 +15,15 @@ function App() {
     palette: {
       primary: {
         // light: will be calculated from palette.primary.main,
-        main: colorAccent,
+        main: colorAccent
         // dark: will be calculated from palette.primary.main,
         // contrastText: will be calculated to contrast with palette.primary.main
       },
       secondary: {
-        light: '#c4e69d',
+        light: "#c4e69d",
         main: colorAccent,
         // dark: will be calculated from palette.secondary.main,
-        contrastText: '#383838',
+        contrastText: "#383838"
       },
       contrastThreshold: 3,
       tonalOffset: 0.2
@@ -31,8 +31,8 @@ function App() {
     typography: {
       button: {
         textTransform: "none",
-        fontSize: '1.7rem'
-      }
+        fontSize: "1.7rem"
+      },
     }
   });
 

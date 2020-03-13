@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Row } from 'simple-flexbox';
 import { Typography } from 'antd';
 import { colorAccent } from '../constants/app_colors';
+import Button from '@material-ui/core/Button';
 
 const Title = Typography.Title;
 
@@ -26,7 +27,9 @@ const headerItemStyle = {
     ...circleContainer,
     marginRight: 80,
     marginTop: 50,
-    fontSize: '25px'
+    fontSize: '25px',
+    color: '#ffffff',
+    fontWeight: 600
 }
 
 export default class Header extends Component {
@@ -38,8 +41,8 @@ export default class Header extends Component {
                 </div>
                 <div style={{...circleContainer, marginTop: 50}}><span style={circle} /></div>
                 <Row flexGrow={1} />
-                <div style={headerItemStyle}><span>About</span></div>
-                <div style={{...headerItemStyle, marginRight: 100}}><span>Contact</span></div>
+                <Button style={headerItemStyle}>About</Button>
+                <Button style={{...headerItemStyle, marginRight: 100}}>Contact</Button>
             </Row>
         )
     }

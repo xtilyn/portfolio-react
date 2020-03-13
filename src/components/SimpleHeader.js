@@ -3,6 +3,7 @@ import { Row } from 'simple-flexbox';
 import { Typography } from 'antd';
 import back from '../images/back.png'
 import { withRouter } from 'react-router-dom';
+import Fade from '@material-ui/core/Fade';
 
 const Title = Typography.Title;
 
@@ -37,15 +38,20 @@ class SimpleHeader extends React.Component {
    render() {
     return (
       <Row flexGrow={1} style={rootStyle}>
-        <div style={backBtnStyle} onClick={this.goBack}>
-          <img style={backImageStyle} src={back} alt="Go back" />
-        </div>
-        <Title
-          level={1}
-          style={{ fontWeight: 600, margin: "auto", marginTop: 40 }}
-        >
-          Portfolio
-        </Title>
+        <Fade in={true} timeout={1000}>
+          <div style={backBtnStyle} onClick={this.goBack}>
+            <img style={backImageStyle} src={back} alt="Go back" />
+          </div>
+        </Fade>
+
+        <Fade in={true} timeout={1000}>
+          <Title
+            level={1}
+            style={{ fontWeight: 600, margin: "auto", marginTop: 40 }}
+          >
+            Portfolio
+          </Title>
+        </Fade>
       </Row>
     );
    };

@@ -7,6 +7,7 @@ import MyPhoto from '../../images/logo.png';
 import Header from '../../components/Header';
 import Fade from '@material-ui/core/Fade';
 import Slide from '@material-ui/core/Slide';
+import { profileSnippetAnimDuration } from '../../constants/shared_variables';
 
 const rootStyle = {
     background: colorPrimary,
@@ -53,7 +54,7 @@ class index extends Component {
                 </Fade>
               </Column>
               <Column flex={1} horizontal="center">
-                <Slide direction='left' in={isMounted} timeout={800}>
+                <Slide direction='left' in={isMounted} timeout={profileSnippetAnimDuration}>
                   <div><ProfileSnippet /></div>
                 </Slide>
               </Column>

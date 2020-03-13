@@ -7,6 +7,10 @@ import linkedIn from '../images/linkedInIcon.png';
 import stackOverflow from '../images/stackoverflowIcon.png';
 import { Link } from "react-router-dom";
 import PrimaryActionButton from '../components/buttons/PrimaryActionButton';
+import IconButton from '@material-ui/core/IconButton';
+import { githubUrl, linkedInUrl, stackOverflowUrl} from '../constants/app_data';
+import Collapse from '@material-ui/core/Collapse';
+import { profileSnippetAnimDuration } from '../constants/shared_variables';
 
 const Title = Typography.Title;
 
@@ -52,14 +56,33 @@ const portfolioBtnStyle = {
 };
 
 export default class ProfileSnippet extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      snippetEnterAnimFinished: false
+    }
+  }
+
+  componentDidMount() {
+    setTimeout( () => {
+      this.setState({
+        snippetEnterAnimFinished: true
+      });
+    }, profileSnippetAnimDuration);
+  }
+
     render() {
+      const { snippetEnterAnimFinished } = this.state;
+
         return (
           <Column flexGrow={1} style={rootStyle}>
             <Title level={1} style={nameStyle}>
               CHRISTILYN <br />
               ARJONA
             </Title>
-            <view style={borderStyle} />
+            <div style={borderStyle} />
             <Title
               level={3}
               style={{ fontWeight: 600, marginRight: 50, marginBottom: 20 }}
@@ -68,21 +91,39 @@ export default class ProfileSnippet extends Component {
               Development, UI/UX Design, and Front End Web Development.
             </Title>
             <Row>
-              <button style={socialBtnStyle}>
+              <IconButton
+                aria-label="LinkedIn Profile link"
+                style={socialBtnStyle}
+                onClick={() => {
+                  window.open(linkedInUrl, "_blank");
+                }}
+              >
                 <img
                   src={linkedIn}
                   style={{ height: 40, width: 40 }}
                   alt={"LinkedIn Profile link"}
                 />
-              </button>
-              <button style={{ ...socialBtnStyle, marginLeft: 20 }}>
+              </IconButton>
+              <IconButton
+                aria-label="Stack Overflow Profile link"
+                style={{ ...socialBtnStyle, marginLeft: 20 }}
+                onClick={() => {
+                  window.open(stackOverflowUrl, "_blank");
+                }}
+              >
                 <img
                   src={stackOverflow}
                   style={{ height: 40, width: 40 }}
                   alt={"Stack Overflow Profile link"}
                 />
-              </button>
-              <button style={{ ...socialBtnStyle, marginLeft: 11 }}>
+              </IconButton>
+              <IconButton
+                aria-label="GitHub Profile link"
+                style={{ ...socialBtnStyle, marginLeft: 11 }}
+                onClick={() => {
+                  window.open(githubUrl, "_blank");
+                }}
+              >
                 <img
                   src={github}
                   style={{
@@ -91,13 +132,15 @@ export default class ProfileSnippet extends Component {
                   }}
                   alt={"GitHub Profile link"}
                 />
-              </button>
+              </IconButton>
             </Row>
-            <Link to="/portfolio" style={{ textDecoration: "none" }}>
-              <PrimaryActionButton variant="contained">
-                See Portfolio
-              </PrimaryActionButton>
-            </Link>
+            <Collapse in={snippetEnterAnimFinished}>
+              <Link to="/portfolio" style={{ textDecoration: "none" }}>
+                <PrimaryActionButton variant="contained">
+                  See Portfolio
+                </PrimaryActionButton>
+              </Link>
+            </Collapse>
           </Column>
         );
     }

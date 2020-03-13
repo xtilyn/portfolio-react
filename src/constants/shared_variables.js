@@ -1,0 +1,1 @@
+export const profileSnippetAnimDuration = 800;
