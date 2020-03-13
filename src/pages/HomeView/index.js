@@ -5,6 +5,8 @@ import ProfileSnippet from '../../components/ProfileSnippet';
 import ExampleComponent from "react-rounded-image";
 import MyPhoto from '../../images/logo.png';
 import Header from '../../components/Header';
+import Fade from '@material-ui/core/Fade';
+import Slide from '@material-ui/core/Slide';
 
 const rootStyle = {
     background: colorPrimary,
@@ -18,11 +20,20 @@ class index extends Component {
         super(props)
 
         this.state = {
-                 
+          isMounted: false
         }
     }
 
+    componentDidMount() {
+      console.log('test')
+      this.setState({
+        isMounted: true
+      });
+    }
+
     render() {
+      const { isMounted } = this.state;
+      console.log(`is mounted: ${isMounted}`)
         return (
           <Column flexGrow={1} style={rootStyle}>
             <Row horizontal="center">
@@ -30,15 +41,21 @@ class index extends Component {
             </Row>
             <Row vertical="center" style={{ height: "80vh" }}>
               <Column flex={1} horizontal="center" style={{ paddingTop: 50 }}>
-                <ExampleComponent
-                  image={MyPhoto}
-                  imageWidth="550"
-                  imageHeight="570"
-                  roundedSize="0"
-                />
+                <Fade in={isMounted} timeout={2000}>
+                  <div>
+                    <ExampleComponent
+                    image={MyPhoto}
+                    imageWidth="550"
+                    imageHeight="570"
+                    roundedSize="0"
+                  />
+                  </div>
+                </Fade>
               </Column>
               <Column flex={1} horizontal="center">
-                <ProfileSnippet />
+                <Slide direction='left' in={isMounted} timeout={800}>
+                  <div><ProfileSnippet /></div>
+                </Slide>
               </Column>
             </Row>
           </Column>

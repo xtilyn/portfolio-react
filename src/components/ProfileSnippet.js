@@ -6,6 +6,7 @@ import github from '../images/githubIcon.png';
 import linkedIn from '../images/linkedInIcon.png';
 import stackOverflow from '../images/stackoverflowIcon.png';
 import { Link } from "react-router-dom";
+import PrimaryActionButton from '../components/buttons/PrimaryActionButton';
 
 const Title = Typography.Title;
 
@@ -92,21 +93,11 @@ export default class ProfileSnippet extends Component {
                 />
               </button>
             </Row>
-            <div style={portfolioBtnStyle} onClick={this.goToPortfolio}>
-              <Link
-                to="/portfolio"
-                style={{
-                  verticalAlign: "middle",
-                  color: "#2E2929",
-                  fontWeight: 600,
-                  marginTop: 20,
-                  display: "table-cell",
-                  textDecoration: "none"
-                }}
-              >
+            <Link to="/portfolio" style={{ textDecoration: "none" }}>
+              <PrimaryActionButton variant="contained">
                 See Portfolio
-              </Link>
-            </div>
+              </PrimaryActionButton>
+            </Link>
           </Column>
         );
     }
