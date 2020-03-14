@@ -29,7 +29,7 @@ const headerItemStyle = {
     marginTop: 50,
     fontSize: '25px',
     color: '#ffffff',
-    fontWeight: 600
+    fontWeight: 500
 }
 
 export default class Header extends Component {

@@ -31,7 +31,7 @@ function App() {
     typography: {
       button: {
         textTransform: "none",
-        fontSize: "1.7rem"
+        fontSize: "1.7rem",
       },
     }
   });

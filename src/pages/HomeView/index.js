@@ -13,7 +13,6 @@ const rootStyle = {
     background: colorPrimary,
     width: '100%',
     height: '100%',
-    overflow: 'hidden'
 }
 
 class index extends Component {
