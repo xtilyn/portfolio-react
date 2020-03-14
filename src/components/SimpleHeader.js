@@ -9,6 +9,7 @@ const Title = Typography.Title;
 
 const rootStyle = {
     height: 100,
+    marginBottom: 30
 }
 
 const backBtnStyle = {

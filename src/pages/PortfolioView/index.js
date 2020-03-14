@@ -1,26 +1,16 @@
 import React, { Component } from "react";
 import { Column, Row } from "simple-flexbox";
-import { colorPrimary } from "../../constants/app_colors";
 import SimpleHeader from "../../components/SimpleHeader";
 import Fade from "@material-ui/core/Fade";
 import { Slide } from "@material-ui/core";
 import PortfolioItemsList from "../../components/PortfolioItemsList";
 import { BehaviorSubject } from "rxjs";
 import { portfolioItemHeight } from "../../constants/shared_variables";
+import AppPreview from "../../components/AppPreview";
 
 const rootStyle = {
   width: "100%",
   height: "100%"
-};
-
-const appPreview = {
-  height: "80vh",
-  background: colorPrimary,
-  filter: "drop-shadow(0px 3px 99px rgba(0, 0, 0, 0.16))",
-  borderRadius: 20,
-  marginTop: 30,
-  marginRight: 80,
-  width: "100%"
 };
 
 const circleIndicator = {
@@ -40,7 +30,8 @@ export default class PortfolioView extends Component {
 
     this.state = {
       isMounted: false,
-      circleIndicatorY: 0
+      circleIndicatorY: 0,
+      selectedItemIndex: 0
     };
   }
 
@@ -58,7 +49,8 @@ export default class PortfolioView extends Component {
         this.setState(
           {
             circleIndicatorY: newCircleIndicatorY,
-            animDuration: diff > 700 ? 0 : 150
+            animDuration: diff > 700 ? 0 : 150,
+            selectedItemIndex: selectedItemIndex
           }
         );
       }
@@ -96,7 +88,7 @@ export default class PortfolioView extends Component {
           </Column>
           <Column flex={1} horizontal="center">
             <Slide in={isMounted} direction="left" timeout={800}>
-              <div style={appPreview}>TODO reposition on scroll</div>
+              <AppPreview subject={this.#subject} />
             </Slide>
           </Column>
         </Row>

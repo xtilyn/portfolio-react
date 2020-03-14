@@ -43,18 +43,6 @@ const socialBtnStyle = {
     cursor: 'pointer'
 }
 
-const portfolioBtnStyle = {
-  width: "320px",
-  height: "60px",
-  borderRadius: "10px",
-  background: "#acdb75",
-  marginTop: 20,
-  textAlign: 'center',
-  verticalAlign: 'middle',
-  display: 'table',
-  cursor: 'pointer'
-};
-
 export default class ProfileSnippet extends Component {
 
   constructor(props) {
