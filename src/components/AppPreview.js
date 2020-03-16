@@ -5,11 +5,10 @@ import { Typography } from "antd";
 import { Column, Row } from "simple-flexbox";
 import Tag from "./Tag";
 import PrimaryActionButton from "./buttons/PrimaryActionButton";
-import OpenInNewOutlinedIcon from '@material-ui/icons/OpenInNewOutlined';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import IconButton from '@material-ui/core/IconButton';
+import OpenInNewOutlinedIcon from "@material-ui/icons/OpenInNewOutlined";
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
+import IconButton from "@material-ui/core/IconButton";
 import { ClickAwayListener, Tooltip } from "@material-ui/core";
-
 const Title = Typography.Title;
 
 const appPreview = {
@@ -19,7 +18,7 @@ const appPreview = {
   borderRadius: 20,
   marginTop: 30,
   marginRight: 80,
-  width: "100%"
+  width: "100%",
 };
 
 const borderStyle = {
@@ -77,7 +76,7 @@ export default class AppPreview extends Component {
     });
   };
 
-  renderLinkButton = (url) => {
+  renderLinkButton = url => {
     return (
       <PrimaryActionButton
         variant="contained"
@@ -89,7 +88,7 @@ export default class AppPreview extends Component {
         View Project <OpenInNewOutlinedIcon />
       </PrimaryActionButton>
     );
-  }
+  };
 
   render() {
     const { portfolioItem, tooltipOpen } = this.state;
@@ -111,7 +110,13 @@ export default class AppPreview extends Component {
                 {portfolioItem?.title ?? ""}{" "}
               </Title>
               <ClickAwayListener onClickAway={this.handleTooltipClose}>
-                <div style={{ width: 50, height: 50, marginTop: 60 }}>
+                <div
+                  style={{
+                    width: 50,
+                    height: 50,
+                    marginTop: 60
+                  }}
+                >
                   <Tooltip
                     PopperProps={{
                       disablePortal: true
@@ -130,7 +135,10 @@ export default class AppPreview extends Component {
                         </Typography>
                         <Typography
                           color="inherit"
-                          style={{ fontSize: 20, marginBottom: 20 }}
+                          style={{
+                            fontSize: 20,
+                            marginBottom: 20
+                          }}
                         >
                           {portfolioItem.projectLength}
                         </Typography>
@@ -174,7 +182,11 @@ export default class AppPreview extends Component {
             <div style={borderStyle} />
             <Column
               flex={1}
-              style={{ marginLeft: 38, width: "68%", marginBottom: 20 }}
+              style={{
+                marginLeft: 38,
+                width: "68%",
+                marginBottom: 20
+              }}
               justifyContent="center"
             >
               <Title
@@ -189,8 +201,15 @@ export default class AppPreview extends Component {
             </Column>
           </Column>
 
-          <Column justifyContent='center' style={{ marginRight: 50, marginTop: 60 }}>
-          <img src={portfolioItem.imagePath} alt='app images' style={{ width: 380 }}/>
+          <Column
+            justifyContent="center"
+            style={{ marginRight: 50, marginTop: 60 }}
+          >
+            <img
+              src={portfolioItem.imagePath}
+              alt="app images"
+              style={{ width: 380 }}
+            />
           </Column>
         </Row>
 
