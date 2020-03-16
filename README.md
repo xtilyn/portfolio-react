@@ -8,5 +8,4 @@
 
 <h2>Mobile Pages</h2>
 
-![](/public/Home_Mobile.png)
-![](/public/Portfolio_Mobile.png)
+![](/public/Home_Mobile.png) ![](/public/Portfolio_Mobile.png)
