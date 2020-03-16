@@ -76,7 +76,7 @@ export default class ProfileSnippet extends Component {
               style={{ fontWeight: 300, marginRight: 100, marginBottom: 20 }}
             >
               A Software Developer currently specializing in Native Android App
-              Development, UI/UX Design, and Front End Web Development.
+              Development, UI/UX Design, with experience in Full Stack Web Development.
             </Title>
             <Row>
               <IconButton
@@ -124,7 +124,7 @@ export default class ProfileSnippet extends Component {
             </Row>
             <Collapse in={snippetEnterAnimFinished} style={{ width: '320px' }}>
               <Link to="/portfolio" style={{ textDecoration: "none" }}>
-                <PrimaryActionButton variant="contained">
+                <PrimaryActionButton variant="contained" borderRadius={10}>
                   See Portfolio
                 </PrimaryActionButton>
               </Link>

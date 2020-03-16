@@ -4,11 +4,16 @@ import { portfolioItems } from "../constants/app_data";
 import { Typography } from "antd";
 import { Column, Row } from "simple-flexbox";
 import Tag from "./Tag";
+import PrimaryActionButton from "./buttons/PrimaryActionButton";
+import OpenInNewOutlinedIcon from '@material-ui/icons/OpenInNewOutlined';
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import IconButton from '@material-ui/core/IconButton';
+import { ClickAwayListener, Tooltip } from "@material-ui/core";
 
 const Title = Typography.Title;
 
 const appPreview = {
-  height: "80vh",
+  minHeight: "80vh",
   background: colorPrimary,
   filter: "drop-shadow(0px 3px 99px rgba(0, 0, 0, 0.16))",
   borderRadius: 20,
@@ -24,6 +29,15 @@ const borderStyle = {
   marginLeft: 38
 };
 
+const tooltipTitleStyle = {
+  fontSize: 16,
+  fontWeight: 300,
+  marginTop: 10,
+  marginLeft: 10,
+  marginRight: 10,
+  marginBottom: 5
+};
+
 export default class AppPreview extends Component {
   #subject;
 
@@ -31,7 +45,8 @@ export default class AppPreview extends Component {
     super(props);
 
     this.state = {
-      portfolioItem: portfolioItems[0]
+      portfolioItem: portfolioItems[0],
+      tooltipOpen: false
     };
 
     this.#subject = this.props.subject;
@@ -50,36 +65,153 @@ export default class AppPreview extends Component {
     this.#subject.unsubscribe();
   }
 
+  handleTooltipClose = () => {
+    this.setState({
+      tooltipOpen: false
+    });
+  };
+
+  handleTooltipOpen = () => {
+    this.setState({
+      tooltipOpen: true
+    });
+  };
+
+  renderLinkButton = (url) => {
+    return (
+      <PrimaryActionButton
+        variant="contained"
+        borderRadius={38}
+        onClick={() => {
+          window.open(url, "_blank");
+        }}
+      >
+        View Project <OpenInNewOutlinedIcon />
+      </PrimaryActionButton>
+    );
+  }
+
   render() {
-    const { portfolioItem } = this.state;
+    const { portfolioItem, tooltipOpen } = this.state;
     return (
       <Column style={appPreview}>
-        <Title
-          level={2}
-          style={{
-            textAlign: "start",
-            fontWeight: 600,
-            fontSize: 53,
-            marginLeft: 38,
-            marginBottom: 15
-          }}
+        <Row>
+          <Column>
+            <Row>
+              <Title
+                level={2}
+                style={{
+                  textAlign: "start",
+                  fontWeight: 600,
+                  fontSize: 53,
+                  marginLeft: 38,
+                  marginBottom: 15
+                }}
+              >
+                {portfolioItem?.title ?? ""}{" "}
+              </Title>
+              <ClickAwayListener onClickAway={this.handleTooltipClose}>
+                <div style={{ width: 50, height: 50, marginTop: 60 }}>
+                  <Tooltip
+                    PopperProps={{
+                      disablePortal: true
+                    }}
+                    onClose={this.handleTooltipClose}
+                    open={tooltipOpen}
+                    disableFocusListener
+                    disableHoverListener
+                    disableTouchListener
+                    placement="right-start"
+                    arrow
+                    title={
+                      <React.Fragment>
+                        <Typography color="inherit" style={tooltipTitleStyle}>
+                          Project Length:
+                        </Typography>
+                        <Typography
+                          color="inherit"
+                          style={{ fontSize: 20, marginBottom: 20 }}
+                        >
+                          {portfolioItem.projectLength}
+                        </Typography>
+                        <Typography color="inherit" style={tooltipTitleStyle}>
+                          Associated with:
+                        </Typography>
+                        <Typography
+                          color="inherit"
+                          style={{
+                            fontSize: 20,
+                            marginBottom: 20,
+                            lineHeight: 1.2
+                          }}
+                        >
+                          {portfolioItem.associatedWith}
+                        </Typography>
+                        <Typography
+                          color="inherit"
+                          style={{
+                            fontSize: 18,
+                            marginBottom: 10,
+                            fontWeight: 300
+                          }}
+                        >
+                          {portfolioItem.year}
+                        </Typography>
+                      </React.Fragment>
+                    }
+                  >
+                    <IconButton
+                      color="secondary"
+                      onClick={this.handleTooltipOpen}
+                    >
+                      <InfoOutlinedIcon />
+                    </IconButton>
+                  </Tooltip>
+                </div>
+              </ClickAwayListener>
+            </Row>
+
+            <div style={borderStyle} />
+            <Column
+              flex={1}
+              style={{ marginLeft: 38, width: "68%", marginBottom: 20 }}
+              justifyContent="center"
+            >
+              <Title
+                level={3}
+                style={{
+                  fontWeight: 300,
+                  textAlign: "start"
+                }}
+              >
+                {portfolioItem?.description ?? ""}
+              </Title>
+            </Column>
+          </Column>
+
+          <Column justifyContent='center' style={{ marginRight: 50, marginTop: 60 }}>
+          <img src={portfolioItem.imagePath} alt='app images' style={{ width: 380 }}/>
+          </Column>
+        </Row>
+
+        <Row
+          wrap
+          vertical="flex-start"
+          alignContent="start"
+          justifyContent="flex-start"
+          alignItems="flex-end"
+          style={{ marginLeft: 38 }}
         >
-          {portfolioItem?.title ?? ""}
-        </Title>
-        <div style={borderStyle} />
-        <Title
-          level={3}
-          style={{ fontWeight: 300, marginBottom: 20, textAlign: 'start', marginLeft: 38, width: '38%' }}
+          {portfolioItem.tags.map(tag => {
+            return <Tag title={tag} />;
+          })}
+        </Row>
+        <Row
+          justifyContent="center"
+          alignItems="flex-end"
+          style={{ paddingBottom: 20 }}
         >
-          {portfolioItem?.description ?? ""}
-        </Title>
-        <Row style={{ width: '38%' }}>
-            {
-                // portfolioItem.tags.map( tag => {
-                //     return <Tag title={tag}/>
-                // })
-                // TODO CONTINUE HERE USE FLEXBOX LAYOUT
-            }
+          {portfolioItem.url ? this.renderLinkButton(portfolioItem.url) : ""}
         </Row>
       </Column>
     );

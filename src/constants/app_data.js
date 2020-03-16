@@ -1,3 +1,9 @@
+import neuwly1 from "../images/Neuwly_group.png";
+import teampics from "../images/Teampics_group.png";
+import cuiseek from "../images/Cuiseek_group.png";
+import jumpbox from "../images/Jumpbox_group.png";
+import medpass from "../images/Medpass_group.png";
+
 export const linkedInUrl = "https://www.linkedin.com/in/christilyn-arjona/";
 export const githubUrl = "https://github.com/xtilyn";
 export const stackOverflowUrl = "https://stackoverflow.com/users/7881446/christilyn";
@@ -34,18 +40,24 @@ export const portfolioItems = [
          new PortfolioItem(
            "Neuwly",
            "Android App",
-           "A social media application that features in-app messaging, augmented reality, event booking, text and media posts among users, and geo search.",
-           "assets/apps/neuwly/neuwly_1.webp",
+           "A social media application that features realtime chat messaging, augmented reality, event booking, instant search, text and multi media posts with geo capabilities.",
+           neuwly1,
            [
+             "Android App",
              "Firebase",
              "Kotlin",
              "Algolia",
              "ARCore",
              "Room",
+             "Retrofit",
              "Dagger",
+             "OnSched",
+             "REST",
              "RxJava",
+             "Stripe",
              "Google Places API",
-             "Android Jetpack"
+             "Android Jetpack",
+             "MVVM"
            ],
            "https://play.google.com/store/apps/details?id=com.latticestudios.neuwly",
            "2019",
@@ -56,9 +68,17 @@ export const portfolioItems = [
          new PortfolioItem(
            "TeamPics",
            "Android App",
-           "A kiosk and management software for photographers. Built while working for Lattice Studios. Made with Kotlin, Firebase, and Room using MVVM design architecture.",
-           "assets/apps/teampics/teampics_1.webp",
-           ["Firebase", "Kotlin", "Algolia"],
+           "A kiosk and management software for photographers. You can organize your picture subjects, allow users to purchase photo packages, and manage your photography events all in one app.",
+           teampics,
+           [
+             "Android App",
+             "Firebase",
+             "Kotlin",
+             "Stripe",
+             "Room",
+             "Android Jetpack",
+             "MVVM"
+           ],
            "https://play.google.com/store/apps/details?id=com.latticestudios.teampicsmobile",
            "2019",
            "4 months",
@@ -67,11 +87,11 @@ export const portfolioItems = [
          ),
          new PortfolioItem(
            "Jumpbox",
-           "Cross Platform",
-           "",
-           "assets/image_01.png",
-           ["Firebase", "Kotlin", "Algolia"],
-           "",
+           "Desktop App",
+           "A Computer Science project implementation of a multiplayer drawing and guessing game implemented using Transmission Control Protocol in which players are connected through single-server model.",
+           jumpbox,
+           ["Desktop App", "Java", "JavaFx", "Socket Programming", "TCP/IP"],
+           "https://github.com/xtilyn/Jumpbox",
            "2019",
            "4 months",
            "CS 441 - Computer Networks \nUniversity Of Calgary",
@@ -82,7 +102,16 @@ export const portfolioItems = [
            "Android App",
            "A social media platform that provides networking and collaborative space for developers. Features include in-app messaging, personalized portfolio, notifications, projects showcase, and more.",
            "assets/image_02.jpg",
-           ["Firebase", "Kotlin", "Algolia"],
+           [
+             "Android App",
+             "Landing Page Website",
+             "Firebase",
+             "Java",
+             "ButterKnife",
+             "Realm",
+             "ReactJS",
+             "ES6"
+           ],
            "https://www.devssocial.com/",
            "2017",
            "2 years",
@@ -92,10 +121,10 @@ export const portfolioItems = [
          new PortfolioItem(
            "Fitness TACKLer",
            "Android App",
-           "A fitness app geared towards power lifting. Developed with Xamarin and C#, built with emphasis on UI and User Experience design.",
+           "A Computer Science project implementation of a fitness app geared towards power lifting. Developed with Xamarin and C#, built with emphasis on UI and User Experience design.",
            "assets/image_03.jpg",
-           ["Firebase", "Kotlin", "Algolia"],
-           "",
+           ["Android App", "C#", "Xamarin"],
+           "https://github.com/Be-bo/FitnessTACKer",
            "2018",
            "4 months",
            "CS 481 - Human Computers Interaction \nUniversity Of Calgary",
@@ -104,9 +133,9 @@ export const portfolioItems = [
          new PortfolioItem(
            "Cuiseek",
            "Android App",
-           "Worked on several social media features for the app using Java and Firebase",
-           "assets/image_04.jpg",
-           ["Firebase", "Kotlin", "Algolia"],
+           "A food and dining companion to help you discover new places around you. You can filter results according to your preferences, view restaurant details and reviews, and choose a place to stop and eat.",
+           cuiseek,
+           ["Android App", "Firebase", "Java", "Material Design"],
            "https://play.google.com/store/apps/details?id=com.cuiseek.android",
            "2018",
            "4 months",
@@ -114,12 +143,24 @@ export const portfolioItems = [
            "http://cuiseek.com/"
          ),
          new PortfolioItem(
+           "MEDPass",
+           "Web Application",
+           "A Computer Science project implementation of an appointment scheduling system built for practitioners, patients, and admins. Developed with CSS, HTML, PHP and MySQL.",
+           medpass,
+           ["Web Application", "HTML", "CSS", "AJAX", "PHP", "MySQL"],
+           "https://github.com/xtilyn/MedPASS_Team4",
+           "2018",
+           "4 months",
+           "CS 471 - Data Base Management Systems \nUniversity Of Calgary",
+           ""
+         ),
+         new PortfolioItem(
            "Mafia",
            "Cross Platform",
-           "A java application based on the popular Mafia party game.",
+           "A java application based on the popular Mafia party game. Implemented using MVC architecture.",
            "assets/image_04.jpg",
-           ["Firebase", "Kotlin", "Algolia"],
-           "",
+           ["Desktop App", "Java", "JavaFx", "MVC"],
+           "https://github.com/xtilyn/MafiaApplication",
            "2017",
            "6 months",
            "Personal Project",
@@ -128,25 +169,13 @@ export const portfolioItems = [
          new PortfolioItem(
            "Localodge",
            "Android App",
-           "A local classifieds app",
+           "An android app template for a local classifieds app. This is an ongoing project that hopes to provide a back-bone for local classified applications that uses Kotlin and Firebase.",
            "assets/image_04.jpg",
-           ["Firebase", "Kotlin", "Algolia"],
+           ["Android App", "Firebase", "Kotlin", "Elastic Search", "Room", "RxJava", "MVVM"],
            "",
            "2019",
            "Ongoing",
            "Personal Project",
-           ""
-         ),
-         new PortfolioItem(
-           "MEDPass",
-           "Web Application",
-           "An appointment scheduling system built for practitioners, patients, and admins. Developed with CSS, HTML, PHP and MySQL.",
-           "assets/apps/neuwly/neuwly_1.webp",
-           ["HTML", "CSS", "AJAX", "PHP", "MySQL"],
-           "https://github.com/HiroOfHyrule/MedPASS_Team4",
-           "2018",
-           "4 months",
-           "CS 471 - Data Base Management Systems \nUniversity Of Calgary",
            ""
          )
        ];

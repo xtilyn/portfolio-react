@@ -7,7 +7,6 @@ import { withStyles } from '@material-ui/core/styles';
 // We can inject some CSS into the DOM.
 const styles = {
   root: {
-    borderRadius: 10,
     border: 0,
     width: "320px",
     height: "60px",
@@ -15,16 +14,17 @@ const styles = {
     verticalAlign: "middle",
     marginTop: 20,
     textDecoration: "none",
-    display: 'table',
-    color: '#383838'
-  },
+    display: "table",
+    color: "#383838",
+    textAlign: "center"
+  }
 };
 
 function PrimaryActionButton(props) {
-  const { classes, children, className, ...other } = props;
+  const { borderRadius, classes, children, className, ...other } = props;
 
   return (
-    <Button disableElevation={true} color='primary' className={clsx(classes.root, className)} {...other}>
+    <Button disableElevation={true} color='primary' className={clsx(classes.root, className)} {...other} style={{ borderRadius: borderRadius }}>
       {children || 'class names'}
     </Button>
   );

@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 
 const rootStyle = {
-  width: 155,
-  height: 44,
+  height: "36px",
   borderRadius: 5,
   background: "transparent",
-  border: "1px solid #8c8787"
+  border: "1px solid #8c8787",
+  alignSelf: "flex-start",
+  paddingLeft: 20,
+  paddingRight: 20,
+  marginTop: 10,
+  marginRight: 10,
+  fontSize: 20,
+  textAlign: "center",
+  lineHeight: "36px"
 };
 
 export default class Tag extends Component {

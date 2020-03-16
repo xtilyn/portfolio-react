@@ -21,7 +21,7 @@ function App() {
       },
       secondary: {
         light: "#c4e69d",
-        main: colorAccent,
+        main: "#fff",
         // dark: will be calculated from palette.secondary.main,
         contrastText: "#383838"
       },
