@@ -8,4 +8,4 @@
 
 <h2>Mobile Pages</h2>
 
-<img src="public/Home_Mobile.png" alt="Home page mobile" width="300" style="margin: 0 20 0 0"/> <img src="public/Portfolio_Mobile.png" alt="Home page mobile" width="300"/>
+<img src="public/Home_Mobile.png" alt="Home page mobile" width="300" style="margin-right: 20px"/> <img src="public/Portfolio_Mobile.png" alt="Home page mobile" width="300"/>
