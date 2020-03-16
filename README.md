@@ -8,4 +8,4 @@
 
 <h2>Mobile Pages</h2>
 
-![](/public/Home_Mobile.png | width=100) ![](/public/Portfolio_Mobile.png | width=100)
+<img src="https://github.com/public/Home_Mobile.png" alt="Home page mobile" width="250"/>
