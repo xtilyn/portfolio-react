@@ -6,6 +6,14 @@
 
 ![](/public/portfolio.png)
 
+<h2>About Page</h2>
+
+![](/public/about.png)
+
+<h2>Contact Page</h2>
+
+![](/public/contact.png)
+
 <h2>Home Page - Mobile</h2>
 
 ![](/public/Home_Mobile.png)
