@@ -14,10 +14,6 @@
 
 ![](/public/contact.png)
 
-<h2>Home Page - Mobile</h2>
+<h2>Mobile Pages</h2>
 
-![](/public/Home_Mobile.png)
-
-<h2>Portfolio Page - Mobile</h2>
-
-![](/public/Portfolio_Mobile.png)
+<img src="public/Home_Mobile.png" alt="Home page mobile" width="300"/>         <img src="public/Portfolio_Mobile.png" alt="Home page mobile" width="300"/>        
