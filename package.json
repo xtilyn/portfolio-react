@@ -16,6 +16,7 @@
     "react-router-dom": "^5.1.2",
     "react-router-page-transition": "^3.1.0",
     "react-scripts": "3.4.0",
+    "react-sticky": "^6.0.3",
     "rxjs": "^6.5.4",
     "simple-flexbox": "^2.3.0"
   },

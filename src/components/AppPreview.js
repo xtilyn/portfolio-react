@@ -9,6 +9,7 @@ import OpenInNewOutlinedIcon from "@material-ui/icons/OpenInNewOutlined";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import IconButton from "@material-ui/core/IconButton";
 import { ClickAwayListener, Tooltip } from "@material-ui/core";
+import ReactDOM from 'react-dom';
 const Title = Typography.Title;
 
 const appPreview = {
@@ -18,7 +19,7 @@ const appPreview = {
   borderRadius: 20,
   marginTop: 30,
   marginRight: 80,
-  width: "100%",
+  width: "100%"
 };
 
 const borderStyle = {
@@ -45,7 +46,10 @@ export default class AppPreview extends Component {
 
     this.state = {
       portfolioItem: portfolioItems[0],
-      tooltipOpen: false
+      tooltipOpen: false,
+      positionY: 0,
+      height: 0,
+      translateY: 0
     };
 
     this.#subject = this.props.subject;
@@ -60,8 +64,43 @@ export default class AppPreview extends Component {
     });
   }
 
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+    const domRect = ReactDOM.findDOMNode(this).getBoundingClientRect();
+    this.setState({
+      positionY: domRect.y,
+      height: domRect.height
+    });
+    document.body.style = `background: ${colorPrimary};`;
+  }
+
   componentWillUnmount() {
     this.#subject.unsubscribe();
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll = (event) => {
+    console.log('yOffset: ', window.pageYOffset);
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      console.log("you're at the bottom of the page");
+      return;
+   }
+   if (window.pageYOffset === 0) {
+     console.log("scroll to top!");
+     this.setState({
+       translateY: 0
+     })
+   }
+
+   const { positionY } = this.state ?? 0;
+   if (!positionY) return;
+    if (window.pageYOffset > positionY) {
+      
+      const diff = window.pageYOffset - positionY;
+      this.setState({
+        translateY: diff
+      });
+    }
   }
 
   handleTooltipClose = () => {
@@ -91,9 +130,10 @@ export default class AppPreview extends Component {
   };
 
   render() {
-    const { portfolioItem, tooltipOpen } = this.state;
+    const { portfolioItem, tooltipOpen, translateY } = this.state;
+    console.log(translateY);
     return (
-      <Column style={appPreview}>
+      <Column style={{ ...appPreview, transform: `translate(0px, ${translateY}px)` }}>
         <Row>
           <Column>
             <Row>

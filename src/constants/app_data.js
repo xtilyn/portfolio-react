@@ -3,6 +3,9 @@ import teampics from "../images/Teampics_group.png";
 import cuiseek from "../images/Cuiseek_group.png";
 import jumpbox from "../images/Jumpbox_group.png";
 import medpass from "../images/Medpass_group.png";
+import mafia from "../images/Mafia_group.png";
+import localodge from "../images/Localodge_group.png";
+import devssocial from "../images/DevsSocial_group.png";
 
 export const linkedInUrl = "https://www.linkedin.com/in/christilyn-arjona/";
 export const githubUrl = "https://github.com/xtilyn";
@@ -86,22 +89,10 @@ export const portfolioItems = [
            "https://www.latticestudios.com/"
          ),
          new PortfolioItem(
-           "Jumpbox",
-           "Desktop App",
-           "A Computer Science project implementation of a multiplayer drawing and guessing game implemented using Transmission Control Protocol in which players are connected through single-server model.",
-           jumpbox,
-           ["Desktop App", "Java", "JavaFx", "Socket Programming", "TCP/IP"],
-           "https://github.com/xtilyn/Jumpbox",
-           "2019",
-           "4 months",
-           "CS 441 - Computer Networks \nUniversity Of Calgary",
-           "https://www.ucalgary.ca/"
-         ),
-         new PortfolioItem(
            "Devs Social",
            "Android App",
            "A social media platform that provides networking and collaborative space for developers. Features include in-app messaging, personalized portfolio, notifications, projects showcase, and more.",
-           "assets/image_02.jpg",
+           devssocial,
            [
              "Android App",
              "Landing Page Website",
@@ -117,18 +108,6 @@ export const portfolioItems = [
            "2 years",
            "Personal Project",
            ""
-         ),
-         new PortfolioItem(
-           "Fitness TACKLer",
-           "Android App",
-           "A Computer Science project implementation of a fitness app geared towards power lifting. Developed with Xamarin and C#, built with emphasis on UI and User Experience design.",
-           "assets/image_03.jpg",
-           ["Android App", "C#", "Xamarin"],
-           "https://github.com/Be-bo/FitnessTACKer",
-           "2018",
-           "4 months",
-           "CS 481 - Human Computers Interaction \nUniversity Of Calgary",
-           "https://www.ucalgary.ca/"
          ),
          new PortfolioItem(
            "Cuiseek",
@@ -155,10 +134,30 @@ export const portfolioItems = [
            ""
          ),
          new PortfolioItem(
+           "Localodge",
+           "Android App",
+           "An android app template for a local classifieds app. This is an ongoing project that hopes to provide a back-bone for local classified applications that uses Kotlin and Firebase.",
+           localodge,
+           [
+             "Android App",
+             "Firebase",
+             "Kotlin",
+             "Elastic Search",
+             "Room",
+             "RxJava",
+             "MVVM"
+           ],
+           "",
+           "2019",
+           "Ongoing",
+           "Personal Project",
+           ""
+         ),
+         new PortfolioItem(
            "Mafia",
            "Cross Platform",
            "A java application based on the popular Mafia party game. Implemented using MVC architecture.",
-           "assets/image_04.jpg",
+           mafia,
            ["Desktop App", "Java", "JavaFx", "MVC"],
            "https://github.com/xtilyn/MafiaApplication",
            "2017",
@@ -167,15 +166,27 @@ export const portfolioItems = [
            ""
          ),
          new PortfolioItem(
-           "Localodge",
+           "Fitness TACKLer",
            "Android App",
-           "An android app template for a local classifieds app. This is an ongoing project that hopes to provide a back-bone for local classified applications that uses Kotlin and Firebase.",
-           "assets/image_04.jpg",
-           ["Android App", "Firebase", "Kotlin", "Elastic Search", "Room", "RxJava", "MVVM"],
-           "",
+           "A Computer Science project implementation of a fitness app geared towards power lifting. Developed with Xamarin and C#, built with emphasis on UI and User Experience design.",
+           "assets/image_03.jpg",
+           ["Android App", "C#", "Xamarin"],
+           "https://github.com/Be-bo/FitnessTACKer",
+           "2018",
+           "4 months",
+           "CS 481 - Human Computers Interaction \nUniversity Of Calgary",
+           "https://www.ucalgary.ca/"
+         ),
+         new PortfolioItem(
+           "Jumpbox",
+           "Desktop App",
+           "A Computer Science project implementation of a multiplayer drawing and guessing game implemented using Transmission Control Protocol in which players are connected through single-server model.",
+           jumpbox,
+           ["Desktop App", "Java", "JavaFx", "Socket Programming", "TCP/IP"],
+           "https://github.com/xtilyn/Jumpbox",
            "2019",
-           "Ongoing",
-           "Personal Project",
-           ""
+           "4 months",
+           "CS 441 - Computer Networks \nUniversity Of Calgary",
+           "https://www.ucalgary.ca/"
          )
        ];
