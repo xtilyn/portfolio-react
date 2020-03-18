@@ -67,7 +67,7 @@ export default class PortfolioView extends Component {
     return (
       <Column flexGrow={1} style={rootStyle}>
         <Row horizontal="center">
-          <SimpleHeader />
+          <SimpleHeader title='Portfolio' />
         </Row>
         <Row vertical="start">
           <Column flex={1} horizontal="center" style={{ paddingTop: 20 }}>

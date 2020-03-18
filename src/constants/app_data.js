@@ -136,7 +136,7 @@ export const portfolioItems = [
          new PortfolioItem(
            "Localodge",
            "Android App",
-           "An android app template for a local classifieds app. This is an ongoing project that hopes to provide a back-bone for local classified applications that uses Kotlin and Firebase.",
+           "An android app template for a local classifieds app. This is an ongoing project that hopes to provide a back-bone for local classifieds applications that uses Kotlin and Firebase.",
            localodge,
            [
              "Android App",

@@ -9,6 +9,7 @@ import {
 import PortfolioView from './pages/PortfolioView';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { colorAccent } from './constants/app_colors';
+import AboutView from './pages/AboutView';
 
 function App() {
   const theme = createMuiTheme({
@@ -44,6 +45,9 @@ function App() {
             <Switch>
               <Route path="/portfolio">
                 <PortfolioView />
+              </Route>
+              <Route path="/about">
+                <AboutView />
               </Route>
               <Route path="/">
                 <HomeView />

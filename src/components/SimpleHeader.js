@@ -50,7 +50,7 @@ class SimpleHeader extends React.Component {
             level={1}
             style={{ fontWeight: 600, margin: "auto", marginTop: 40 }}
           >
-            Portfolio
+            {this.props.title}
           </Title>
         </Fade>
       </Row>
