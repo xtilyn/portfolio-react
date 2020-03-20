@@ -34,6 +34,22 @@ function App() {
         textTransform: "none",
         fontSize: "1.7rem",
       },
+      h1: {
+        fontFamily: "Segoe UI"
+      },
+      h2: {
+        fontFamily: "Segoe UI"
+      },
+      h3: {
+        fontFamily: "Segoe UI"
+      },
+      h4: {
+        fontFamily: "Segoe UI"
+      },
+      subtitle1: {
+        fontFamily: "Consolas",
+        fontSize: 18
+      }
     }
   });
 

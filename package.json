@@ -19,7 +19,8 @@
     "react-scripts": "3.4.0",
     "react-sticky": "^6.0.3",
     "rxjs": "^6.5.4",
-    "simple-flexbox": "^2.3.0"
+    "simple-flexbox": "^2.3.0",
+    "typeface-roboto": "0.0.75"
   },
   "scripts": {
     "start": "react-scripts start",
