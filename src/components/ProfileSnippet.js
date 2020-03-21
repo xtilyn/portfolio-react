@@ -21,7 +21,8 @@ const rootStyle = {
   textAlign: "left",
   paddingLeft: 80,
   paddingBottom: 50,
-  paddingTop: 40
+  paddingTop: 40,
+  minHeight: "65vh"
 };
 
 const borderStyle = {

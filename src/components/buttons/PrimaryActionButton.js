@@ -22,10 +22,10 @@ const styles = {
 };
 
 function PrimaryActionButton(props) {
-  const { borderRadius, classes, children, className, ...other } = props;
+  const { borderRadius, classes, children, className, endIcon, ...other } = props;
 
   return (
-    <Button disableElevation={true} color='primary' className={clsx(classes.root, className)} {...other} style={{ borderRadius: borderRadius }}>
+    <Button disableElevation={true} color='primary' className={clsx(classes.root, className)} {...other} style={{ borderRadius: borderRadius }} endIcon={endIcon}>
       {children || 'class names'}
     </Button>
   );
