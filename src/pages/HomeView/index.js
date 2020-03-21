@@ -175,11 +175,13 @@ class index extends Component {
                     placeholder="Name"
                     inputProps={{ "aria-label": "enter name" }}
                     style={{ ...textFieldStyle, marginRight: 15 }}
+                    required
                   />
                   <InputBase
                     placeholder="Email"
                     inputProps={{ "aria-label": "enter email address" }}
                     style={textFieldStyle}
+                    required
                   />
                 </Row>
                 <InputBase
@@ -193,6 +195,7 @@ class index extends Component {
                     marginLeft: 65,
                     marginTop: 15
                   }}
+                  required
                 />
                 <InputBase
                   placeholder="Message"
@@ -207,9 +210,10 @@ class index extends Component {
                     marginLeft: 65,
                     marginTop: 15
                   }}
+                  required
                 />
                 <Row flex={1} justifyContent="center" style={{ marginTop: 20 }}>
-                  <PrimaryActionButton variant="contained" borderRadius={90}>
+                  <PrimaryActionButton variant="contained" borderRadius={90} type="submit">
                     <Row
                       justifyContent="center"
                       alignItems="center"
