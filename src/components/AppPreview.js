@@ -268,7 +268,7 @@ export default class AppPreview extends Component {
         <Row
           justifyContent="center"
           alignItems="flex-end"
-          style={{ paddingBottom: 20 }}
+          style={{ paddingBottom: 20, paddingTop: 20 }}
         >
           {portfolioItem.url ? this.renderLinkButton(portfolioItem.url) : ""}
         </Row>
