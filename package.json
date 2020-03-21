@@ -11,6 +11,7 @@
     "antd": "^4.0.2",
     "minimist": "^1.2.5",
     "react": "^16.13.0",
+    "react-card-flip": "^1.0.10",
     "react-dom": "^16.13.0",
     "react-draggable": "^4.2.0",
     "react-image-lazy-progressive-load-with-progress-bar": "^0.1.8",
