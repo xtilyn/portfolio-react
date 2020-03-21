@@ -11,6 +11,7 @@ import firebaseIcon from "../../images/firebase_icon.png";
 import reactIcon from "../../images/react_icon.png";
 import { Typography, Fade, Grow } from "@material-ui/core";
 import ReactDOM from "react-dom";
+import Flippy, { FrontSide, BackSide } from "react-flippy";
 import RoomIcon from "@material-ui/icons/Room";
 import Draggable from "react-draggable";
 
@@ -23,6 +24,11 @@ const aboutContainer = {
   borderRadius: "32px",
   background: "#3d3d3d",
   boxShadow: "0px 3px 99px rgba(0, 0, 0, 0.16)"
+};
+
+const tile = {
+  background: "#5e5e5e",
+  borderRadius: "14px"
 };
 
 const dot = {
@@ -157,8 +163,8 @@ class AboutView extends Component {
     const width = firebaseIconDOM.getBoundingClientRect().width;
     const height = firebaseIconDOM.getBoundingClientRect().height;
     this.setState({
-      reactIconX: x + width / 2,
-      reactIconY: y + height
+      reactIconX: x + width / 2 + 10,
+      reactIconY: y + height + 10
     });
   };
 
@@ -280,31 +286,110 @@ class AboutView extends Component {
 
           <Row flex={1} justifyContent="center" alignItems="center">
             <Column alignItems="start" style={{ height: "100%" }}>
-              <img
-                src={firebaseIcon}
-                ref="firebaseIcon"
-                style={{
-                  width: 131,
-                  height: 126,
-                  marginTop: 80,
-                  marginRight: 10
-                }}
-                alt=""
-              />
+              <Flippy>
+                <FrontSide
+                  style={{
+                    backgroundColor: "transparent",
+                    boxShadow: "none",
+                    marginTop: 80
+                  }}
+                >
+                  <img
+                    src={firebaseIcon}
+                    ref="firebaseIcon"
+                    className="techTile"
+                    style={{
+                      width: 131,
+                      height: 126,
+                      cursor: "pointer"
+                    }}
+                    alt=""
+                  />
+                </FrontSide>
+
+                <BackSide
+                  style={{
+                    backgroundColor: "transparent",
+                    boxShadow: "none"
+                  }}
+                >
+                  <Column
+                    className="techTile"
+                    style={{
+                      ...tile,
+                      width: 131,
+                      height: 126,
+                      cursor: "pointer"
+                    }}
+                    justifyContent="center"
+                  >
+                    <Typography
+                      variant="body1"
+                      style={{ fontFamily: "Consolas" }}
+                    >
+                      Firebase
+                    </Typography>
+                  </Column>
+                </BackSide>
+              </Flippy>
             </Column>
-            <img
-              src={reactIcon}
-              ref="reactIcon"
+            <Flippy
               style={{
-                width: 189,
-                height: 132,
                 position: "absolute",
                 top: reactIconY,
                 left: reactIconX,
                 marginTop: 10
               }}
-              alt=""
-            />
+            >
+              <FrontSide
+                style={{
+                  backgroundColor: "transparent",
+                  boxShadow: "none",
+                  padding: 0
+                }}
+              >
+                <img
+                  src={reactIcon}
+                  ref="reactIcon"
+                  style={{
+                    width: 149,
+                    height: 132,
+                    cursor: "pointer"
+                  }}
+                  alt=""
+                  className="techTile"
+                />
+              </FrontSide>
+
+              <BackSide
+                style={{
+                  backgroundColor: "transparent",
+                  boxShadow: "none",
+                  padding: 0
+                }}
+              >
+                <Column
+                  className="techTile"
+                  style={{
+                    ...tile,
+                    width: 149,
+                    height: 132,
+                    cursor: "pointer"
+                  }}
+                  justifyContent="center"
+                >
+                  <Typography
+                    variant="body1"
+                    style={{
+                      fontFamily: "Consolas",
+                      textAlign: "center"
+                    }}
+                  >
+                    ReactJS / <br></br>React Native
+                  </Typography>
+                </Column>
+              </BackSide>
+            </Flippy>
             <Column
               style={{
                 marginBottom: 60
@@ -315,7 +400,8 @@ class AboutView extends Component {
                 style={{
                   width: 321,
                   height: 521,
-                  marginBottom: 10
+                  marginBottom: 10,
+                  marginRight: 14
                 }}
                 alt=""
               />
@@ -341,52 +427,293 @@ class AboutView extends Component {
                 in
                 timeout={this.#defaultAnimTimeout}
                 style={{ transformOrigin: "0 0 0" }}
+                unmountOnExit
               >
-                <img
-                  src={mongoIcon}
-                  style={{ width: 141, height: 122, marginBottom: 10 }}
-                  alt=""
-                />
+                <Flippy
+                  style={{
+                    marginBottom: 10,
+                    width: 141,
+                    height: 122
+                  }}
+                >
+                  <FrontSide
+                    style={{
+                      backgroundColor: "transparent",
+                      boxShadow: "none",
+                      padding: 0
+                    }}
+                  >
+                    <img
+                      src={mongoIcon}
+                      style={{
+                        width: 141,
+                        height: 122,
+                        cursor: "pointer"
+                      }}
+                      alt=""
+                      className="techTile"
+                    />
+                  </FrontSide>
+
+                  <BackSide
+                    style={{
+                      backgroundColor: "transparent",
+                      boxShadow: "none",
+                      padding: 0
+                    }}
+                  >
+                    <Column
+                      className="techTile"
+                      style={{
+                        ...tile,
+                        width: 141,
+                        height: 122,
+                        cursor: "pointer"
+                      }}
+                      justifyContent="center"
+                    >
+                      <Typography
+                        variant="body1"
+                        style={{
+                          fontFamily: "Consolas",
+                          textAlign: "center"
+                        }}
+                      >
+                        MongoDB
+                      </Typography>
+                    </Column>
+                  </BackSide>
+                </Flippy>
               </Grow>
               <Grow
                 in={animateNodeIcon}
                 timeout={this.#defaultAnimTimeout}
                 style={{ transformOrigin: "0 0 0" }}
               >
-                <img
-                  src={nodeIcon}
-                  style={{ width: 172, height: 122, marginBottom: 10 }}
-                  alt=""
-                />
+                <Flippy
+                  style={{
+                    marginBottom: 10,
+                    width: 152,
+                    height: 122
+                  }}
+                >
+                  <FrontSide
+                    style={{
+                      backgroundColor: "transparent",
+                      boxShadow: "none",
+                      padding: 0
+                    }}
+                  >
+                    <img
+                      src={nodeIcon}
+                      style={{
+                        width: 152,
+                        height: 122,
+                        cursor: "pointer"
+                      }}
+                      alt=""
+                      className="techTile"
+                    />
+                  </FrontSide>
+
+                  <BackSide
+                    style={{
+                      backgroundColor: "transparent",
+                      boxShadow: "none",
+                      padding: 0
+                    }}
+                  >
+                    <Column
+                      className="techTile"
+                      style={{
+                        ...tile,
+                        width: 152,
+                        height: 122,
+                        cursor: "pointer"
+                      }}
+                      justifyContent="center"
+                    >
+                      <Typography
+                        variant="body1"
+                        style={{
+                          fontFamily: "Consolas",
+                          textAlign: "center"
+                        }}
+                      >
+                        NodeJS
+                      </Typography>
+                    </Column>
+                  </BackSide>
+                </Flippy>
               </Grow>
               <Grow
                 in={animateReduxIcon}
                 timeout={this.#defaultAnimTimeout}
                 style={{ transformOrigin: "0 0 0" }}
               >
-                <img
-                  src={reduxIcon}
-                  style={{ width: 121, height: 116, marginBottom: 10 }}
-                  alt=""
-                />
+                <Flippy
+                  style={{
+                    width: 121,
+                    height: 116,
+                    marginBottom: 10
+                  }}
+                >
+                  <FrontSide
+                    style={{
+                      backgroundColor: "transparent",
+                      boxShadow: "none",
+                      padding: 0
+                    }}
+                  >
+                    <img
+                      src={reduxIcon}
+                      style={{ width: 121, height: 116, cursor: "pointer" }}
+                      alt=""
+                      className="techTile"
+                    />
+                  </FrontSide>
+
+                  <BackSide
+                    style={{
+                      backgroundColor: "transparent",
+                      boxShadow: "none",
+                      padding: 0
+                    }}
+                  >
+                    <Column
+                      className="techTile"
+                      style={{
+                        ...tile,
+                        width: 121,
+                        height: 116,
+                        cursor: "pointer"
+                      }}
+                      justifyContent="center"
+                    >
+                      <Typography
+                        variant="body1"
+                        style={{
+                          fontFamily: "Consolas",
+                          textAlign: "center"
+                        }}
+                      >
+                        Redux
+                      </Typography>
+                    </Column>
+                  </BackSide>
+                </Flippy>
               </Grow>
               <Grow
                 in={animateFlutterIcon}
                 timeout={this.#defaultAnimTimeout}
                 style={{ transformOrigin: "0 0 0" }}
               >
-                <img
-                  src={flutterIcon}
-                  style={{ width: 134, height: 125, marginBottom: 10 }}
-                  alt=""
-                />
+                <Flippy
+                  style={{
+                    width: 134,
+                    height: 125,
+                    marginBottom: 10
+                  }}
+                >
+                  <FrontSide
+                    style={{
+                      backgroundColor: "transparent",
+                      boxShadow: "none",
+                      padding: 0
+                    }}
+                  >
+                    <img
+                      src={flutterIcon}
+                      style={{ width: 134, height: 125, cursor: "pointer" }}
+                      alt=""
+                    />
+                  </FrontSide>
+
+                  <BackSide
+                    style={{
+                      backgroundColor: "transparent",
+                      boxShadow: "none",
+                      padding: 0
+                    }}
+                  >
+                    <Column
+                      className="techTile"
+                      style={{
+                        ...tile,
+                        width: 134,
+                        height: 125,
+                        cursor: "pointer"
+                      }}
+                      justifyContent="center"
+                    >
+                      <Typography
+                        variant="body1"
+                        style={{
+                          fontFamily: "Consolas",
+                          textAlign: "center"
+                        }}
+                      >
+                        Flutter
+                      </Typography>
+                    </Column>
+                  </BackSide>
+                </Flippy>
               </Grow>
               <Grow
                 in={animateXdIcon}
                 timeout={this.#defaultAnimTimeout}
                 style={{ transformOrigin: "0 0 0" }}
               >
-                <img src={xdIcon} style={{ width: 121, height: 116 }} alt="" />
+                <Flippy
+                  style={{
+                    width: 121,
+                    height: 116
+                  }}
+                >
+                  <FrontSide
+                    style={{
+                      backgroundColor: "transparent",
+                      boxShadow: "none",
+                      padding: 0
+                    }}
+                  >
+                    <img
+                      src={xdIcon}
+                      style={{ width: 121, height: 116, cursor: "pointer" }}
+                      alt=""
+                      className="techTile"
+                    />
+                  </FrontSide>
+
+                  <BackSide
+                    style={{
+                      backgroundColor: "transparent",
+                      boxShadow: "none",
+                      padding: 0
+                    }}
+                  >
+                    <Column
+                      className="techTile"
+                      style={{
+                        ...tile,
+                        width: 121,
+                        height: 116,
+                        cursor: "pointer"
+                      }}
+                      justifyContent="center"
+                    >
+                      <Typography
+                        variant="body1"
+                        style={{
+                          fontFamily: "Consolas",
+                          textAlign: "center"
+                        }}
+                      >
+                        Adobe XD
+                      </Typography>
+                    </Column>
+                  </BackSide>
+                </Flippy>
               </Grow>
             </Column>
           </Row>

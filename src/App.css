@@ -22,10 +22,17 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  max-width: 1920px;
+  max-height: 1080px;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.techTile:hover {
+  box-shadow: 0px 5px 21px rgba(0, 0, 0, 0.16);
+  transition: box-shadow .3s;
 }
 
 @keyframes App-logo-spin {
