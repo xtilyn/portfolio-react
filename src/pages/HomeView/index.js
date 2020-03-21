@@ -1,19 +1,47 @@
-import React, { Component } from 'react';
-import { Column, Row } from 'simple-flexbox';
-import { colorPrimary } from '../../constants/app_colors';
-import ProfileSnippet from '../../components/ProfileSnippet';
+import React, { Component } from "react";
+import { Column, Row } from "simple-flexbox";
+import { colorPrimary } from "../../constants/app_colors";
+import ProfileSnippet from "../../components/ProfileSnippet";
 import ExampleComponent from "react-rounded-image";
-import MyPhoto from '../../images/logo.png';
-import Header from '../../components/Header';
-import Fade from '@material-ui/core/Fade';
-import Slide from '@material-ui/core/Slide';
-import { profileSnippetAnimDuration } from '../../constants/shared_variables';
+import MyPhoto from "../../images/logo.png";
+import Header from "../../components/Header";
+import Fade from "@material-ui/core/Fade";
+import Slide from "@material-ui/core/Slide";
+import { profileSnippetAnimDuration } from "../../constants/shared_variables";
+import {
+  SwipeableDrawer,
+  IconButton,
+  Typography,
+  TextField,
+  InputBase
+} from "@material-ui/core";
+import CloseIcon from "@material-ui/icons/Close";
+import { colorAccent } from "../../constants/app_colors";
 
 const rootStyle = {
-    background: colorPrimary,
-    width: '100%',
-    height: '100%',
-}
+  background: colorPrimary,
+  width: "100%",
+  height: "100%"
+};
+
+const borderStyle = {
+  width: "20%",
+  height: "10px",
+  background: colorAccent,
+  marginLeft: 70,
+  marginTop: 10
+};
+
+const textFieldStyle = {
+  borderRadius: "12px",
+  background: "#5e5e5e",
+  boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.16)",
+  paddingTop: 10,
+  paddingBottom: 10,
+  paddingLeft: 10,
+  paddingRight: 10,
+  color: "#fff"
+};
 
 class index extends Component {
   #imagePercentWidth;
@@ -27,7 +55,8 @@ class index extends Component {
     this.state = {
       isMounted: false,
       windowWidth: 0,
-      windowHeight: 0
+      windowHeight: 0,
+      drawerOpen: false
     };
   }
 
@@ -43,6 +72,13 @@ class index extends Component {
     window.removeEventListener("resize", this.updateWindowDimensions);
   }
 
+  toggleNavDrawer = () => {
+    const { drawerOpen } = this.state;
+    this.setState({
+      drawerOpen: !drawerOpen
+    });
+  };
+
   updateWindowDimensions = () => {
     this.setState({
       windowWidth: window.innerWidth,
@@ -51,12 +87,12 @@ class index extends Component {
   };
 
   render() {
-    const { isMounted, windowWidth, windowHeight } = this.state;
+    const { isMounted, windowWidth, drawerOpen } = this.state;
     console.log(`is mounted: ${isMounted}`);
     return (
-      <Column flexGrow={1} style={rootStyle}>
+      <Column flexGrow={1} style={rootStyle} key="right">
         <Row horizontal="center">
-          <Header />
+          <Header toggleNavDrawer={this.toggleNavDrawer} />
         </Row>
         <Row vertical="center" flex={1}>
           <Column flex={1} horizontal="center">
@@ -83,9 +119,67 @@ class index extends Component {
             </Slide>
           </Column>
         </Row>
+
+        <SwipeableDrawer
+          anchor="right"
+          open={drawerOpen}
+          onClose={this.toggleNavDrawer}
+          onOpen={this.toggleNavDrawer}
+        >
+          <Column flex={1} style={{ background: colorPrimary, width: "50vw" }}>
+            <IconButton
+              onClick={this.toggleNavDrawer}
+              style={{ width: 70, height: 70 }}
+            >
+              <CloseIcon style={{ width: 50, height: 50, color: "fff" }} />
+            </IconButton>
+            <Typography
+              variant="h2"
+              style={{
+                marginLeft: 65,
+                fontWeight: 600,
+                color: "#fff",
+                fontFamily: "Segoe UI"
+              }}
+            >
+              Contact
+            </Typography>
+            <div style={borderStyle} />
+            <Typography
+              variant="body1"
+              style={{
+                marginLeft: 65,
+                marginTop: 15,
+                color: "#fff",
+                fontFamily: "Segoe UI",
+                fontSize: "1.2em"
+              }}
+            >
+              I'm currently a full time student but I'm always looking for new
+              opportunities. If you have other questions, don't hesitate to ask!
+            </Typography>
+            <form>
+              {/* TODO CONTINUE HERE */}
+              <Row flex={1}>
+              <InputBase
+                placeholder="Name"
+                inputProps={{ "aria-label": "enter name" }}
+                style={textFieldStyle}
+                flex={1}
+              />
+              <InputBase
+                placeholder="Name"
+                inputProps={{ "aria-label": "enter name" }}
+                style={textFieldStyle}
+                flex={1}
+              />
+              </Row>
+            </form>
+          </Column>
+        </SwipeableDrawer>
       </Column>
     );
   }
 }
 
-export default index
+export default index;

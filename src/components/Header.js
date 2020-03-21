@@ -56,7 +56,7 @@ export default class Header extends Component {
             <Link to="/about" style={{ textDecoration: "none" }}>
               <Button style={headerItemStyle}>About</Button>
             </Link>
-            <Button style={{ ...headerItemStyle, marginRight: 100 }}>
+            <Button style={{ ...headerItemStyle, marginRight: 100 }} onClick={this.props.toggleNavDrawer}>
               Contact
             </Button>
           </Row>
