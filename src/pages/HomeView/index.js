@@ -16,51 +16,76 @@ const rootStyle = {
 }
 
 class index extends Component {
-    constructor(props) {
-        super(props)
+  #imagePercentWidth;
+  #imagePercentHeight;
 
-        this.state = {
-          isMounted: false
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.#imagePercentWidth = 642 / 1920;
+    this.#imagePercentHeight = 662 / 1080;
 
-    componentDidMount() {
-      console.log('test')
-      this.setState({
-        isMounted: true
-      });
-    }
+    this.state = {
+      isMounted: false,
+      windowWidth: 0,
+      windowHeight: 0
+    };
+  }
 
-    render() {
-      const { isMounted } = this.state;
-      console.log(`is mounted: ${isMounted}`)
-        return (
-          <Column flexGrow={1} style={rootStyle}>
-            <Row horizontal="center">
-              <Header />
-            </Row>
-            <Row vertical="center" style={{ height: "80vh" }}>
-              <Column flex={1} horizontal="center" style={{ paddingTop: 50 }}>
-                <Fade in={isMounted} timeout={2000}>
-                  <div>
-                    <ExampleComponent
-                    image={MyPhoto}
-                    imageWidth="550"
-                    imageHeight="570"
-                    roundedSize="0"
-                  />
-                  </div>
-                </Fade>
-              </Column>
-              <Column flex={1} horizontal="center">
-                <Slide direction='left' in={isMounted} timeout={profileSnippetAnimDuration}>
-                  <div><ProfileSnippet /></div>
-                </Slide>
-              </Column>
-            </Row>
+  componentDidMount() {
+    this.setState({
+      isMounted: true
+    });
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions = () => {
+    this.setState({
+      windowWidth: window.innerWidth,
+      windowHeight: window.innerHeight
+    });
+  };
+
+  render() {
+    const { isMounted, windowWidth, windowHeight } = this.state;
+    console.log(`is mounted: ${isMounted}`);
+    return (
+      <Column flexGrow={1} style={rootStyle}>
+        <Row horizontal="center">
+          <Header />
+        </Row>
+        <Row vertical="center" flex={1}>
+          <Column flex={1} horizontal="center">
+            <Fade in={isMounted} timeout={2000}>
+              <div>
+                <ExampleComponent
+                  image={MyPhoto}
+                  imageWidth={this.#imagePercentWidth * windowWidth}
+                  imageHeight={this.#imagePercentWidth * windowWidth + 20}
+                  roundedSize="0"
+                />
+              </div>
+            </Fade>
           </Column>
-        );
-    }
+          <Column flex={1} horizontal="center">
+            <Slide
+              direction="left"
+              in={isMounted}
+              timeout={profileSnippetAnimDuration}
+            >
+              <div>
+                <ProfileSnippet />
+              </div>
+            </Slide>
+          </Column>
+        </Row>
+      </Column>
+    );
+  }
 }
 
 export default index

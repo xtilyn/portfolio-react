@@ -32,7 +32,7 @@ function App() {
     typography: {
       button: {
         textTransform: "none",
-        fontSize: "1.7rem",
+        fontSize: "0.9em",
       },
       h1: {
         fontFamily: "Segoe UI"

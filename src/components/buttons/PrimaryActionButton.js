@@ -8,15 +8,16 @@ import { withStyles } from '@material-ui/core/styles';
 const styles = {
   root: {
     border: 0,
-    width: "320px",
-    height: "60px",
     padding: "0 30px",
     verticalAlign: "middle",
-    marginTop: 20,
     textDecoration: "none",
     display: "table",
     color: "#383838",
-    textAlign: "center"
+    textAlign: "center",
+    paddingLeft: 40,
+    paddingRight: 40,
+    paddingTop: 5,
+    paddingBottom: 5
   }
 };
 

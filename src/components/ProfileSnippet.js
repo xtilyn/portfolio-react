@@ -15,14 +15,13 @@ import { profileSnippetAnimDuration } from '../constants/shared_variables';
 const Title = Typography.Title;
 
 const rootStyle = {
-  width: "100%",
-  height: "80vh",
   borderRadius: "117px 0px 0px 117px",
   background: colorPrimary,
   boxShadow: "0px 0px 74px rgba(0, 0, 0, 0.16)",
   textAlign: "left",
   paddingLeft: 80,
-  marginTop: 90,
+  paddingBottom: 50,
+  paddingTop: 40
 };
 
 const borderStyle = {
@@ -30,12 +29,6 @@ const borderStyle = {
   height: "13px",
   background: colorAccent
 };
-
-const nameStyle = {
-    fontSize: '80px', 
-    fontWeight: 600, 
-    marginBottom: 20
-}
 
 const socialBtnStyle = {
     background: 'transparent', 
@@ -65,18 +58,27 @@ export default class ProfileSnippet extends Component {
       const { snippetEnterAnimFinished } = this.state;
 
         return (
-          <Column flexGrow={1} style={rootStyle}>
-            <Title level={1} style={nameStyle}>
+          <Column flexGrow={1} style={rootStyle} justifyContent="center">
+            <Title
+              level={1}
+              style={{ fontSize: "3em", fontWeight: 600, marginBottom: 15, marginTop: 0 }}
+            >
               CHRISTILYN <br />
               ARJONA
             </Title>
             <div style={borderStyle} />
             <Title
               level={3}
-              style={{ fontWeight: 300, marginRight: 100, marginBottom: 20 }}
+              style={{
+                fontWeight: 300,
+                marginRight: 100,
+                marginBottom: 0,
+                marginTop: 15
+              }}
             >
               A Software Developer currently specializing in Native Android App
-              Development, UI/UX Design, with experience in Full Stack Web Development.
+              Development, UI/UX Design, with experience in Full Stack Web
+              Development.
             </Title>
             <Row>
               <IconButton
@@ -122,13 +124,11 @@ export default class ProfileSnippet extends Component {
                 />
               </IconButton>
             </Row>
-            <Collapse in={snippetEnterAnimFinished} style={{ width: '320px' }}>
-              <Link to="/portfolio" style={{ textDecoration: "none" }}>
-                <PrimaryActionButton variant="contained" borderRadius={10}>
-                  See Portfolio
-                </PrimaryActionButton>
-              </Link>
-            </Collapse>
+            <Link to="/portfolio" style={{ textDecoration: "none" }}>
+              <PrimaryActionButton variant="contained" borderRadius={10}>
+                See Portfolio
+              </PrimaryActionButton>
+            </Link>
           </Column>
         );
     }
