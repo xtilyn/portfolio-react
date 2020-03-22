@@ -79,29 +79,29 @@ export default class AppPreview extends Component {
     window.removeEventListener("scroll", this.handleScroll);
   }
 
-  handleScroll = (event) => {
-    console.log('yOffset: ', window.pageYOffset);
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+  handleScroll = event => {
+    console.log("yOffset: ", window.pageYOffset);
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
       console.log("you're at the bottom of the page");
       return;
-   }
-   if (window.pageYOffset === 0) {
-     console.log("scroll to top!");
-     this.setState({
-       translateY: 0
-     })
-   }
+    }
+    if (window.pageYOffset === 0) {
+      console.log("scroll to top!");
+      this.setState({
+        translateY: 0
+      });
+    }
 
-   const { positionY } = this.state ?? 0;
-   if (!positionY) return;
-    if (window.pageYOffset > positionY) {
-      
-      const diff = window.pageYOffset - positionY;
+    const { positionY } = this.state ?? 0;
+    if (!positionY) return;
+    const temp = window.pageYOffset + 50;
+    if (temp > positionY) {
+      const diff = temp - positionY;
       this.setState({
         translateY: diff
       });
     }
-  }
+  };
 
   handleTooltipClose = () => {
     this.setState({
