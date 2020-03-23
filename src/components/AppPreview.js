@@ -23,7 +23,7 @@ const appPreview = {
 };
 
 const borderStyle = {
-  width: 258,
+  width: 158,
   height: 10,
   background: colorAccent,
   marginLeft: 38
@@ -136,13 +136,13 @@ export default class AppPreview extends Component {
       <Column style={{ ...appPreview, transform: `translate(0px, ${translateY}px)` }}>
         <Row>
           <Column>
-            <Row>
+            <Row alignItems="end">
               <Title
                 level={2}
                 style={{
                   textAlign: "start",
                   fontWeight: 600,
-                  fontSize: 53,
+                  fontSize: 43,
                   marginLeft: 38,
                   marginBottom: 15
                 }}
@@ -154,7 +154,7 @@ export default class AppPreview extends Component {
                   style={{
                     width: 50,
                     height: 50,
-                    marginTop: 60
+                    marginBottom: 10
                   }}
                 >
                   <Tooltip
@@ -230,7 +230,7 @@ export default class AppPreview extends Component {
               justifyContent="center"
             >
               <Title
-                level={3}
+                level={4}
                 style={{
                   fontWeight: 300,
                   textAlign: "start"
@@ -248,7 +248,7 @@ export default class AppPreview extends Component {
             <img
               src={portfolioItem.imagePath}
               alt="app images"
-              style={{ width: 380 }}
+              style={{ width: 340 }}
             />
           </Column>
         </Row>
@@ -269,6 +269,7 @@ export default class AppPreview extends Component {
           justifyContent="center"
           alignItems="flex-end"
           style={{ paddingBottom: 20, paddingTop: 20 }}
+          flex={1}
         >
           {portfolioItem.url ? this.renderLinkButton(portfolioItem.url) : ""}
         </Row>
