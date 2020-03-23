@@ -421,7 +421,7 @@ class AboutView extends Component {
             <Column
               justifyContent="center"
               alignItems="center"
-              style={{ marginBottom: 50 }}
+              style={{ marginBottom: 50, marginRight: 15 }}
             >
               <Grow
                 in
