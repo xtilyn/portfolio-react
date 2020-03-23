@@ -1,20 +1,20 @@
 import React, { Component } from "react";
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from "react-responsive";
 import MobileView from "./MobileView";
 import DesktopView from "./DesktopView";
 
-const HomeView = (props) => {
-  const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-device-width: 1224px)'
-  });
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+const HomeView = props => {
+  const isDesktop = useMediaQuery({ minWidth: 992 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
     <div>
-      { isDesktopOrLaptop && <DesktopView/> }
-      { isTabletOrMobile && <MobileView /> }
+      {isDesktop && <DesktopView />}
+      {isMobile && <MobileView />}
+      {isTablet && <DesktopView />}
     </div>
   );
-}
+};
 
 export default HomeView;
