@@ -11,6 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { githubUrl, linkedInUrl, stackOverflowUrl} from '../constants/app_data';
 import Collapse from '@material-ui/core/Collapse';
 import { profileSnippetAnimDuration } from '../constants/shared_variables';
+import { description } from "../constants/app_data";
 
 const Title = Typography.Title;
 
@@ -77,9 +78,7 @@ export default class ProfileSnippet extends Component {
                 marginTop: 15
               }}
             >
-              A Software Developer currently specializing in Native Android App
-              Development, UI/UX Design, with experience in Full Stack Web
-              Development.
+              {description}
             </Title>
             <Row>
               <IconButton

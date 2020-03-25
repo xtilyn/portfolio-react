@@ -11,6 +11,9 @@ export const linkedInUrl = "https://www.linkedin.com/in/christilyn-arjona/";
 export const githubUrl = "https://github.com/xtilyn";
 export const stackOverflowUrl = "https://stackoverflow.com/users/7881446/christilyn";
 
+export const description =
+  "A Software Developer currently specializing in Native Android App Development, UI/UX Design, with experience in Full Stack Web Development.";
+
 class PortfolioItem {
     constructor(
         title, 
