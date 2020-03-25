@@ -150,21 +150,6 @@ export default class DesktopView extends Component {
                 Contact
               </Typography>
               <div style={borderStyle} />
-              <Typography
-                variant="body1"
-                style={{
-                  marginLeft: 65,
-                  marginRight: 65,
-                  marginTop: 15,
-                  color: "#fff",
-                  fontFamily: "Segoe UI",
-                  fontSize: "1.2em"
-                }}
-              >
-                I'm currently a full time student but I'm always looking for new
-                opportunities. If you have other questions, don't hesitate to
-                ask!
-              </Typography>
               <form>
                 <Row
                   flex={1}

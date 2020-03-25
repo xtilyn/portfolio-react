@@ -35,6 +35,10 @@
   transition: box-shadow .3s;
 }
 
+:root {
+  background: #505050;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

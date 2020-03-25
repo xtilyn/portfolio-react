@@ -13,15 +13,18 @@ import {
 import github from "../images/githubIcon.png";
 import linkedIn from "../images/linkedInIcon.png";
 import stackOverflow from "../images/stackoverflowIcon.png";
+import PrimaryActionButton from "../components/buttons/PrimaryActionButton";
+import { Link } from "react-router-dom";
 
 const rootStyle = {
   background: colorPrimary,
-//   webkitBoxShadow: "0px 0px 58px 0px rgba(0,0,0,0.21)",
-//   mozBoxShadow: "0px 0px 58px 0px rgba(0,0,0,0.21)",
-//   boxShadow: "0px 0px 58px 0px rgba(0,0,0,0.21)",
-//   borderRadius: 18,
+  //   webkitBoxShadow: "0px 0px 58px 0px rgba(0,0,0,0.21)",
+  //   mozBoxShadow: "0px 0px 58px 0px rgba(0,0,0,0.21)",
+  //   boxShadow: "0px 0px 58px 0px rgba(0,0,0,0.21)",
+  //   borderRadius: 18,
   margin: "auto",
-  width: "90%",
+  width: "100%",
+  height: "100%"
 };
 
 const socialBtnStyle = {
@@ -30,42 +33,60 @@ const socialBtnStyle = {
   cursor: "pointer"
 };
 
+const cardStyle = {
+  borderRadius: "17px",
+  background: "#5d5d5d",
+  marginLeft: 24,
+  marginRight: 24,
+  paddingBottom: 40
+};
+
 export default function ProfileSnippetMobile() {
   return (
     <Column style={rootStyle}>
-      <Row justifyContent="center" style={{ paddingTop: 30 }}>
-        <ExampleComponent
-          image={MyPhoto}
-          imageWidth={158}
-          imageHeight={160}
-          roundedSize="0"
-        />
-      </Row>
-      <Typography
+      <Column flex={1}></Column>
+      <Column justifyContent="center" alignItems="center" style={cardStyle}>
+        <Row justifyContent="center" style={{ paddingTop: 40 }}>
+          <ExampleComponent
+            image={MyPhoto}
+            imageWidth={128}
+            imageHeight={130}
+            roundedSize="0"
+          />
+        </Row>
+        <Typography
           variant="h4"
           style={{
             fontWeight: 600,
             fontFamily: "Segoe UI",
             textAlign: "center",
             marginLeft: 8,
-            marginTop: 20
+            marginTop: 15,
+            fontSize: 25
           }}
         >
           Christilyn Arjona
         </Typography>
-      <Typography
-        variant="subtitle2"
-        style={{
-          fontFamily: "Segoe UI",
-          fontWeight: 300,
-          fontSize: 20,
-          marginTop: 20,
-          marginBottom: 5
-        }}
-      >
-        {description}
-      </Typography>
-      <Row justifyContent="center" style={{ marginBottom: 10 }}>
+        <Typography
+          variant="subtitle2"
+          style={{
+            fontFamily: "Segoe UI",
+            fontWeight: 300,
+            fontSize: 16,
+            marginTop: 60,
+            marginBottom: 20,
+            width: "80%"
+          }}
+        >
+          {description}
+        </Typography>
+        <Link to="/portfolio" style={{ textDecoration: "none" }}>
+          <PrimaryActionButton variant="contained" borderRadius={36}>
+            See Portfolio
+          </PrimaryActionButton>
+        </Link>
+      </Column>
+      <Row justifyContent="center" style={{ marginBottom: 50 }} flexGrow={1}>
         <IconButton
           aria-label="LinkedIn Profile link"
           style={socialBtnStyle}
