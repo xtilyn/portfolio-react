@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import { colorAccent } from "../../constants/app_colors";
 import ProfileSnippetMobile from "../../components/ProfileSnippetMobile";
 import NavDrawer from "../../components/NavDrawer";
+import HeaderMobile from "../../HeaderMobile";
 
 const rootStyle = {
   background: colorPrimary,
@@ -45,19 +46,7 @@ export default class MobileView extends Component {
     return (
       <div style={rootStyle}>
         <React.Fragment key="left">
-          <Row
-            flex={1}
-            style={{ height: 50, paddingLeft: 20, paddingRight: 20 }}
-          >
-            <IconButton
-              onClick={this.toggleDrawer}
-              style={{ padding: 0, marginTop: 15 }}
-            >
-              <MenuIcon style={{ color: "#fff" }} />
-            </IconButton>
-            <Row flexGrow={1} />
-            <Signature width={20} height={20} />
-          </Row>
+          <HeaderMobile toggleDrawer={this.toggleDrawer} />
           <SwipeableDrawer
             anchor="left"
             open={isDrawerOpen}
