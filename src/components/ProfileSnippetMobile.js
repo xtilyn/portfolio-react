@@ -75,7 +75,7 @@ export default function ProfileSnippetMobile() {
             fontSize: 16,
             marginTop: 60,
             marginBottom: 20,
-            width: "80%"
+            width: "85%"
           }}
         >
           {description}
