@@ -4,4 +4,5 @@ export const navRoutes = {
     "Home": "/",
     "Portfolio": "/portfolio",
     "About": "/about",
+    "Contact": "/contactMobile"
 }

@@ -33,7 +33,8 @@ const borderStyle = {
   height: "10px",
   background: colorAccent,
   marginLeft: 70,
-  marginTop: 10
+  marginTop: 10,
+  marginBottom: 50
 };
 
 const textFieldStyle = {

@@ -10,6 +10,7 @@ import PortfolioView from './pages/PortfolioView';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { colorAccent } from './constants/app_colors';
 import AboutView from './pages/AboutView';
+import MobileView from './pages/ContactView/MobileView';
 
 function App() {
   const theme = createMuiTheme({
@@ -64,6 +65,9 @@ function App() {
               </Route>
               <Route path="/about">
                 <AboutView />
+              </Route>
+              <Route path="/contactMobile">
+                <MobileView />
               </Route>
               <Route path="/">
                 <HomeView />
