@@ -34,24 +34,29 @@ const socialBtnStyle = {
 };
 
 const cardStyle = {
-  borderRadius: "17px",
+  borderRadius: "66px 0px 0px 0px",
   background: "#5d5d5d",
-  marginLeft: 24,
-  marginRight: 24,
-  paddingBottom: 40
+  boxShadow: "0px 3px 0px rgba(0, 0, 0, 0.16)"
+};
+
+const dividerStyle = {
+  width: "70%",
+  height: "2px",
+  background: "#848484",
+  marginTop: 50
 };
 
 export default function ProfileSnippetMobile() {
   return (
     <Column style={rootStyle}>
-      <Column flex={1}></Column>
-      <Column justifyContent="center" alignItems="center" style={cardStyle}>
+      <Column justifyContent="center" alignItems="center" flexGrow={1}>
         <Row justifyContent="center" style={{ paddingTop: 40 }}>
           <ExampleComponent
             image={MyPhoto}
-            imageWidth={128}
-            imageHeight={130}
-            roundedSize="0"
+            imageWidth={133}
+            imageHeight={135}
+            roundedSize="13"
+            roundedColor="#E4E4E4"
           />
         </Row>
         <Typography
@@ -67,14 +72,19 @@ export default function ProfileSnippetMobile() {
         >
           Christilyn Arjona
         </Typography>
+        <Typography variant="body2" style={{ color: "#D2D2D2", marginTop: 6, marginBottom: 10 }}>
+          SOFTWARE DEVELOPER
+        </Typography>
+      </Column>
+      <Column flexGrow={1} style={cardStyle} alignItems="center">
         <Typography
           variant="subtitle2"
           style={{
             fontFamily: "Segoe UI",
             fontWeight: 300,
-            fontSize: 16,
-            marginTop: 60,
-            marginBottom: 20,
+            fontSize: 18,
+            marginTop: 50,
+            marginBottom: 30,
             width: "85%"
           }}
         >
@@ -85,51 +95,52 @@ export default function ProfileSnippetMobile() {
             See Portfolio
           </PrimaryActionButton>
         </Link>
-      </Column>
-      <Row justifyContent="center" style={{ marginBottom: 50 }} flexGrow={1}>
-        <IconButton
-          aria-label="LinkedIn Profile link"
-          style={socialBtnStyle}
-          onClick={() => {
-            window.open(linkedInUrl, "_blank");
-          }}
-        >
-          <img
-            src={linkedIn}
-            style={{ height: 40, width: 40 }}
-            alt={"LinkedIn Profile link"}
-          />
-        </IconButton>
-        <IconButton
-          aria-label="Stack Overflow Profile link"
-          style={{ ...socialBtnStyle, marginLeft: 20 }}
-          onClick={() => {
-            window.open(stackOverflowUrl, "_blank");
-          }}
-        >
-          <img
-            src={stackOverflow}
-            style={{ height: 40, width: 40 }}
-            alt={"Stack Overflow Profile link"}
-          />
-        </IconButton>
-        <IconButton
-          aria-label="GitHub Profile link"
-          style={{ ...socialBtnStyle, marginLeft: 11 }}
-          onClick={() => {
-            window.open(githubUrl, "_blank");
-          }}
-        >
-          <img
-            src={github}
-            style={{
-              height: 60,
-              width: 60
+        <div style={dividerStyle}></div>
+        <Row justifyContent="center" style={{ marginBottom: 50 }} flexGrow={1}>
+          <IconButton
+            aria-label="LinkedIn Profile link"
+            style={socialBtnStyle}
+            onClick={() => {
+              window.open(linkedInUrl, "_blank");
             }}
-            alt={"GitHub Profile link"}
-          />
-        </IconButton>
-      </Row>
+          >
+            <img
+              src={linkedIn}
+              style={{ height: 40, width: 40 }}
+              alt={"LinkedIn Profile link"}
+            />
+          </IconButton>
+          <IconButton
+            aria-label="Stack Overflow Profile link"
+            style={{ ...socialBtnStyle, marginLeft: 20 }}
+            onClick={() => {
+              window.open(stackOverflowUrl, "_blank");
+            }}
+          >
+            <img
+              src={stackOverflow}
+              style={{ height: 40, width: 40 }}
+              alt={"Stack Overflow Profile link"}
+            />
+          </IconButton>
+          <IconButton
+            aria-label="GitHub Profile link"
+            style={{ ...socialBtnStyle, marginLeft: 11 }}
+            onClick={() => {
+              window.open(githubUrl, "_blank");
+            }}
+          >
+            <img
+              src={github}
+              style={{
+                height: 60,
+                width: 60
+              }}
+              alt={"GitHub Profile link"}
+            />
+          </IconButton>
+        </Row>
+      </Column>
     </Column>
   );
 }
