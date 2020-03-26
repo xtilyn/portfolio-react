@@ -1,7 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class MobileView extends Component {
-  render() {
-    return <div>About MobileView</div>;
-  }
+export default function MobileView() {
+  return <div>about mobile view</div>;
 }
