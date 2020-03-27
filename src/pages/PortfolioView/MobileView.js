@@ -1,0 +1,269 @@
+import React, { useState } from "react";
+import { Column, Row } from "simple-flexbox";
+import HeaderMobile from "../../HeaderMobile";
+import { colorPrimary } from "../../constants/app_colors";
+import { SwipeableDrawer, Typography } from "@material-ui/core";
+import NavDrawer from "../../components/NavDrawer";
+import { colorAccent } from "../../constants/app_colors";
+import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
+import WebIcon from "@material-ui/icons/Web";
+import LaptopIcon from "@material-ui/icons/Laptop";
+import SwipeableViews from "react-swipeable-views";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import MobileStepper from "@material-ui/core/MobileStepper";
+import Button from "@material-ui/core/Button";
+import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
+import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
+import { portfolioItems } from "../../constants/app_data";
+import Tag from "../../components/Tag";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import PrimaryActionButton from "../../components/buttons/PrimaryActionButton";
+import OpenInNewOutlinedIcon from "@material-ui/icons/OpenInNewOutlined";
+
+const rootStyle = {
+  background: colorPrimary,
+  width: "100vw",
+  height: "100vh"
+};
+
+const portfolioTagStyle = {
+  borderRadius: 5,
+  background: "transparent",
+  border: "1px solid #8c8787",
+  alignSelf: "flex-start",
+  paddingLeft: 10,
+  paddingRight: 10,
+  marginTop: 5,
+  marginRight: 5,
+  fontSize: 13,
+  textAlign: "center",
+  lineHeight: "26px"
+};
+
+const dividerStyle = {
+  width: "17%",
+  height: "5px",
+  background: colorAccent,
+  marginLeft: 22,
+  marginTop: 10,
+  marginBottom: 10
+};
+
+const tagStyle = {
+  borderRadius: "43px",
+  background: "#545454",
+  border: "2px solid #707070",
+  padding: "3px 10px 3px 10px",
+  fontSize: 13
+};
+
+const slideStyle = {
+  margin: 15,
+  borderRadius: "20px",
+  background: "#5d5d5d",
+  height: "65vh",
+  marginTop: 20,
+  overflow: "hidden"
+};
+
+const stepperStyle = {
+  width: "100vw",
+  background: colorPrimary,
+  marginBottom: 30
+};
+
+export default function MobileView(props) {
+  const theme = useTheme();
+  const [activeStep, setActiveStep] = useState(0);
+  const [swipeableIndex, setSwipeableIndex] = useState(0);
+  const [isDrawerOpen, toggleDrawer] = useState(false);
+
+  const toggleDrawerTrueFalse = () => {
+    toggleDrawer(!isDrawerOpen);
+  };
+
+  const onChangeIndexCallback = index => {
+    setActiveStep(index);
+  };
+
+  const handleNext = () => {
+    const current = activeStep + 1;
+    setActiveStep(current);
+    setSwipeableIndex(current);
+  };
+
+  const handleBack = () => {
+    const current = activeStep - 1;
+    setActiveStep(current);
+    setSwipeableIndex(current);
+  };
+
+  const renderTag = tag => {
+    return <div style={portfolioTagStyle}>{tag.toUpperCase()}</div>;
+  };
+
+  const renderPortfolioItem = portfolioItem => {
+    return (
+      <Column style={slideStyle}>
+        <Row justifyContent="center" style={{ marginTop: 10 }}>
+          <img
+            src={portfolioItem.imagePath}
+            alt="app images"
+            style={{ width: 170 }}
+          />
+        </Row>
+        <Typography
+          variant="h5"
+          style={{
+            fontFamily: "Segoe UI",
+            textAlign: "start",
+            marginLeft: 20,
+            fontWeight: 600
+          }}
+        >
+          {portfolioItem.title}
+        </Typography>
+        <Typography
+          variant="body1"
+          style={{
+            fontFamily: "Segoe UI",
+            textAlign: "start",
+            fontWeight: 300,
+            fontSize: 15,
+            marginLeft: 20,
+            marginTop: 7,
+            marginRight: 20
+          }}
+        >
+          {portfolioItem.description}
+        </Typography>
+        <Row
+          wrap
+          vertical="flex-start"
+          alignContent="start"
+          justifyContent="flex-start"
+          alignItems="flex-end"
+          style={{ marginLeft: 20, marginTop: 10 }}
+        >
+          {portfolioItem.tags.slice(0, 5).map(tag => renderTag(tag))}
+          {portfolioItem.tags.length > 5 ? (
+            <div style={{ marginTop: 10, fontSize: 15 }}>
+              +{portfolioItem.tags.length - 5}
+            </div>
+          ) : (
+            ""
+          )}
+        </Row>
+        <Column flex={1} justifyContent="center" alignItems="center">
+          <div>
+          <PrimaryActionButton
+            variant="contained"
+            borderRadius={36}
+            onClick={() => {
+              window.open(portfolioItem.url, "_blank");
+            }}
+          >
+            View Project <OpenInNewOutlinedIcon style={{ width: 15, height: 15 }} />
+          </PrimaryActionButton>
+          </div>
+        </Column>
+      </Column>
+    );
+  };
+
+  return (
+    <div style={rootStyle}>
+      <React.Fragment key="left">
+        <HeaderMobile toggleDrawer={toggleDrawerTrueFalse} />
+        <SwipeableDrawer
+          anchor="left"
+          open={isDrawerOpen}
+          onClose={toggleDrawerTrueFalse}
+          onOpen={toggleDrawerTrueFalse}
+          style={{ background: colorPrimary }}
+        >
+          <NavDrawer selectedItem={1} />
+        </SwipeableDrawer>
+        <Column style={{ width: "100vw" }}>
+          <Column>
+            <Typography
+              variant="h4"
+              style={{
+                marginLeft: 20,
+                fontWeight: 600,
+                marginTop: 20,
+                textAlign: "start"
+              }}
+            >
+              Portfolio
+            </Typography>
+            <div style={dividerStyle}></div>
+          </Column>
+          <Column flexGrow={1}>
+            <Row
+              alignItems="center"
+              wrap
+              style={{ marginLeft: 20, marginBottom: 5 }}
+            >
+              <Row style={tagStyle}>
+                6 Mobile
+                <PhoneAndroidIcon
+                  style={{ marginLeft: 5, width: 20, height: 20 }}
+                />
+              </Row>
+              <Row style={{ ...tagStyle, marginLeft: 5 }}>
+                4 Web
+                <WebIcon style={{ marginLeft: 5, width: 20, height: 20 }} />
+              </Row>
+              <Row style={{ ...tagStyle, marginLeft: 5 }}>
+                2 Desktop
+                <LaptopIcon style={{ marginLeft: 5, width: 20, height: 20 }} />
+              </Row>
+            </Row>
+            <SwipeableViews
+              enableMouseEvents
+              onChangeIndex={onChangeIndexCallback}
+              index={swipeableIndex}
+              style={{ height: "70vh", overflow: "hidden" }}
+            >
+              {portfolioItems.map(item => renderPortfolioItem(item))}
+            </SwipeableViews>
+            <MobileStepper
+              variant="dots"
+              steps={portfolioItems.length}
+              position="static"
+              activeStep={activeStep}
+              style={{ background: colorPrimary }}
+              nextButton={
+                <Button
+                  size="small"
+                  onClick={handleNext}
+                  disabled={activeStep === portfolioItems.length - 1}
+                >
+                  {theme.direction === "rtl" ? (
+                    <KeyboardArrowLeft />
+                  ) : (
+                    <KeyboardArrowRight />
+                  )}
+                </Button>
+              }
+              backButton={
+                <Button
+                  size="small"
+                  onClick={handleBack}
+                  disabled={activeStep === 0}
+                >
+                  {theme.direction === "rtl" ? (
+                    <KeyboardArrowRight />
+                  ) : (
+                    <KeyboardArrowLeft />
+                  )}
+                </Button>
+              }
+            />
+          </Column>
+        </Column>
+      </React.Fragment>
+    </div>
+  );
+}

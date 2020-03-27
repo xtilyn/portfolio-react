@@ -9,7 +9,7 @@ export default function AboutView() {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
-    <div>
+    <div style={{ width: "100vw", height: "100vh" }}>
       {isDesktop && <DesktopView />}
       {isMobile && <MobileView />}
       {isTablet && <DesktopView />}

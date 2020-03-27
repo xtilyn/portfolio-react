@@ -17,7 +17,8 @@ const styles = {
     paddingLeft: 40,
     paddingRight: 40,
     paddingTop: 5,
-    paddingBottom: 5
+    paddingBottom: 5,
+    fontFamily: "Segoe UI"
   }
 };
 

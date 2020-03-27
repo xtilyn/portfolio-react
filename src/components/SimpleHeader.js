@@ -40,7 +40,7 @@ class SimpleHeader extends React.Component {
     return (
       <Row flexGrow={1} style={rootStyle}>
         <Fade in={true} timeout={1000}>
-          <div style={backBtnStyle} onClick={this.goBack}>
+          <div style={{ ...backBtnStyle, marginTop: 45 }} onClick={this.goBack}>
             <img style={backImageStyle} src={back} alt="Go back" />
           </div>
         </Fade>
@@ -48,7 +48,7 @@ class SimpleHeader extends React.Component {
         <Fade in={true} timeout={1000}>
           <Title
             level={1}
-            style={{ fontWeight: 600, margin: "auto", marginTop: 40 }}
+            style={{ fontWeight: 600, margin: "auto", marginTop: 70 }}
           >
             {this.props.title}
           </Title>
