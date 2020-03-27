@@ -105,11 +105,11 @@ export default function MobileView(props) {
   const renderPortfolioItem = portfolioItem => {
     return (
       <Column style={slideStyle}>
-        <Row justifyContent="center" style={{ marginTop: 10 }}>
+        <Row justifyContent="center" style={{ marginTop: 10 }} flex={1}>
           <img
             src={portfolioItem.imagePath}
             alt="app images"
-            style={{ width: 170 }}
+            style={{ width: 170, maxHeight: 240 }}
           />
         </Row>
         <Typography
@@ -154,7 +154,7 @@ export default function MobileView(props) {
             ""
           )}
         </Row>
-        <Column flex={1} justifyContent="center" alignItems="center">
+        <Column justifyContent="center" alignItems="center" style={{ paddingTop: 20, paddingBottom: 20 }}>
           <div>
           <PrimaryActionButton
             variant="contained"
