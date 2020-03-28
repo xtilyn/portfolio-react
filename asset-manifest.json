@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/portfolio-react/static/css/main.236cb45c.chunk.css",
+    "main.js": "/portfolio-react/static/js/main.231dfbab.chunk.js",
+    "main.js.map": "/portfolio-react/static/js/main.231dfbab.chunk.js.map",
+    "runtime-main.js": "/portfolio-react/static/js/runtime-main.6f440d9c.js",
+    "runtime-main.js.map": "/portfolio-react/static/js/runtime-main.6f440d9c.js.map",
+    "static/css/2.49d78008.chunk.css": "/portfolio-react/static/css/2.49d78008.chunk.css",
+    "static/js/2.4455c5a4.chunk.js": "/portfolio-react/static/js/2.4455c5a4.chunk.js",
+    "static/js/2.4455c5a4.chunk.js.map": "/portfolio-react/static/js/2.4455c5a4.chunk.js.map",
+    "index.html": "/portfolio-react/index.html",
+    "precache-manifest.70462fc207fba7fe015e2ae3f5f23e32.js": "/portfolio-react/precache-manifest.70462fc207fba7fe015e2ae3f5f23e32.js",
+    "service-worker.js": "/portfolio-react/service-worker.js",
+    "static/css/2.49d78008.chunk.css.map": "/portfolio-react/static/css/2.49d78008.chunk.css.map",
+    "static/css/main.236cb45c.chunk.css.map": "/portfolio-react/static/css/main.236cb45c.chunk.css.map",
+    "static/js/2.4455c5a4.chunk.js.LICENSE.txt": "/portfolio-react/static/js/2.4455c5a4.chunk.js.LICENSE.txt",
+    "static/media/Cuiseek_group.png": "/portfolio-react/static/media/Cuiseek_group.f065119a.png",
+    "static/media/DevsSocial_group.png": "/portfolio-react/static/media/DevsSocial_group.f9d59d0d.png",
+    "static/media/Jumpbox_group.png": "/portfolio-react/static/media/Jumpbox_group.0c78cc3f.png",
+    "static/media/Localodge_group.png": "/portfolio-react/static/media/Localodge_group.6b4e0c78.png",
+    "static/media/Mafia_group.png": "/portfolio-react/static/media/Mafia_group.9e63d92e.png",
+    "static/media/Medpass_group.png": "/portfolio-react/static/media/Medpass_group.9b5f720a.png",
+    "static/media/Neuwly_group.png": "/portfolio-react/static/media/Neuwly_group.0d828c16.png",
+    "static/media/Teampics_group.png": "/portfolio-react/static/media/Teampics_group.367ea682.png",
+    "static/media/logo.png": "/portfolio-react/static/media/logo.bb37778a.png",
+    "static/media/index.css": "/portfolio-react/static/media/montserrat-latin-900italic.a8ec4957.woff",
+    "static/media/phone_android.png": "/portfolio-react/static/media/phone_android.6296e283.png",
+    "static/media/xd_icon.png": "/portfolio-react/static/media/xd_icon.fdf56c48.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6f440d9c.js",
+    "static/css/2.49d78008.chunk.css",
+    "static/js/2.4455c5a4.chunk.js",
+    "static/css/main.236cb45c.chunk.css",
+    "static/js/main.231dfbab.chunk.js"
+  ]
+}
