@@ -150,9 +150,9 @@ export default function MobileView(props) {
         >
           {portfolioItem.tags.slice(0, 5).map(tag => renderTag(tag))}
           {portfolioItem.tags.length > 5 ? (
-            <div style={{ marginTop: 10, fontSize: 15 }}>
-              <Typography variant="body2">+{portfolioItem.tags.length - 5}</Typography>
-            </div>
+            <Column justifyContent="center">
+              <Typography variant="body2" style={{ fontSize: 15, marginTop: 6 }}>+{portfolioItem.tags.length - 5}</Typography>
+            </Column>
           ) : (
             ""
           )}
