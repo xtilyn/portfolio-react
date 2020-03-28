@@ -25,6 +25,7 @@
     "react-swipeable-views": "^0.13.9",
     "rxjs": "^6.5.4",
     "simple-flexbox": "^2.3.0",
+    "typeface-montserrat": "0.0.75",
     "typeface-roboto": "0.0.75"
   },
   "scripts": {
