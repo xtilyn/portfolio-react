@@ -58,7 +58,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Router basename={`${process.env.PUBLIC_URL}/`}>
+      <Router>
         <div className="App">
           <header className="App-header">
             <Switch>
