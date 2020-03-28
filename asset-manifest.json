@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/portfolio-react/static/css/main.236cb45c.chunk.css",
-    "main.js": "/portfolio-react/static/js/main.583c3eaa.chunk.js",
-    "main.js.map": "/portfolio-react/static/js/main.583c3eaa.chunk.js.map",
+    "main.js": "/portfolio-react/static/js/main.cda92ad5.chunk.js",
+    "main.js.map": "/portfolio-react/static/js/main.cda92ad5.chunk.js.map",
     "runtime-main.js": "/portfolio-react/static/js/runtime-main.6f440d9c.js",
     "runtime-main.js.map": "/portfolio-react/static/js/runtime-main.6f440d9c.js.map",
     "static/css/2.49d78008.chunk.css": "/portfolio-react/static/css/2.49d78008.chunk.css",
-    "static/js/2.4455c5a4.chunk.js": "/portfolio-react/static/js/2.4455c5a4.chunk.js",
-    "static/js/2.4455c5a4.chunk.js.map": "/portfolio-react/static/js/2.4455c5a4.chunk.js.map",
+    "static/js/2.bca28451.chunk.js": "/portfolio-react/static/js/2.bca28451.chunk.js",
+    "static/js/2.bca28451.chunk.js.map": "/portfolio-react/static/js/2.bca28451.chunk.js.map",
     "index.html": "/portfolio-react/index.html",
-    "precache-manifest.aefb504dc9e8ef61e671ab7b57b4af60.js": "/portfolio-react/precache-manifest.aefb504dc9e8ef61e671ab7b57b4af60.js",
+    "precache-manifest.acf27a15079b981ae79a67a95bc0ad19.js": "/portfolio-react/precache-manifest.acf27a15079b981ae79a67a95bc0ad19.js",
     "service-worker.js": "/portfolio-react/service-worker.js",
     "static/css/2.49d78008.chunk.css.map": "/portfolio-react/static/css/2.49d78008.chunk.css.map",
     "static/css/main.236cb45c.chunk.css.map": "/portfolio-react/static/css/main.236cb45c.chunk.css.map",
-    "static/js/2.4455c5a4.chunk.js.LICENSE.txt": "/portfolio-react/static/js/2.4455c5a4.chunk.js.LICENSE.txt",
+    "static/js/2.bca28451.chunk.js.LICENSE.txt": "/portfolio-react/static/js/2.bca28451.chunk.js.LICENSE.txt",
     "static/media/Cuiseek_group.png": "/portfolio-react/static/media/Cuiseek_group.f065119a.png",
     "static/media/DevsSocial_group.png": "/portfolio-react/static/media/DevsSocial_group.f9d59d0d.png",
     "static/media/Jumpbox_group.png": "/portfolio-react/static/media/Jumpbox_group.0c78cc3f.png",
@@ -30,8 +30,8 @@
   "entrypoints": [
     "static/js/runtime-main.6f440d9c.js",
     "static/css/2.49d78008.chunk.css",
-    "static/js/2.4455c5a4.chunk.js",
+    "static/js/2.bca28451.chunk.js",
     "static/css/main.236cb45c.chunk.css",
-    "static/js/main.583c3eaa.chunk.js"
+    "static/js/main.cda92ad5.chunk.js"
   ]
 }
