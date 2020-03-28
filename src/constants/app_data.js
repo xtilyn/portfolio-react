@@ -183,9 +183,9 @@ export const portfolioItems = [
          new PortfolioItem(
            "Jumpbox",
            "Desktop App",
-           "A Computer Science project implementation of a multiplayer drawing and guessing game implemented using Transmission Control Protocol in which players are connected through single-server model.",
+           "A Computer Science project implementation of a multiplayer drawing and guessing game implemented using TCP in which players are connected through single-server model.",
            jumpbox,
-           ["Desktop App", "Java", "JavaFx", "Socket Programming", "TCP/IP"],
+           ["Desktop App", "Java", "JavaFx" ],
            "https://github.com/xtilyn/Jumpbox",
            "2019",
            "4 months",

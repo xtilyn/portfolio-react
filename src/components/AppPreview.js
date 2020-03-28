@@ -131,7 +131,7 @@ export default class AppPreview extends Component {
     const { portfolioItem, tooltipOpen, translateY } = this.state;
     console.log(translateY);
     return (
-      <Column style={{ ...appPreview, transform: `translate(0px, ${translateY}px)` }}>
+      <Column style={{ ...appPreview, transform: `translate(0px, ${translateY}px)` }} justifyContent="center">
         <Row>
           <Column>
             <Row alignItems="end">
@@ -243,7 +243,7 @@ export default class AppPreview extends Component {
 
           <Column
             justifyContent="center"
-            style={{ marginRight: 50, marginTop: 60 }}
+            style={{ marginRight: 50, marginTop: 15 }}
           >
             <img
               src={portfolioItem.imagePath}
@@ -268,8 +268,7 @@ export default class AppPreview extends Component {
         <Row
           justifyContent="center"
           alignItems="flex-end"
-          style={{ paddingBottom: 20, paddingTop: 20 }}
-          flex={1}
+          style={{ paddingBottom: 20, paddingTop: 30 }}
         >
           {portfolioItem.url ? this.renderLinkButton(portfolioItem.url) : ""}
         </Row>
