@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import { colorPrimary, colorAccent } from "../constants/app_colors";
 import { portfolioItems } from "../constants/app_data";
-import { Typography } from "antd";
 import { Column, Row } from "simple-flexbox";
 import Tag from "./Tag";
 import PrimaryActionButton from "./buttons/PrimaryActionButton";
 import OpenInNewOutlinedIcon from "@material-ui/icons/OpenInNewOutlined";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import IconButton from "@material-ui/core/IconButton";
-import { ClickAwayListener, Tooltip } from "@material-ui/core";
+import { ClickAwayListener, Tooltip, Typography } from "@material-ui/core";
 import ReactDOM from 'react-dom';
-const Title = Typography.Title;
 
 const appPreview = {
   minHeight: "80vh",
@@ -137,18 +135,19 @@ export default class AppPreview extends Component {
         <Row>
           <Column>
             <Row alignItems="end">
-              <Title
-                level={2}
+              <Typography
+                variant="h3"
                 style={{
                   textAlign: "start",
                   fontWeight: 600,
                   fontSize: 43,
                   marginLeft: 38,
-                  marginBottom: 15
+                  marginBottom: 15,
+                  marginTop: 15
                 }}
               >
                 {portfolioItem?.title ?? ""}{" "}
-              </Title>
+              </Typography>
               <ClickAwayListener onClickAway={this.handleTooltipClose}>
                 <div
                   style={{
@@ -229,15 +228,16 @@ export default class AppPreview extends Component {
               }}
               justifyContent="center"
             >
-              <Title
-                level={4}
+              <Typography
+              variant="h5"
                 style={{
                   fontWeight: 300,
-                  textAlign: "start"
+                  textAlign: "start",
+                  marginTop: 10
                 }}
               >
                 {portfolioItem?.description ?? ""}
-              </Title>
+              </Typography>
             </Column>
           </Column>
 

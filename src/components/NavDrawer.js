@@ -57,7 +57,6 @@ class NavDrawer extends Component {
           variant="subtitle2"
           style={{
             fontWeight: selectedIndex === index ? 600 : 300,
-            fontFamily: "Segoe UI",
             fontSize: 18,
             color: "#fff"
           }}
@@ -82,7 +81,6 @@ class NavDrawer extends Component {
         <Typography
           variant="subtitle2"
           style={{
-            fontFamily: "Segoe UI",
             fontSize: 17,
             color: "#fff",
             marginTop: 12,

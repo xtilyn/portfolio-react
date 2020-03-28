@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import { Typography } from '@material-ui/core';
+import { Column } from 'simple-flexbox';
 
 const rootStyle = {
-  height: "36px",
   borderRadius: 5,
   background: "transparent",
   border: "1px solid #8c8787",
   alignSelf: "flex-start",
   paddingLeft: 20,
   paddingRight: 20,
+  paddingTop: 5,
+  paddingBottom: 5,
   marginTop: 10,
   marginRight: 10,
   fontSize: 20,
@@ -18,9 +21,9 @@ const rootStyle = {
 export default class Tag extends Component {
     render() {
         return (
-            <div style={rootStyle}>
-                {this.props.title}
-            </div>
+            <Column style={rootStyle} justifyContent="center">
+                <Typography variant="body2">{this.props.title}</Typography>
+            </Column>
         )
     }
 }

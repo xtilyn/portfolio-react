@@ -145,7 +145,6 @@ export default class DesktopView extends Component {
                   marginLeft: 65,
                   fontWeight: 600,
                   color: "#fff",
-                  fontFamily: "Segoe UI"
                 }}
               >
                 Contact
@@ -210,7 +209,7 @@ export default class DesktopView extends Component {
                     >
                       <Typography
                         variant="h5"
-                        style={{ fontWeight: 500, fontFamily: "Segoe UI" }}
+                        style={{ fontWeight: 500 }}
                       >
                         Send Message
                       </Typography>

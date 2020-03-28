@@ -410,7 +410,6 @@ class DesktopView extends Component {
                 style={{
                   color: "#BBBBBB",
                   fontSize: 20,
-                  fontFamily: "Segoe UI",
                   textAlign: "center"
                 }}
               >

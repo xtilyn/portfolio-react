@@ -1,11 +1,9 @@
 import React from 'react';
 import { Row } from 'simple-flexbox';
-import { Typography } from 'antd';
 import back from '../images/back.png'
 import { withRouter } from 'react-router-dom';
 import Fade from '@material-ui/core/Fade';
-
-const Title = Typography.Title;
+import { Typography } from '@material-ui/core';
 
 const rootStyle = {
     height: 100,
@@ -46,12 +44,12 @@ class SimpleHeader extends React.Component {
         </Fade>
 
         <Fade in={true} timeout={1000}>
-          <Title
-            level={1}
+          <Typography
+            variant="h2"
             style={{ fontWeight: 600, margin: "auto", marginTop: 70 }}
           >
             {this.props.title}
-          </Title>
+          </Typography>
         </Fade>
       </Row>
     );

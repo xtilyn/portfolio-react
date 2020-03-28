@@ -34,7 +34,6 @@ const inputContainer = {
   minHeight: "50px",
   borderRadius: "12px",
   background: "#5e5e5e",
-  fontFamily: "Segoe UI",
   color: "#fff",
   paddingLeft: 8,
   paddingRight: 8
@@ -130,7 +129,7 @@ export default function MobileView(props) {
                   >
                     <Typography
                       variant="h5"
-                      style={{ fontWeight: 500, fontFamily: "Segoe UI", fontSize: 16 }}
+                      style={{ fontWeight: 500, fontSize: 16 }}
                     >
                       Send Message
                     </Typography>

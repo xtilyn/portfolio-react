@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import List from "@material-ui/core/List";
 import { colorPrimary } from "../constants/app_colors";
 import Divider from "@material-ui/core/Divider";
-import { ListItem, withStyles } from "@material-ui/core";
+import { ListItem, withStyles, Typography } from "@material-ui/core";
 import { portfolioItems } from "../constants/app_data";
-import { Typography } from "antd";
 import { portfolioItemHeight } from "../constants/shared_variables";
-
-const Title = Typography.Title;
 
 const StyledListItem = withStyles({
   root: {
@@ -55,9 +52,9 @@ export default class PortfolioItemsList extends Component {
             selected={selectedIndex === index}
             onClick={event => this.handleListItemClick(event, index)}
           >
-            <Title level={2} style={{ fontWeight: 400 }}>
+            <Typography variant="h4" style={{ fontWeight: 400 }}>
               {portfolioItem.title}
-            </Title>
+            </Typography>
           </StyledListItem>
           <Divider />
         </div>

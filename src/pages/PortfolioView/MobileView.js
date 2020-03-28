@@ -102,7 +102,9 @@ export default function MobileView(props) {
   };
 
   const renderTag = tag => {
-    return <div style={portfolioTagStyle}>{tag.toUpperCase()}</div>;
+    return <Column style={portfolioTagStyle} justifyContent="center">
+      <Typography variant="body2">{tag}</Typography>
+    </Column>;
   };
 
   const renderPortfolioItem = portfolioItem => {
@@ -118,7 +120,6 @@ export default function MobileView(props) {
         <Typography
           variant="h5"
           style={{
-            fontFamily: "Segoe UI",
             textAlign: "start",
             marginLeft: 20,
             fontWeight: 600
@@ -129,7 +130,6 @@ export default function MobileView(props) {
         <Typography
           variant="body1"
           style={{
-            fontFamily: "Segoe UI",
             textAlign: "start",
             fontWeight: 300,
             fontSize: 15,
@@ -151,7 +151,7 @@ export default function MobileView(props) {
           {portfolioItem.tags.slice(0, 5).map(tag => renderTag(tag))}
           {portfolioItem.tags.length > 5 ? (
             <div style={{ marginTop: 10, fontSize: 15 }}>
-              +{portfolioItem.tags.length - 5}
+              <Typography variant="body2">+{portfolioItem.tags.length - 5}</Typography>
             </div>
           ) : (
             ""
@@ -214,17 +214,17 @@ export default function MobileView(props) {
               style={{ marginLeft: 20, marginBottom: 5 }}
             >
               <Row style={tagStyle}>
-                6 Mobile
+                <Typography variant="body2">6 Mobile</Typography>
                 <PhoneAndroidIcon
                   style={{ marginLeft: 5, width: 20, height: 20 }}
                 />
               </Row>
               <Row style={{ ...tagStyle, marginLeft: 5 }}>
-                4 Web
+              <Typography variant="body2">4 Web</Typography>
                 <WebIcon style={{ marginLeft: 5, width: 20, height: 20 }} />
               </Row>
               <Row style={{ ...tagStyle, marginLeft: 5 }}>
-                2 Desktop
+              <Typography variant="body2">2 Desktop</Typography>
                 <LaptopIcon style={{ marginLeft: 5, width: 20, height: 20 }} />
               </Row>
             </Row>

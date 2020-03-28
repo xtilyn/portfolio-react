@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Column, Row } from 'simple-flexbox';
 import { colorPrimary, colorAccent } from '../constants/app_colors';
-import { Typography } from 'antd';
 import github from '../images/githubIcon.png';
 import linkedIn from '../images/linkedInIcon.png';
 import stackOverflow from '../images/stackoverflowIcon.png';
@@ -12,8 +11,7 @@ import { githubUrl, linkedInUrl, stackOverflowUrl} from '../constants/app_data';
 import Collapse from '@material-ui/core/Collapse';
 import { profileSnippetAnimDuration } from '../constants/shared_variables';
 import { description } from "../constants/app_data";
-
-const Title = Typography.Title;
+import { Typography } from '@material-ui/core';
 
 const rootStyle = {
   borderRadius: "117px 0px 0px 117px",
@@ -61,16 +59,16 @@ export default class ProfileSnippet extends Component {
 
         return (
           <Column flexGrow={1} style={rootStyle} justifyContent="center">
-            <Title
-              level={1}
+            <Typography
+              variant="h1"
               style={{ fontSize: "3em", fontWeight: 600, marginBottom: 15, marginTop: 0 }}
             >
               CHRISTILYN <br />
               ARJONA
-            </Title>
+            </Typography>
             <div style={borderStyle} />
-            <Title
-              level={3}
+            <Typography
+              variant="h5"
               style={{
                 fontWeight: 300,
                 marginRight: 100,
@@ -79,7 +77,7 @@ export default class ProfileSnippet extends Component {
               }}
             >
               {description}
-            </Title>
+            </Typography>
             <Row>
               <IconButton
                 aria-label="LinkedIn Profile link"

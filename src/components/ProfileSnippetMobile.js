@@ -63,7 +63,6 @@ export default function ProfileSnippetMobile() {
           variant="h4"
           style={{
             fontWeight: 600,
-            fontFamily: "Segoe UI",
             textAlign: "center",
             marginLeft: 8,
             marginTop: 15,
@@ -80,7 +79,6 @@ export default function ProfileSnippetMobile() {
         <Typography
           variant="subtitle2"
           style={{
-            fontFamily: "Segoe UI",
             fontWeight: 300,
             fontSize: 18,
             marginTop: 50,

@@ -169,7 +169,6 @@ export default function MobileView(props) {
           <Typography
             variant="h6"
             style={{
-              fontFamily: "Segoe UI",
               textAlign: "start",
               marginLeft: 18,
               marginTop: 30,
