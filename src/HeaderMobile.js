@@ -6,7 +6,7 @@ import Signature from "./components/Signature";
 
 export default function HeaderMobile(props) {
   return (
-    <Row flex={1} style={{ height: 50, paddingLeft: 20, paddingRight: 20 }}>
+    <Row style={{ height: 50, paddingLeft: 20, paddingRight: 20 }}>
       <IconButton
         onClick={props.toggleDrawer}
         style={{ padding: 0, marginTop: 15 }}

@@ -36,7 +36,7 @@ const socialBtnStyle = {
 const cardStyle = {
   borderRadius: "66px 0px 0px 0px",
   background: "#5d5d5d",
-  boxShadow: "0px 3px 0px rgba(0, 0, 0, 0.16)"
+  boxShadow: "0px 3px 0px rgba(0, 0, 0, 0.16)",
 };
 
 const dividerStyle = {

@@ -19,11 +19,13 @@ import Tag from "../../components/Tag";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import PrimaryActionButton from "../../components/buttons/PrimaryActionButton";
 import OpenInNewOutlinedIcon from "@material-ui/icons/OpenInNewOutlined";
+import "./style.css";
 
 const rootStyle = {
   background: colorPrimary,
   width: "100vw",
-  height: "100vh"
+  height: "100vh",
+  overflowY: "scroll"
 };
 
 const portfolioTagStyle = {
@@ -61,8 +63,9 @@ const slideStyle = {
   margin: 15,
   borderRadius: "20px",
   background: "#5d5d5d",
-  height: "65vh",
-  marginTop: 20,
+  height: "95%",
+  marginTop: 10,
+  flexGrow: 1,
   overflow: "hidden"
 };
 
@@ -109,7 +112,7 @@ export default function MobileView(props) {
           <img
             src={portfolioItem.imagePath}
             alt="app images"
-            style={{ width: 170, maxHeight: 240 }}
+            style={{ width: "40%", height: "90%" }}
           />
         </Row>
         <Typography
@@ -154,17 +157,22 @@ export default function MobileView(props) {
             ""
           )}
         </Row>
-        <Column justifyContent="center" alignItems="center" style={{ paddingTop: 20, paddingBottom: 20 }}>
+        <Column
+          justifyContent="center"
+          alignItems="center"
+          style={{ paddingTop: 20, paddingBottom: 20 }}
+        >
           <div>
-          <PrimaryActionButton
-            variant="contained"
-            borderRadius={36}
-            onClick={() => {
-              window.open(portfolioItem.url, "_blank");
-            }}
-          >
-            View Project <OpenInNewOutlinedIcon style={{ width: 15, height: 15 }} />
-          </PrimaryActionButton>
+            <PrimaryActionButton
+              variant="contained"
+              borderRadius={36}
+              onClick={() => {
+                window.open(portfolioItem.url, "_blank");
+              }}
+            >
+              View Project{" "}
+              <OpenInNewOutlinedIcon style={{ width: 15, height: 15 }} />
+            </PrimaryActionButton>
           </div>
         </Column>
       </Column>
@@ -173,7 +181,7 @@ export default function MobileView(props) {
 
   return (
     <div style={rootStyle}>
-      <React.Fragment key="left">
+      <Column key="left" style={{ height: "100vh" }}>
         <HeaderMobile toggleDrawer={toggleDrawerTrueFalse} />
         <SwipeableDrawer
           anchor="left"
@@ -184,7 +192,7 @@ export default function MobileView(props) {
         >
           <NavDrawer selectedItem={1} />
         </SwipeableDrawer>
-        <Column style={{ width: "100vw" }}>
+        <Column style={{ width: "100vw" }} flex={1} flexGrow={1}>
           <Column>
             <Typography
               variant="h4"
@@ -220,50 +228,52 @@ export default function MobileView(props) {
                 <LaptopIcon style={{ marginLeft: 5, width: 20, height: 20 }} />
               </Row>
             </Row>
-            <SwipeableViews
-              enableMouseEvents
-              onChangeIndex={onChangeIndexCallback}
-              index={swipeableIndex}
-              style={{ height: "70vh", overflow: "hidden" }}
-            >
-              {portfolioItems.map(item => renderPortfolioItem(item))}
-            </SwipeableViews>
-            <MobileStepper
-              variant="dots"
-              steps={portfolioItems.length}
-              position="static"
-              activeStep={activeStep}
-              style={{ background: colorPrimary }}
-              nextButton={
-                <Button
-                  size="small"
-                  onClick={handleNext}
-                  disabled={activeStep === portfolioItems.length - 1}
-                >
-                  {theme.direction === "rtl" ? (
-                    <KeyboardArrowLeft />
-                  ) : (
-                    <KeyboardArrowRight />
-                  )}
-                </Button>
-              }
-              backButton={
-                <Button
-                  size="small"
-                  onClick={handleBack}
-                  disabled={activeStep === 0}
-                >
-                  {theme.direction === "rtl" ? (
-                    <KeyboardArrowRight />
-                  ) : (
-                    <KeyboardArrowLeft />
-                  )}
-                </Button>
-              }
-            />
+            <Column flexGrow={1}>
+              <SwipeableViews
+                enableMouseEvents
+                onChangeIndex={onChangeIndexCallback}
+                index={swipeableIndex}
+                className="swipeable"
+              >
+                {portfolioItems.map(item => renderPortfolioItem(item))}
+              </SwipeableViews>
+              <MobileStepper
+                variant="dots"
+                steps={portfolioItems.length}
+                position="static"
+                activeStep={activeStep}
+                style={{ background: colorPrimary }}
+                nextButton={
+                  <Button
+                    size="small"
+                    onClick={handleNext}
+                    disabled={activeStep === portfolioItems.length - 1}
+                  >
+                    {theme.direction === "rtl" ? (
+                      <KeyboardArrowLeft />
+                    ) : (
+                      <KeyboardArrowRight />
+                    )}
+                  </Button>
+                }
+                backButton={
+                  <Button
+                    size="small"
+                    onClick={handleBack}
+                    disabled={activeStep === 0}
+                  >
+                    {theme.direction === "rtl" ? (
+                      <KeyboardArrowRight />
+                    ) : (
+                      <KeyboardArrowLeft />
+                    )}
+                  </Button>
+                }
+              />
+            </Column>
           </Column>
         </Column>
-      </React.Fragment>
+      </Column>
     </div>
   );
 }

@@ -45,7 +45,7 @@ export default class MobileView extends Component {
     const { isDrawerOpen } = this.state;
     return (
       <div style={rootStyle}>
-        <React.Fragment key="left">
+        <Column key="left" style={{ height: "100vh" }}>
           <HeaderMobile toggleDrawer={this.toggleDrawer} />
           <SwipeableDrawer
             anchor="left"
@@ -57,7 +57,7 @@ export default class MobileView extends Component {
             <NavDrawer selectedItem={0}/>
           </SwipeableDrawer>
 
-          <Column style={{ height: "100vh" }}>
+          <Column flex={1}>
             {/* <Typography
               variant="h4"
               style={{ marginLeft: 20, fontWeight: 600, marginTop: 20,}}
@@ -67,7 +67,7 @@ export default class MobileView extends Component {
             <div style={dividerStyle}></div> */}
             <ProfileSnippetMobile />
           </Column>
-        </React.Fragment>
+        </Column>
       </div>
     );
   }
