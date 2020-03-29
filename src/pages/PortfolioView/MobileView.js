@@ -33,11 +33,12 @@ const portfolioTagStyle = {
   background: "transparent",
   border: "1px solid #8c8787",
   alignSelf: "flex-start",
-  paddingLeft: 10,
-  paddingRight: 10,
-  marginTop: 5,
-  marginRight: 5,
-  fontSize: 13,
+  paddingLeft: 5,
+  paddingTop: 2,
+  paddingBottom: 2,
+  paddingRight: 5,
+  marginTop: 3,
+  marginRight: 3,
   textAlign: "center",
   lineHeight: "26px"
 };
@@ -56,7 +57,6 @@ const tagStyle = {
   background: "#545454",
   border: "2px solid #707070",
   padding: "3px 10px 3px 10px",
-  fontSize: 13
 };
 
 const slideStyle = {
@@ -103,7 +103,7 @@ export default function MobileView(props) {
 
   const renderTag = tag => {
     return <Column style={portfolioTagStyle} justifyContent="center">
-      <Typography variant="body2">{tag}</Typography>
+      <Typography variant="body2" style={{ fontSize: 12 }}>{tag}</Typography>
     </Column>;
   };
 
@@ -146,7 +146,7 @@ export default function MobileView(props) {
           alignContent="start"
           justifyContent="flex-start"
           alignItems="flex-end"
-          style={{ marginLeft: 20, marginTop: 10 }}
+          style={{ marginLeft: 20, marginTop: 10, marginRight: 20 }}
         >
           {portfolioItem.tags.slice(0, 5).map(tag => renderTag(tag))}
           {portfolioItem.tags.length > 5 ? (

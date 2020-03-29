@@ -50,6 +50,7 @@ export const portfolioItems = [
            neuwly1,
            [
              "Android App",
+             "Web App",
              "Firebase",
              "Kotlin",
              "Algolia",
