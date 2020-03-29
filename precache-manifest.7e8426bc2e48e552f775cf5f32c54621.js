@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f4eff36270c79e8dcc4043b33b9c816b",
+    "revision": "763e13b13a354d8429631eb209412e3c",
     "url": "/portfolio-react/index.html"
   },
   {
-    "revision": "15eec69f9d72c6ff3d9c",
-    "url": "/portfolio-react/static/css/2.0e2acddb.chunk.css"
+    "revision": "c7c9cbf1ef0346ed21f8",
+    "url": "/portfolio-react/static/css/2.c2baa3df.chunk.css"
   },
   {
-    "revision": "a55954f637bfd0920958",
+    "revision": "18bbacc9b9fef9c7d443",
     "url": "/portfolio-react/static/css/main.b580f3a1.chunk.css"
   },
   {
-    "revision": "15eec69f9d72c6ff3d9c",
+    "revision": "c7c9cbf1ef0346ed21f8",
     "url": "/portfolio-react/static/js/2.3de93e90.chunk.js"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio-react/static/js/2.3de93e90.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a55954f637bfd0920958",
-    "url": "/portfolio-react/static/js/main.2408e4e0.chunk.js"
+    "revision": "18bbacc9b9fef9c7d443",
+    "url": "/portfolio-react/static/js/main.fea157aa.chunk.js"
   },
   {
     "revision": "38cc46e1fd5c05c02767",
@@ -58,14 +58,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "367ea6826647d582d3668624c3f1d9cc",
     "url": "/portfolio-react/static/media/Teampics_group.367ea682.png"
-  },
-  {
-    "revision": "5db4988d3e555d0f6ef54d4eb2019f6a",
-    "url": "/portfolio-react/static/media/droid-sans-mono-latin-400.5db4988d.woff"
-  },
-  {
-    "revision": "d7d78adfd525b08872fd82d6edbe0bb4",
-    "url": "/portfolio-react/static/media/droid-sans-mono-latin-400.d7d78adf.woff2"
   },
   {
     "revision": "bb37778a40cc7ac245cd3115985616d6",
@@ -218,6 +210,118 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6296e2836a5f98bc92f98d2dc4156bd2",
     "url": "/portfolio-react/static/media/phone_android.6296e283.png"
+  },
+  {
+    "revision": "558e932a85350db3380c8daa75c396ab",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-200.558e932a.woff"
+  },
+  {
+    "revision": "ffa5c77d0ba471964e2edf117c5e52cf",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-200.ffa5c77d.woff2"
+  },
+  {
+    "revision": "5150e99c19321c28973e47f9569d2777",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-200italic.5150e99c.woff2"
+  },
+  {
+    "revision": "62a30baa98bb767d790e8780b73e2b1c",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-200italic.62a30baa.woff"
+  },
+  {
+    "revision": "dccbac565028cfebef65293db4bd9714",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-300.dccbac56.woff2"
+  },
+  {
+    "revision": "de712560ce6208f9fb93e71af1dd0f8b",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-300.de712560.woff"
+  },
+  {
+    "revision": "7082c98886a824910e49c07a1025f114",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-300italic.7082c988.woff"
+  },
+  {
+    "revision": "9e3292f8b91cbb18756a46d39b802e48",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-300italic.9e3292f8.woff2"
+  },
+  {
+    "revision": "17ea4760cdf09ade45a20bce5f2933a9",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-400.17ea4760.woff"
+  },
+  {
+    "revision": "982234eca7d717dd9784d15519ece2f8",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-400.982234ec.woff2"
+  },
+  {
+    "revision": "18dd4f87fffded28ff1bb467f5b0709f",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-400italic.18dd4f87.woff"
+  },
+  {
+    "revision": "1a0fda4533853faab45697ee60d0f9fe",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-400italic.1a0fda45.woff2"
+  },
+  {
+    "revision": "3f58f0647ec74049ee3ba6cef1a5fde0",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-500.3f58f064.woff"
+  },
+  {
+    "revision": "744eeaab2c97bfcde24f9f96377a0ec9",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-500.744eeaab.woff2"
+  },
+  {
+    "revision": "04d782d8f60233715c253e81be5ef8a2",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-500italic.04d782d8.woff2"
+  },
+  {
+    "revision": "cfc748ca1b98f6855c39ccff0f6414b8",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-500italic.cfc748ca.woff"
+  },
+  {
+    "revision": "3036a9fd64c64be915eb1dbcfb6a51cf",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-600.3036a9fd.woff2"
+  },
+  {
+    "revision": "5a085db27a43c3351e2983f7a755dc5e",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-600.5a085db2.woff"
+  },
+  {
+    "revision": "b4c3891c92598de51f1470a6302a2f67",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-600italic.b4c3891c.woff2"
+  },
+  {
+    "revision": "fead30eb2d488adb1b3ddf744aeb7995",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-600italic.fead30eb.woff"
+  },
+  {
+    "revision": "b837c15c474e3654dabab85ad647cde6",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-700.b837c15c.woff"
+  },
+  {
+    "revision": "f85c431d467f00f1f44b1a2dc3792852",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-700.f85c431d.woff2"
+  },
+  {
+    "revision": "e690a100108349e491a9803509e8f61e",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-700italic.e690a100.woff"
+  },
+  {
+    "revision": "fc9b51aa041ab01766a7d13cca7e230c",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-700italic.fc9b51aa.woff2"
+  },
+  {
+    "revision": "c48732b54355ac669ca48b5cea058c40",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-900.c48732b5.woff"
+  },
+  {
+    "revision": "e13ecdc77b68244d5e0d1149a35726e1",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-900.e13ecdc7.woff2"
+  },
+  {
+    "revision": "9e39d561554343bf27d2acf561bf256e",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-900italic.9e39d561.woff2"
+  },
+  {
+    "revision": "f6d69098a7e1481b4d682aca18d979ea",
+    "url": "/portfolio-react/static/media/source-code-pro-latin-900italic.f6d69098.woff"
   },
   {
     "revision": "fdf56c48a482b71683490bb97ea06f3c",
