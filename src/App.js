@@ -11,7 +11,8 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { colorAccent } from './constants/app_colors';
 import AboutView from './pages/AboutView';
 import MobileView from './pages/ContactView/MobileView';
-require('typeface-montserrat')
+require('typeface-montserrat');
+require('typeface-droid-sans-mono');
 
 function App() {
   const theme = createMuiTheme({
@@ -37,20 +38,8 @@ function App() {
         textTransform: "none",
         fontSize: "0.9em",
       },
-      // h1: {
-      //   fontFamily: "Segoe UI"
-      // },
-      // h2: {
-      //   fontFamily: "Segoe UI"
-      // },
-      // h3: {
-      //   fontFamily: "Segoe UI"
-      // },
-      // h4: {
-      //   fontFamily: "Segoe UI"
-      // },
       subtitle1: {
-        fontFamily: "Consolas",
+        fontFamily: "Droid Sans Mono",
         fontSize: 18
       }
     }
