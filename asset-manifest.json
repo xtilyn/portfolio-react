@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/portfolio-react/static/css/main.b580f3a1.chunk.css",
-    "main.js": "/portfolio-react/static/js/main.fea157aa.chunk.js",
-    "main.js.map": "/portfolio-react/static/js/main.fea157aa.chunk.js.map",
+    "main.css": "/portfolio-react/static/css/main.3924c010.chunk.css",
+    "main.js": "/portfolio-react/static/js/main.affcd06c.chunk.js",
+    "main.js.map": "/portfolio-react/static/js/main.affcd06c.chunk.js.map",
     "runtime-main.js": "/portfolio-react/static/js/runtime-main.6f440d9c.js",
     "runtime-main.js.map": "/portfolio-react/static/js/runtime-main.6f440d9c.js.map",
     "static/css/2.c2baa3df.chunk.css": "/portfolio-react/static/css/2.c2baa3df.chunk.css",
     "static/js/2.3de93e90.chunk.js": "/portfolio-react/static/js/2.3de93e90.chunk.js",
     "static/js/2.3de93e90.chunk.js.map": "/portfolio-react/static/js/2.3de93e90.chunk.js.map",
     "index.html": "/portfolio-react/index.html",
-    "precache-manifest.7e8426bc2e48e552f775cf5f32c54621.js": "/portfolio-react/precache-manifest.7e8426bc2e48e552f775cf5f32c54621.js",
+    "precache-manifest.171a053887a35d7f0d38258998295153.js": "/portfolio-react/precache-manifest.171a053887a35d7f0d38258998295153.js",
     "service-worker.js": "/portfolio-react/service-worker.js",
     "static/css/2.c2baa3df.chunk.css.map": "/portfolio-react/static/css/2.c2baa3df.chunk.css.map",
-    "static/css/main.b580f3a1.chunk.css.map": "/portfolio-react/static/css/main.b580f3a1.chunk.css.map",
+    "static/css/main.3924c010.chunk.css.map": "/portfolio-react/static/css/main.3924c010.chunk.css.map",
     "static/js/2.3de93e90.chunk.js.LICENSE.txt": "/portfolio-react/static/js/2.3de93e90.chunk.js.LICENSE.txt",
     "static/media/Cuiseek_group.png": "/portfolio-react/static/media/Cuiseek_group.f065119a.png",
     "static/media/DevsSocial_group.png": "/portfolio-react/static/media/DevsSocial_group.f9d59d0d.png",
@@ -22,7 +22,7 @@
     "static/media/Medpass_group.png": "/portfolio-react/static/media/Medpass_group.9b5f720a.png",
     "static/media/Neuwly_group.png": "/portfolio-react/static/media/Neuwly_group.0d828c16.png",
     "static/media/Teampics_group.png": "/portfolio-react/static/media/Teampics_group.367ea682.png",
-    "static/media/logo.png": "/portfolio-react/static/media/logo.bb37778a.png",
+    "static/media/logo.png": "/portfolio-react/static/media/logo.24ca2f9b.png",
     "static/media/index.css": "/portfolio-react/static/media/source-code-pro-latin-900italic.f6d69098.woff",
     "static/media/phone_android.png": "/portfolio-react/static/media/phone_android.6296e283.png",
     "static/media/xd_icon.png": "/portfolio-react/static/media/xd_icon.fdf56c48.png"
@@ -31,7 +31,7 @@
     "static/js/runtime-main.6f440d9c.js",
     "static/css/2.c2baa3df.chunk.css",
     "static/js/2.3de93e90.chunk.js",
-    "static/css/main.b580f3a1.chunk.css",
-    "static/js/main.fea157aa.chunk.js"
+    "static/css/main.3924c010.chunk.css",
+    "static/js/main.affcd06c.chunk.js"
   ]
 }
