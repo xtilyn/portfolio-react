@@ -12,7 +12,7 @@ import { colorAccent } from './constants/app_colors';
 import AboutView from './pages/AboutView';
 import MobileView from './pages/ContactView/MobileView';
 require('typeface-montserrat');
-require('typeface-droid-sans-mono');
+require('typeface-source-code-pro');
 
 function App() {
   const theme = createMuiTheme({
@@ -39,7 +39,7 @@ function App() {
         fontSize: "0.9em",
       },
       subtitle1: {
-        fontFamily: "Droid Sans Mono",
+        fontFamily: "Source Code Pro",
         fontSize: 18
       }
     }
