@@ -121,7 +121,7 @@ export const portfolioItems = [
            "Android App",
            "A food and dining companion to help you discover new places around you. You can filter results according to your preferences, view restaurant details and reviews, and choose a place to stop and eat.",
            cuiseek,
-           ["Android App", "Firebase", "Java", "Material Design"],
+           ["Android App", "Firebase", "Java", "Material Design", "Google Places API"],
            "https://play.google.com/store/apps/details?id=com.cuiseek.android",
            "2018",
            "4 months",
