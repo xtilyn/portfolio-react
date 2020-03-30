@@ -143,7 +143,7 @@ export const portfolioItems = [
          new PortfolioItem(
            "Localodge",
            "Android App",
-           "An android UI template for a local classifieds app. This is an ongoing project that hopes to provide a back-bone for local classifieds applications that uses Kotlin.",
+           "A simple local classifieds app made with Kotlin and Firebase. This project uses Elastic Search integrated using GCP, Stripe, and Google Pay for payment options.",
            localodge,
            [
              "Android App",
@@ -152,9 +152,11 @@ export const portfolioItems = [
              "Elastic Search",
              "Room",
              "RxJava",
-             "MVVM"
+             "MVVM",
+             "Google Pay",
+             "Stripe"
            ],
-           "",
+           "https://github.com/xtilyn/Localodge",
            "2019",
            "Ongoing",
            "Personal Project",
