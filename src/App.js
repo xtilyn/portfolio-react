@@ -1,18 +1,14 @@
-import React from 'react';
-import './App.css';
-import HomeView from './pages/HomeView';
-import {
-  HashRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
-import PortfolioView from './pages/PortfolioView';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { colorAccent } from './constants/app_colors';
-import AboutView from './pages/AboutView';
-import MobileView from './pages/ContactView/MobileView';
-require('typeface-montserrat');
-require('typeface-source-code-pro');
+import React from "react";
+import "./App.css";
+import HomeView from "./pages/HomeView";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import PortfolioView from "./pages/PortfolioView";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { colorAccent } from "./constants/app_colors";
+import AboutView from "./pages/AboutView";
+import MobileView from "./pages/ContactView/MobileView";
+require("typeface-montserrat");
+require("typeface-source-code-pro");
 
 function App() {
   const theme = createMuiTheme({
@@ -33,10 +29,10 @@ function App() {
       tonalOffset: 0.2
     },
     typography: {
-      fontFamily: "\"Montserrat\", \"Segoe UI\", \"Helvetica\", \"Arial\", sans-serif",
+      fontFamily: '"Montserrat", "Segoe UI", "Helvetica", "Arial", sans-serif',
       button: {
         textTransform: "none",
-        fontSize: "0.9em",
+        fontSize: "0.9em"
       },
       subtitle1: {
         fontFamily: "Source Code Pro",

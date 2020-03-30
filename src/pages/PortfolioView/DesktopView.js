@@ -4,9 +4,10 @@ import SimpleHeader from "../../components/SimpleHeader";
 import Fade from "@material-ui/core/Fade";
 import { Slide } from "@material-ui/core";
 import PortfolioItemsList from "../../components/PortfolioItemsList";
-import { BehaviorSubject } from "rxjs";
 import { portfolioItemHeight } from "../../constants/shared_variables";
 import AppPreview from "../../components/AppPreview";
+import { connect } from "react-redux";
+import { StickyContainer, Sticky } from "react-sticky";
 
 const rootStyle = {
   width: "100%",
@@ -21,17 +22,13 @@ const circleIndicator = {
   marginRight: 15
 };
 
-export default class DesktopView extends Component {
-  #subject;
-
+class DesktopViewConnected extends Component {
   constructor(props) {
     super(props);
-    this.#subject = new BehaviorSubject(0);
 
     this.state = {
       isMounted: false,
-      circleIndicatorY: 0,
-      selectedItemIndex: 0
+      circleIndicatorY: 0
     };
   }
 
@@ -39,27 +36,28 @@ export default class DesktopView extends Component {
     this.setState({
       isMounted: true
     });
-    this.#subject.subscribe({
-      next: selectedItemIndex => {
-        const marginTop = 54;
-        const { circleIndicatorY } = this.state;
-        const newCircleIndicatorY = marginTop + selectedItemIndex * portfolioItemHeight;
-        const diff = Math.abs(circleIndicatorY - newCircleIndicatorY);
-        console.log(diff);
-        this.setState(
-          {
-            circleIndicatorY: newCircleIndicatorY,
-            animDuration: diff > 700 ? 0 : 150,
-            selectedItemIndex: selectedItemIndex
-          }
-        );
-      }
-    });
+    this.updateCircleIndicator(0);
   }
 
-  componentWillUnmount() {
-    this.#subject.unsubscribe();
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const selectedItemIndex = this.props.appPreviewSelectedItem;
+    if (prevProps.appPreviewSelectedItem !== selectedItemIndex) {
+      this.updateCircleIndicator(selectedItemIndex);
+    }
   }
+
+  updateCircleIndicator = selectedItemIndex => {
+    const { circleIndicatorY } = this.state;
+    const marginTop = 54;
+    const newCircleIndicatorY =
+      marginTop + selectedItemIndex * portfolioItemHeight;
+    const diff = Math.abs(circleIndicatorY - newCircleIndicatorY);
+    console.log(diff);
+    this.setState({
+      circleIndicatorY: newCircleIndicatorY,
+      animDuration: diff > 700 ? 0 : 150
+    });
+  };
 
   render() {
     const { isMounted, circleIndicatorY, animDuration } = this.state;
@@ -67,9 +65,9 @@ export default class DesktopView extends Component {
     return (
       <Column flexGrow={1} style={rootStyle}>
         <Row horizontal="center">
-          <SimpleHeader title='Portfolio' />
+          <SimpleHeader title="Portfolio" />
         </Row>
-        <Row vertical="start">
+        <Row vertical="start" flex={1}>
           <Column flex={1} horizontal="center" style={{ paddingTop: 20 }}>
             <Fade in={true} timeout={1000}>
               <div style={{ width: "75%", height: "100%" }}>
@@ -81,14 +79,16 @@ export default class DesktopView extends Component {
                       transition: `transform ${animDuration}ms ${animDuration}ms ease-in`
                     }}
                   />
-                  <PortfolioItemsList subject={this.#subject} />
+                  <PortfolioItemsList />
                 </Row>
               </div>
             </Fade>
           </Column>
-          <Column flex={1} horizontal="center">
+          <Column flex={1} horizontal="center" style={{ height: "100vh", paddingRight: 50 }}>
             <Slide in={isMounted} direction="left" timeout={800}>
-              <AppPreview subject={this.#subject} />
+              <div>
+                <AppPreview />
+              </div>
             </Slide>
           </Column>
         </Row>
@@ -96,3 +96,11 @@ export default class DesktopView extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  appPreviewSelectedItem: state.appPreviewSelectedItem
+});
+
+const DesktopView = connect(mapStateToProps)(DesktopViewConnected);
+
+export default DesktopView;

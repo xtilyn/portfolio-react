@@ -8,7 +8,8 @@ import OpenInNewOutlinedIcon from "@material-ui/icons/OpenInNewOutlined";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import IconButton from "@material-ui/core/IconButton";
 import { ClickAwayListener, Tooltip, Typography } from "@material-ui/core";
-import ReactDOM from 'react-dom';
+import { connect } from "react-redux";
+import ReactDOM from "react-dom";
 
 const appPreview = {
   minHeight: "80vh",
@@ -17,7 +18,7 @@ const appPreview = {
   borderRadius: 20,
   marginTop: 30,
   marginRight: 80,
-  width: "100%"
+  width: "100%",
 };
 
 const borderStyle = {
@@ -36,30 +37,17 @@ const tooltipTitleStyle = {
   marginBottom: 5
 };
 
-export default class AppPreview extends Component {
-  #subject;
+class ConnectedAppPreview extends Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
-      portfolioItem: portfolioItems[0],
       tooltipOpen: false,
       positionY: 0,
       height: 0,
       translateY: 0
     };
-
-    this.#subject = this.props.subject;
-    this.#subject.subscribe({
-      next: selectedItemIndex => {
-        const selectedItemObject = portfolioItems[selectedItemIndex];
-        console.log(selectedItemObject);
-        this.setState({
-          portfolioItem: selectedItemObject
-        });
-      }
-    });
   }
 
   componentDidMount() {
@@ -69,12 +57,17 @@ export default class AppPreview extends Component {
       positionY: domRect.y,
       height: domRect.height
     });
-    document.body.style = `background: ${colorPrimary};`;
   }
 
   componentWillUnmount() {
-    this.#subject.unsubscribe();
     window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  shouldComponentUpdate(nextProps) {
+    if (nextProps.appPreviewSelectedItem !== this.props.appPreviewSelectedItem) {
+      return true;
+    }
+    return false;
   }
 
   handleScroll = event => {
@@ -128,10 +121,12 @@ export default class AppPreview extends Component {
   };
 
   render() {
-    const { portfolioItem, tooltipOpen, translateY } = this.state;
-    console.log(translateY);
+    const { tooltipOpen, translateY } = this.state;
+    const { appPreviewSelectedItem } = this.props;
+    const portfolioItem = portfolioItems[appPreviewSelectedItem];
+    console.log('appPreviewSelectedItem: ', appPreviewSelectedItem);
     return (
-      <Column style={{ ...appPreview, transform: `translate(0px, ${translateY}px)` }} justifyContent="center">
+      <Column style={{ ...appPreview }} justifyContent="center">
         <Row>
           <Column>
             <Row alignItems="end">
@@ -276,3 +271,13 @@ export default class AppPreview extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return { appPreviewSelectedItem: state.appPreviewSelectedItem };
+};
+
+const AppPreview = connect(
+  mapStateToProps
+)(ConnectedAppPreview);
+
+export default AppPreview;

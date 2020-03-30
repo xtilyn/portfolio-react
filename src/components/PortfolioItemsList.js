@@ -5,6 +5,8 @@ import Divider from "@material-ui/core/Divider";
 import { ListItem, withStyles, Typography } from "@material-ui/core";
 import { portfolioItems } from "../constants/app_data";
 import { portfolioItemHeight } from "../constants/shared_variables";
+import { selectPortfolioItem } from "../redux/actions/actions-types";
+import { connect } from "react-redux";
 
 const StyledListItem = withStyles({
   root: {
@@ -20,12 +22,12 @@ const StyledListItem = withStyles({
 })(ListItem);
 
 const rootStyle = {
-    width: "100%",
-    height: "100%",
-    backgroundColor: colorPrimary
-}
+  width: "100%",
+  height: "100%",
+  backgroundColor: colorPrimary
+};
 
-export default class PortfolioItemsList extends Component {
+class PortfolioItemsListConnected extends Component {
   constructor(props) {
     super(props);
 
@@ -36,10 +38,10 @@ export default class PortfolioItemsList extends Component {
 
   handleListItemClick(event, index) {
     this.setState({
-        selectedIndex: index
+      selectedIndex: index
     });
-    this.props.subject.next(index);
-  };
+    this.props.selectPortfolioItem(index);
+  }
 
   render() {
     const { selectedIndex } = this.state;
@@ -72,3 +74,17 @@ export default class PortfolioItemsList extends Component {
     );
   }
 }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    selectPortfolioItem: appPreviewSelectedItem =>
+      dispatch(selectPortfolioItem(appPreviewSelectedItem))
+  };
+}
+
+const PortfolioItemsList = connect(
+  null,
+  mapDispatchToProps
+)(PortfolioItemsListConnected);
+
+export default PortfolioItemsList;
