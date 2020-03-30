@@ -6,6 +6,7 @@ import medpass from "../images/Medpass_group.png";
 import mafia from "../images/Mafia_group.png";
 import localodge from "../images/Localodge_group.png";
 import devssocial from "../images/DevsSocial_group.png";
+import fitnessTackler from "../images/FitnessTackler_group.png";
 
 export const linkedInUrl = "https://www.linkedin.com/in/christilyn-arjona/";
 export const githubUrl = "https://github.com/xtilyn";
@@ -170,10 +171,10 @@ export const portfolioItems = [
            ""
          ),
          new PortfolioItem(
-           "Fitness TACKLer",
+           "Fitness Tackler",
            "Android App",
            "A Computer Science project implementation of a fitness app geared towards power lifting. Developed with Xamarin and C#, built with emphasis on UI and User Experience design.",
-           "assets/image_03.jpg",
+           fitnessTackler,
            ["Android App", "C#", "Xamarin"],
            "https://github.com/Be-bo/FitnessTACKer",
            "2018",
