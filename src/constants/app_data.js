@@ -11,6 +11,7 @@ import fitnessTackler from "../images/FitnessTackler_group.png";
 export const linkedInUrl = "https://www.linkedin.com/in/christilyn-arjona/";
 export const githubUrl = "https://github.com/xtilyn";
 export const stackOverflowUrl = "https://stackoverflow.com/users/7881446/christilyn";
+export const sourceCodeUrl = "https://github.com/xtilyn/portfolio-react";
 
 export const description =
   "A Software Developer currently specializing in Native Android App Development, UI/UX Design, with experience in Full Stack Web Development.";
@@ -54,6 +55,7 @@ export const portfolioItems = [
              "Web App",
              "Firebase",
              "Kotlin",
+             "ReactJS",
              "Algolia",
              "ARCore",
              "Room",

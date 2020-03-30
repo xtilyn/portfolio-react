@@ -8,11 +8,13 @@ import { description } from "../constants/app_data";
 import {
   githubUrl,
   linkedInUrl,
-  stackOverflowUrl
+  stackOverflowUrl,
+  sourceCodeUrl
 } from "../constants/app_data";
 import github from "../images/githubIcon.png";
 import linkedIn from "../images/linkedInIcon.png";
 import stackOverflow from "../images/stackoverflowIcon.png";
+import viewSource from "../images/view_source.png";
 import PrimaryActionButton from "../components/buttons/PrimaryActionButton";
 import { Link } from "react-router-dom";
 
@@ -30,13 +32,14 @@ const rootStyle = {
 const socialBtnStyle = {
   background: "transparent",
   border: "none",
-  cursor: "pointer"
+  cursor: "pointer",
+  padding: 0
 };
 
 const cardStyle = {
   borderRadius: "66px 0px 0px 0px",
   background: "#5d5d5d",
-  boxShadow: "0px 3px 0px rgba(0, 0, 0, 0.16)",
+  boxShadow: "0px 3px 0px rgba(0, 0, 0, 0.16)"
 };
 
 const dividerStyle = {
@@ -71,7 +74,10 @@ export default function ProfileSnippetMobile() {
         >
           Christilyn Arjona
         </Typography>
-        <Typography variant="body2" style={{ color: "#D2D2D2", marginTop: 6, marginBottom: 10 }}>
+        <Typography
+          variant="body2"
+          style={{ color: "#D2D2D2", marginTop: 6, marginBottom: 10 }}
+        >
           SOFTWARE DEVELOPER
         </Typography>
       </Column>
@@ -135,6 +141,22 @@ export default function ProfileSnippetMobile() {
                 width: 60
               }}
               alt={"GitHub Profile link"}
+            />
+          </IconButton>
+          <IconButton
+            aria-label="View source code"
+            style={{ ...socialBtnStyle, marginLeft: 11 }}
+            onClick={() => {
+              window.open(sourceCodeUrl, "_blank");
+            }}
+          >
+            <img
+              src={viewSource}
+              style={{
+                height: 40,
+                width: 40
+              }}
+              alt={"View source code"}
             />
           </IconButton>
         </Row>
