@@ -160,7 +160,7 @@ export const portfolioItems = [
          new PortfolioItem(
            "Mafia",
            "Cross Platform",
-           "A java application based on the popular Mafia party game. Implemented using MVC architecture.",
+           "A Computer Science project implementation of a java application based on the popular multi-player Mafia party game. Implemented using MVC architecture.",
            mafia,
            ["Desktop App", "Java", "JavaFx", "MVC"],
            "https://github.com/xtilyn/MafiaApplication",

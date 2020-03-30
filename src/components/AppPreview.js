@@ -12,13 +12,13 @@ import { connect } from "react-redux";
 import ReactDOM from "react-dom";
 
 const appPreview = {
-  minHeight: "80vh",
   background: colorPrimary,
   filter: "drop-shadow(0px 3px 99px rgba(0, 0, 0, 0.16))",
   borderRadius: 20,
   marginTop: 30,
   marginRight: 80,
   width: "100%",
+  paddingTop: 20
 };
 
 const borderStyle = {
@@ -57,27 +57,32 @@ class ConnectedAppPreview extends Component {
       positionY: domRect.y,
       height: domRect.height
     });
+
+    console.log("temp: ", this.props);
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
   }
 
-  shouldComponentUpdate(nextProps) {
+  shouldComponentUpdate(nextProps, nextState) {
     if (nextProps.appPreviewSelectedItem !== this.props.appPreviewSelectedItem) {
+      return true;
+    }
+    if (nextState !== this.state) {
       return true;
     }
     return false;
   }
 
   handleScroll = event => {
-    console.log("yOffset: ", window.pageYOffset);
+    // console.log("yOffset: ", window.pageYOffset);
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-      console.log("you're at the bottom of the page");
+      // console.log("you're at the bottom of the page");
       return;
     }
     if (window.pageYOffset === 0) {
-      console.log("scroll to top!");
+      // console.log("scroll to top!");
       this.setState({
         translateY: 0
       });
@@ -122,13 +127,14 @@ class ConnectedAppPreview extends Component {
 
   render() {
     const { tooltipOpen, translateY } = this.state;
+    console.log("translateY: ", translateY);
     const { appPreviewSelectedItem } = this.props;
     const portfolioItem = portfolioItems[appPreviewSelectedItem];
-    console.log('appPreviewSelectedItem: ', appPreviewSelectedItem);
+    // console.log('appPreviewSelectedItem: ', appPreviewSelectedItem);
     return (
       <Column style={{ ...appPreview }} justifyContent="center">
         <Row>
-          <Column>
+          <Column flex={1}>
             <Row alignItems="end">
               <Typography
                 variant="h3"
@@ -238,12 +244,13 @@ class ConnectedAppPreview extends Component {
 
           <Column
             justifyContent="center"
-            style={{ marginRight: 50, marginTop: 15 }}
+            style={{ marginTop: 15 }}
+            flex={1}
           >
             <img
               src={portfolioItem.imagePath}
               alt="app images"
-              style={{ width: 340 }}
+              style={{ width: "80%" }}
             />
           </Column>
         </Row>
@@ -254,7 +261,7 @@ class ConnectedAppPreview extends Component {
           alignContent="start"
           justifyContent="flex-start"
           alignItems="flex-end"
-          style={{ marginLeft: 38 }}
+          style={{ marginLeft: 38, marginTop: 20 }}
         >
           {portfolioItem.tags.map(tag => {
             return <Tag title={tag} />;
