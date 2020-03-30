@@ -24,6 +24,7 @@
     "react-scripts": "3.4.0",
     "react-sticky": "^6.0.3",
     "react-swipeable-views": "^0.13.9",
+    "redux": "^4.0.5",
     "rxjs": "^6.5.4",
     "simple-flexbox": "^2.3.0",
     "typeface-montserrat": "0.0.75",
@@ -54,6 +55,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^2.2.0",
+    "react-redux": "^7.2.0"
   }
 }
