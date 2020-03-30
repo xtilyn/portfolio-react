@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "474577510dbd64d150de4a7b3c90d5c1",
+    "revision": "384529bf988fb785664b1662295a8aba",
     "url": "/portfolio-react/index.html"
   },
   {
-    "revision": "c7c9cbf1ef0346ed21f8",
+    "revision": "9deeb39ca5b87b876c17",
     "url": "/portfolio-react/static/css/2.c2baa3df.chunk.css"
   },
   {
-    "revision": "a27cd053a953483c6db7",
-    "url": "/portfolio-react/static/css/main.3924c010.chunk.css"
+    "revision": "5ddd01454ccff4d5c5c6",
+    "url": "/portfolio-react/static/css/main.b580f3a1.chunk.css"
   },
   {
-    "revision": "c7c9cbf1ef0346ed21f8",
-    "url": "/portfolio-react/static/js/2.3de93e90.chunk.js"
+    "revision": "9deeb39ca5b87b876c17",
+    "url": "/portfolio-react/static/js/2.76e8ea20.chunk.js"
   },
   {
     "revision": "f2e468b2a9e5e062245a55e7492c93dc",
-    "url": "/portfolio-react/static/js/2.3de93e90.chunk.js.LICENSE.txt"
+    "url": "/portfolio-react/static/js/2.76e8ea20.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a27cd053a953483c6db7",
-    "url": "/portfolio-react/static/js/main.affcd06c.chunk.js"
+    "revision": "5ddd01454ccff4d5c5c6",
+    "url": "/portfolio-react/static/js/main.2a03cceb.chunk.js"
   },
   {
     "revision": "38cc46e1fd5c05c02767",
@@ -34,6 +34,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f9d59d0d0e022d74c9f30a991ac23d3e",
     "url": "/portfolio-react/static/media/DevsSocial_group.f9d59d0d.png"
+  },
+  {
+    "revision": "a08c69215bc63ffa5abaf3862267dd9b",
+    "url": "/portfolio-react/static/media/FitnessTackler_group.a08c6921.png"
   },
   {
     "revision": "0c78cc3fd809f8608698b9f1feaf5bab",
@@ -52,8 +56,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio-react/static/media/Medpass_group.9b5f720a.png"
   },
   {
-    "revision": "0d828c1685b0a8a521badea452510b84",
-    "url": "/portfolio-react/static/media/Neuwly_group.0d828c16.png"
+    "revision": "41fb25bcbf69d79f7af0eccba8b00446",
+    "url": "/portfolio-react/static/media/Neuwly_group.41fb25bc.png"
   },
   {
     "revision": "367ea6826647d582d3668624c3f1d9cc",
