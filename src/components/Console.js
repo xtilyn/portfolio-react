@@ -7,8 +7,7 @@ const linesContainer = {
   background: "#373737"
 };
 
-const rootStyle = {
-}
+const rootStyle = {};
 
 export default function Console() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -43,13 +42,12 @@ export default function Console() {
       window.removeEventListener("resize", updateWindowDimensions);
     };
   }, [windowWidth, windowHeight, updateWindowDimensions]);
-  
 
   const renderLineNumbers = () => {
     let list = [];
     for (var i = 1; i <= Math.floor(aboutTextHeight / 24) + 1; i++) {
       list.push(
-        <div style={{ fontSize: 15 }}>
+        <div style={{ fontSize: "0.8em" }}>
           {i}
           <br></br>
         </div>
@@ -85,7 +83,7 @@ export default function Console() {
             marginRight: 10,
             overflow: "hidden",
             marginBottom: 20,
-            fontSize: 15
+            fontSize: "0.8em"
           }}
         >
           Primarily connected with native android app development using
@@ -95,7 +93,7 @@ export default function Console() {
           with various cross-platform technologies such as Flutter, Xamarin, and
           React Native. <br></br>
           <br></br>Love to work on ambitious projects, learn new technologies,
-          and design mobile systems.
+          design and implement mobile applications.
         </Typography>
       </Column>
     </Row>

@@ -143,6 +143,7 @@ class DesktopView extends Component {
 
     const node = ReactDOM.findDOMNode(this.refs["aboutText"]);
     if (node) {
+      console.log('console node: ', node);
       const calculatedHeight = node.clientHeight;
       this.setState({
         aboutTextHeight: calculatedHeight
@@ -170,13 +171,27 @@ class DesktopView extends Component {
 
   renderLineNumbers = () => {
     const { aboutTextHeight } = this.state;
+    const node = ReactDOM.findDOMNode(this.refs["aboutText"]);
+    let temp;
+    if (node && node.clientHeight !== aboutTextHeight) {
+      temp = node.clientHeight;
+    } else {
+      temp = aboutTextHeight
+    }
+    
+    console.log('aboutTextheight: ', temp);
     let list = [];
-    for (var i = 1; i <= Math.floor(aboutTextHeight / 28); i++) {
+    for (var i = 1; i <= Math.floor((temp - 30) / (14 * 1.42857)) + 1; i++) {
       list.push(
-        <div>
+        <Typography
+          variant="subtitle1"
+          style={{
+            fontSize: 14
+          }}
+        >
           {i}
           <br></br>
-        </div>
+        </Typography>
       );
     }
     return list;
@@ -243,19 +258,19 @@ class DesktopView extends Component {
                     <Column
                       style={{
                         ...linesContainer,
-                        marginTop: 30,
+                        marginTop: 15,
                         width: linesContainerWidth,
                         overflow: "hidden"
                       }}
                     >
                       <Typography
                         variant="subtitle1"
-                        style={{ textAlign: "center", overflow: "hidden" }}
+                        style={{ textAlign: "center", overflow: "hidden", marginBottom: 5 }}
                       >
                         {this.renderLineNumbers()}
                       </Typography>
                     </Column>
-                    <Column flex={1} style={{ marginTop: 30 }}>
+                    <Column flex={1} style={{ marginTop: 15 }}>
                       <Typography
                         ref="aboutText"
                         variant="subtitle1"
@@ -264,7 +279,8 @@ class DesktopView extends Component {
                           marginLeft: 10,
                           marginRight: 10,
                           overflow: "hidden",
-                          marginBottom: 20
+                          marginBottom: 20,
+                          fontSize: 14
                         }}
                       >
                         Primarily connected with native android app development
@@ -275,7 +291,7 @@ class DesktopView extends Component {
                         have played with various cross-platform technologies
                         such as Flutter, Xamarin, and React Native. <br></br>
                         <br></br>Love to work on ambitious projects, learn new
-                        technologies, and design mobile systems.
+                        technologies, design and implement mobile applications.
                       </Typography>
                     </Column>
                   </Row>
