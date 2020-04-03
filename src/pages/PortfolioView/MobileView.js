@@ -113,7 +113,7 @@ export default function MobileView(props) {
 
   const renderPortfolioItem = portfolioItem => {
     return (
-      <Column style={slideStyle}>
+      <Column style={slideStyle} justifyContent="center">
         <Row justifyContent="center" style={{ marginTop: 10 }}>
           <img
             src={portfolioItem.mobileImagePath || portfolioItem.imagePath}
@@ -227,7 +227,7 @@ export default function MobileView(props) {
               <Typography variant="body2" style={tagText}>4 Web</Typography>
                 <WebIcon style={{ marginLeft: 5, width: 15, height: 15 }} />
               </Row>
-              <Row style={{ ...tagStyle, marginTop: 5 }}>
+              <Row style={{ ...tagStyle}}>
               <Typography variant="body2" style={tagText}>2 Desktop</Typography>
                 <LaptopIcon style={{ marginLeft: 5, width: 15, height: 15 }} />
               </Row>
