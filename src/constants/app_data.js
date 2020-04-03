@@ -76,7 +76,6 @@ export const portfolioItems = [
              "Retrofit",
              "Dagger",
              "OnSched",
-             "REST",
              "RxJava",
              "Stripe",
              "Google Places API",

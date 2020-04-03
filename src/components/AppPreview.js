@@ -22,8 +22,8 @@ const appPreview = {
 };
 
 const borderStyle = {
-  width: 158,
-  height: 10,
+  width: 98,
+  height: 7,
   background: colorAccent,
   marginLeft: 38
 };
@@ -134,16 +134,15 @@ class ConnectedAppPreview extends Component {
     return (
       <Column style={{ ...appPreview }} justifyContent="center">
         <Row>
-          <Column flex={1}>
+          <Column flex={1} justifyContent="center">
             <Row alignItems="end">
               <Typography
-                variant="h3"
+                variant="h4"
                 style={{
                   textAlign: "start",
                   fontWeight: 600,
-                  fontSize: 43,
                   marginLeft: 38,
-                  marginBottom: 15,
+                  marginBottom: 8,
                   marginTop: 15
                 }}
               >
@@ -211,6 +210,7 @@ class ConnectedAppPreview extends Component {
                     <IconButton
                       color="secondary"
                       onClick={this.handleTooltipOpen}
+                      style={{ marginTop: 6 }}
                     >
                       <InfoOutlinedIcon />
                     </IconButton>
@@ -221,7 +221,6 @@ class ConnectedAppPreview extends Component {
 
             <div style={borderStyle} />
             <Column
-              flex={1}
               style={{
                 marginLeft: 38,
                 width: "68%",
@@ -230,11 +229,12 @@ class ConnectedAppPreview extends Component {
               justifyContent="center"
             >
               <Typography
-              variant="h5"
+              variant="body1"
                 style={{
                   fontWeight: 300,
                   textAlign: "start",
-                  marginTop: 10
+                  marginTop: 10,
+                  fontSize: "0.7em"
                 }}
               >
                 {portfolioItem?.description ?? ""}
