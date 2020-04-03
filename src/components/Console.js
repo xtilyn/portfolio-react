@@ -44,10 +44,21 @@ export default function Console() {
   }, [windowWidth, windowHeight, updateWindowDimensions]);
 
   const renderLineNumbers = () => {
+    const node = aboutText.current;
+    let temp;
+    if (node) {
+      const calculatedHeight = node.clientHeight;
+      if (temp !== calculatedHeight) {
+        temp = calculatedHeight;
+      } else {
+        temp = aboutTextHeight;
+      }
+    }
+
     let list = [];
-    for (var i = 1; i <= Math.floor(aboutTextHeight / 24) + 1; i++) {
+    for (var i = 1; i <= Math.floor(temp / (13 * 1.42857)) + 1; i++) {
       list.push(
-        <div style={{ fontSize: "0.8em" }}>
+        <div style={{ fontSize: 12 }}>
           {i}
           <br></br>
         </div>
@@ -55,6 +66,8 @@ export default function Console() {
     }
     return list;
   };
+
+  console.log('about text height mobile: ', aboutTextHeight);
 
   return (
     <Row flex={1} style={rootStyle}>
@@ -83,7 +96,7 @@ export default function Console() {
             marginRight: 10,
             overflow: "hidden",
             marginBottom: 20,
-            fontSize: "0.8em"
+            fontSize: 12
           }}
         >
           Primarily connected with native android app development using
