@@ -8,6 +8,16 @@ import localodge from "../images/Localodge_group.png";
 import devssocial from "../images/DevsSocial_group.png";
 import fitnessTackler from "../images/FitnessTackler_group.png";
 
+import mobileTeampics from "../images/mobile_teampics.png";
+import mobileJumpbox from "../images/mobile_jumpbox.png";
+import mobileMedpass from "../images/mobile_medpass.png";
+import mobileNeuwly from "../images/mobile_neuwly.png";
+import mobileDevssocial from "../images/mobile_devssocial.png";
+import mobileLocalodge from "../images/mobile_localodge.png";
+import mobileCuiseek from "../images/mobile_cuiseek.png";
+import mobileMafia from "../images/mobile_mafia.png";
+import mobileFitnesstackler from "../images/mobile_fitnesstackler.png";
+
 export const linkedInUrl = "https://www.linkedin.com/in/christilyn-arjona/";
 export const githubUrl = "https://github.com/xtilyn";
 export const stackOverflowUrl = "https://stackoverflow.com/users/7881446/christilyn";
@@ -28,7 +38,9 @@ class PortfolioItem {
         year,
         projectLength,
         associatedWith,
-        companyUrl
+        companyUrl,
+
+        mobileImagePath
     ) {
         this.title = title;
         this.type = type;
@@ -41,6 +53,8 @@ class PortfolioItem {
         this.projectLength = projectLength;
         this.associatedWith = associatedWith;
         this.companyUrl = companyUrl;
+
+        this.mobileImagePath = mobileImagePath
     }
   }
 
@@ -73,7 +87,8 @@ export const portfolioItems = [
            "2019",
            "7 months",
            "Lattice Studios",
-           "https://www.latticestudios.com/"
+           "https://www.latticestudios.com/",
+           mobileNeuwly
          ),
          new PortfolioItem(
            "TeamPics",
@@ -93,7 +108,8 @@ export const portfolioItems = [
            "2019",
            "4 months",
            "Lattice Studios",
-           "https://www.latticestudios.com/"
+           "https://www.latticestudios.com/",
+           mobileTeampics
          ),
          new PortfolioItem(
            "Devs Social",
@@ -114,7 +130,8 @@ export const portfolioItems = [
            "2017",
            "2 years",
            "Personal Project",
-           ""
+           "",
+           mobileDevssocial
          ),
          new PortfolioItem(
            "Cuiseek",
@@ -126,7 +143,8 @@ export const portfolioItems = [
            "2018",
            "4 months",
            "Personal Internship @ Cuiseek",
-           "http://cuiseek.com/"
+           "http://cuiseek.com/",
+           mobileCuiseek
          ),
          new PortfolioItem(
            "MEDPass",
@@ -138,7 +156,8 @@ export const portfolioItems = [
            "2018",
            "4 months",
            "CS 471 - Data Base Management Systems \nUniversity Of Calgary",
-           ""
+           "",
+           mobileMedpass
          ),
          new PortfolioItem(
            "Localodge",
@@ -160,7 +179,8 @@ export const portfolioItems = [
            "2019",
            "Ongoing",
            "Personal Project",
-           ""
+           "",
+           mobileLocalodge
          ),
          new PortfolioItem(
            "Mafia",
@@ -172,7 +192,8 @@ export const portfolioItems = [
            "2017",
            "6 months",
            "Personal Project",
-           ""
+           "",
+           mobileMafia
          ),
          new PortfolioItem(
            "Fitness Tackler",
@@ -184,7 +205,8 @@ export const portfolioItems = [
            "2018",
            "4 months",
            "CS 481 - Human Computers Interaction \nUniversity Of Calgary",
-           "https://www.ucalgary.ca/"
+           "https://www.ucalgary.ca/",
+           mobileFitnesstackler
          ),
          new PortfolioItem(
            "Jumpbox",
@@ -196,6 +218,7 @@ export const portfolioItems = [
            "2019",
            "4 months",
            "CS 441 - Computer Networks \nUniversity Of Calgary",
-           "https://www.ucalgary.ca/"
+           "https://www.ucalgary.ca/",
+           mobileJumpbox
          )
        ];

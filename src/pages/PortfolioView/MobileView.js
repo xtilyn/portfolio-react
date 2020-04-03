@@ -56,8 +56,12 @@ const tagStyle = {
   borderRadius: "43px",
   background: "#545454",
   border: "2px solid #707070",
-  padding: "3px 10px 3px 10px",
+  padding: "3px 10px 3px 10px"
 };
+
+const tagText = {
+  fontSize: "0.7em"
+}
 
 const slideStyle = {
   margin: 15,
@@ -110,11 +114,11 @@ export default function MobileView(props) {
   const renderPortfolioItem = portfolioItem => {
     return (
       <Column style={slideStyle}>
-        <Row justifyContent="center" style={{ marginTop: 10 }} flex={1}>
+        <Row justifyContent="center" style={{ marginTop: 10 }}>
           <img
-            src={portfolioItem.imagePath}
+            src={portfolioItem.mobileImagePath || portfolioItem.imagePath}
             alt="app images"
-            style={{ width: "40%", height: "90%" }}
+            style={{ width: "90%" }}
           />
         </Row>
         <Typography
@@ -214,18 +218,18 @@ export default function MobileView(props) {
               style={{ marginLeft: 20, marginBottom: 5 }}
             >
               <Row style={tagStyle}>
-                <Typography variant="body2">6 Mobile</Typography>
+                <Typography variant="body2" style={tagText}>6 Mobile</Typography>
                 <PhoneAndroidIcon
-                  style={{ marginLeft: 5, width: 20, height: 20 }}
+                  style={{ marginLeft: 5, width: 15, height: 15 }}
                 />
               </Row>
-              <Row style={{ ...tagStyle, marginLeft: 5 }}>
-              <Typography variant="body2">4 Web</Typography>
-                <WebIcon style={{ marginLeft: 5, width: 20, height: 20 }} />
+              <Row style={{ ...tagStyle, marginLeft: 5, marginRight: 5 }}>
+              <Typography variant="body2" style={tagText}>4 Web</Typography>
+                <WebIcon style={{ marginLeft: 5, width: 15, height: 15 }} />
               </Row>
-              <Row style={{ ...tagStyle, marginLeft: 5 }}>
-              <Typography variant="body2">2 Desktop</Typography>
-                <LaptopIcon style={{ marginLeft: 5, width: 20, height: 20 }} />
+              <Row style={{ ...tagStyle, marginTop: 5 }}>
+              <Typography variant="body2" style={tagText}>2 Desktop</Typography>
+                <LaptopIcon style={{ marginLeft: 5, width: 15, height: 15 }} />
               </Row>
             </Row>
             <Column flexGrow={1}>
