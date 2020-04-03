@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dada8bc5079b3239bd236d01e13dba56",
+    "revision": "9d2ebc435596a8ec65f26424afb4ede8",
     "url": "/portfolio-react/index.html"
   },
   {
-    "revision": "9deeb39ca5b87b876c17",
+    "revision": "cb070f6088a1693b2a25",
     "url": "/portfolio-react/static/css/2.c2baa3df.chunk.css"
   },
   {
-    "revision": "f033f8dc906c2a18f91f",
+    "revision": "fda4ff3312cd3f928001",
     "url": "/portfolio-react/static/css/main.3924c010.chunk.css"
   },
   {
-    "revision": "9deeb39ca5b87b876c17",
-    "url": "/portfolio-react/static/js/2.76e8ea20.chunk.js"
+    "revision": "cb070f6088a1693b2a25",
+    "url": "/portfolio-react/static/js/2.fdc37638.chunk.js"
   },
   {
     "revision": "f2e468b2a9e5e062245a55e7492c93dc",
-    "url": "/portfolio-react/static/js/2.76e8ea20.chunk.js.LICENSE.txt"
+    "url": "/portfolio-react/static/js/2.fdc37638.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f033f8dc906c2a18f91f",
-    "url": "/portfolio-react/static/js/main.844dfac9.chunk.js"
+    "revision": "fda4ff3312cd3f928001",
+    "url": "/portfolio-react/static/js/main.4c913e1e.chunk.js"
   },
   {
     "revision": "38cc46e1fd5c05c02767",
@@ -66,6 +66,42 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "24ca2f9bddbf694b045f3a04728277a7",
     "url": "/portfolio-react/static/media/logo.24ca2f9b.png"
+  },
+  {
+    "revision": "49c52650067f8191105f2c6216c53d04",
+    "url": "/portfolio-react/static/media/mobile_cuiseek.49c52650.png"
+  },
+  {
+    "revision": "9c697ae81f3d87d50eac4d8c32205ea5",
+    "url": "/portfolio-react/static/media/mobile_devssocial.9c697ae8.png"
+  },
+  {
+    "revision": "0ace2c8f14625052ffeeb1e7f3578bc6",
+    "url": "/portfolio-react/static/media/mobile_fitnesstackler.0ace2c8f.png"
+  },
+  {
+    "revision": "f5851bf2fb69125ecb5681bc125d1a33",
+    "url": "/portfolio-react/static/media/mobile_jumpbox.f5851bf2.png"
+  },
+  {
+    "revision": "b5234adae66c060422ea90b1fec691ae",
+    "url": "/portfolio-react/static/media/mobile_localodge.b5234ada.png"
+  },
+  {
+    "revision": "58312338cdb7257bf8a5488e6b4aa5d8",
+    "url": "/portfolio-react/static/media/mobile_mafia.58312338.png"
+  },
+  {
+    "revision": "4e210f93790077993c7203baf0f7fd39",
+    "url": "/portfolio-react/static/media/mobile_medpass.4e210f93.png"
+  },
+  {
+    "revision": "39dd6e1303c7ef724127fa631de91076",
+    "url": "/portfolio-react/static/media/mobile_neuwly.39dd6e13.png"
+  },
+  {
+    "revision": "63d953714ebd59fbeb3dad1cdd78292e",
+    "url": "/portfolio-react/static/media/mobile_teampics.63d95371.png"
   },
   {
     "revision": "191cc9f50f3b76b9617cb383f19acb7d",
