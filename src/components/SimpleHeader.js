@@ -38,14 +38,14 @@ class SimpleHeader extends React.Component {
     return (
       <Row flexGrow={1} style={rootStyle}>
         <Fade in={true} timeout={1000}>
-          <div style={{ ...backBtnStyle, marginTop: 45 }} onClick={this.goBack}>
+          <div style={{ ...backBtnStyle, marginTop: 35 }} onClick={this.goBack}>
             <img style={backImageStyle} src={back} alt="Go back" />
           </div>
         </Fade>
 
         <Fade in={true} timeout={1000}>
           <Typography
-            variant="h2"
+            variant="h3"
             style={{ fontWeight: 600, margin: "auto", marginTop: 70 }}
           >
             {this.props.title}

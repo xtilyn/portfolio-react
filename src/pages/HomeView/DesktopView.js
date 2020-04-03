@@ -140,7 +140,7 @@ export default class DesktopView extends Component {
             </IconButton>
             <Column flex={1} justifyContent="center">
               <Typography
-                variant="h2"
+                variant="h3"
                 style={{
                   marginLeft: 65,
                   fontWeight: 600,
