@@ -61,7 +61,7 @@ const tagStyle = {
 
 const tagText = {
   fontSize: "0.7em"
-}
+};
 
 const slideStyle = {
   margin: 15,
@@ -69,7 +69,7 @@ const slideStyle = {
   background: "#5d5d5d",
   height: "95%",
   marginTop: 10,
-  flexGrow: 1,
+  flex: 1,
   overflow: "hidden"
 };
 
@@ -106,9 +106,13 @@ export default function MobileView(props) {
   };
 
   const renderTag = tag => {
-    return <Column style={portfolioTagStyle} justifyContent="center">
-      <Typography variant="body2" style={{ fontSize: 12 }}>{tag}</Typography>
-    </Column>;
+    return (
+      <Column style={portfolioTagStyle} justifyContent="center">
+        <Typography variant="body2" style={{ fontSize: "0.7em" }}>
+          {tag}
+        </Typography>
+      </Column>
+    );
   };
 
   const renderPortfolioItem = portfolioItem => {
@@ -136,7 +140,7 @@ export default function MobileView(props) {
           style={{
             textAlign: "start",
             fontWeight: 300,
-            fontSize: 15,
+            fontSize: "0.9em",
             marginLeft: 20,
             marginTop: 7,
             marginRight: 20
@@ -155,7 +159,12 @@ export default function MobileView(props) {
           {portfolioItem.tags.slice(0, 5).map(tag => renderTag(tag))}
           {portfolioItem.tags.length > 5 ? (
             <Column justifyContent="center">
-              <Typography variant="body2" style={{ fontSize: 15, marginTop: 6 }}>+{portfolioItem.tags.length - 5}</Typography>
+              <Typography
+                variant="body2"
+                style={{ fontSize: "0.9em", marginTop: 6 }}
+              >
+                +{portfolioItem.tags.length - 5}
+              </Typography>
             </Column>
           ) : (
             ""
@@ -218,17 +227,23 @@ export default function MobileView(props) {
               style={{ marginLeft: 20, marginBottom: 5 }}
             >
               <Row style={tagStyle}>
-                <Typography variant="body2" style={tagText}>6 Mobile</Typography>
+                <Typography variant="body2" style={tagText}>
+                  6 Mobile
+                </Typography>
                 <PhoneAndroidIcon
                   style={{ marginLeft: 5, width: 15, height: 15 }}
                 />
               </Row>
               <Row style={{ ...tagStyle, marginLeft: 5, marginRight: 5 }}>
-              <Typography variant="body2" style={tagText}>4 Web</Typography>
+                <Typography variant="body2" style={tagText}>
+                  4 Web
+                </Typography>
                 <WebIcon style={{ marginLeft: 5, width: 15, height: 15 }} />
               </Row>
-              <Row style={{ ...tagStyle}}>
-              <Typography variant="body2" style={tagText}>2 Desktop</Typography>
+              <Row style={{ ...tagStyle }}>
+                <Typography variant="body2" style={tagText}>
+                  2 Desktop
+                </Typography>
                 <LaptopIcon style={{ marginLeft: 5, width: 15, height: 15 }} />
               </Row>
             </Row>
@@ -238,6 +253,7 @@ export default function MobileView(props) {
                 onChangeIndex={onChangeIndexCallback}
                 index={swipeableIndex}
                 className="swipeable"
+                style={{ paddingRight: "30px" }}
               >
                 {portfolioItems.map(item => renderPortfolioItem(item))}
               </SwipeableViews>

@@ -27,12 +27,12 @@ const cardStyle = {
   borderRadius: "43px 0px 0px 0px",
   background: "#505050",
   boxShadow: "0px -8px 39px rgba(0, 0, 0, 0.16)",
-  marginTop: 30
 };
 
 const inputContainer = {
-  minHeight: "50px",
-  borderRadius: "12px",
+  paddingTop: 2, 
+  paddingBottom: 2,
+  borderRadius: 8,
   background: "#5e5e5e",
   color: "#fff",
   paddingLeft: 8,
@@ -74,12 +74,12 @@ export default function MobileView(props) {
             </Typography>
             <div style={dividerStyle}></div>
           </Column>
-          <Column flexGrow={1} style={cardStyle}>
-            <form style={{ textAlign: "start", height: "100%" }}>
+          <Column flexGrow={1} style={cardStyle} justifyContent="center">
+            <form style={{ textAlign: "start" }}>
               <InputBase
                 placeholder="Name"
                 inputProps={{ "aria-label": "enter name" }}
-                style={{ ...inputContainer, marginLeft: 20, marginTop: 50 }}
+                style={{ ...inputContainer, marginLeft: 20, marginTop: 10 }}
                 required
               />
               <InputBase
@@ -108,7 +108,6 @@ export default function MobileView(props) {
                 rows={8}
                 style={{
                   ...inputContainer,
-                  flexGrow: 1,
                   display: "flex",
                   marginTop: 15,
                   marginLeft: 20,
@@ -116,7 +115,7 @@ export default function MobileView(props) {
                 }}
                 required
               />
-              <Row justifyContent="center" style={{ marginTop: 50 }}>
+              <Row justifyContent="center" style={{ marginTop: 15 }}>
                 <PrimaryActionButton
                   variant="contained"
                   borderRadius={90}

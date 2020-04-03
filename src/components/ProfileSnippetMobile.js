@@ -24,9 +24,8 @@ const rootStyle = {
   //   mozBoxShadow: "0px 0px 58px 0px rgba(0,0,0,0.21)",
   //   boxShadow: "0px 0px 58px 0px rgba(0,0,0,0.21)",
   //   borderRadius: 18,
-  margin: "auto",
   width: "100%",
-  height: "100%"
+  flex: 1
 };
 
 const socialBtnStyle = {
@@ -45,8 +44,7 @@ const cardStyle = {
 const dividerStyle = {
   width: "70%",
   height: "2px",
-  background: "#848484",
-  marginTop: 50
+  background: "#848484"
 };
 
 export default function ProfileSnippetMobile() {
@@ -82,84 +80,92 @@ export default function ProfileSnippetMobile() {
         </Typography>
       </Column>
       <Column flexGrow={1} style={cardStyle} alignItems="center">
+        <Column flex={1}></Column>
         <Typography
           variant="subtitle2"
           style={{
             fontWeight: 300,
-            fontSize: 18,
-            marginTop: 50,
-            marginBottom: 30,
+            fontSize: "1em",
+            marginTop: 20,
             width: "85%"
           }}
         >
           {description}
         </Typography>
-        <Link to="/portfolio" style={{ textDecoration: "none" }}>
+        <Column flex={1}></Column>
+        <Link to="/portfolio" style={{ textDecoration: "none", marginBottom: 10, marginTop: 10 }}>
           <PrimaryActionButton variant="contained" borderRadius={36}>
             See Portfolio
           </PrimaryActionButton>
         </Link>
-        <div style={dividerStyle}></div>
-        <Row justifyContent="center" style={{ marginBottom: 50 }} flexGrow={1}>
-          <IconButton
-            aria-label="LinkedIn Profile link"
-            style={socialBtnStyle}
-            onClick={() => {
-              window.open(linkedInUrl, "_blank");
-            }}
+        <Column flex={1}></Column>
+        <Column style={{ width: "100%" }} alignItems="center">
+          <div style={dividerStyle}></div>
+          <Row
+            justifyContent="center"
+            style={{ marginBottom: 10 }}
+            flexGrow={1}
           >
-            <img
-              src={linkedIn}
-              style={{ height: 40, width: 40 }}
-              alt={"LinkedIn Profile link"}
-            />
-          </IconButton>
-          <IconButton
-            aria-label="Stack Overflow Profile link"
-            style={{ ...socialBtnStyle, marginLeft: 20 }}
-            onClick={() => {
-              window.open(stackOverflowUrl, "_blank");
-            }}
-          >
-            <img
-              src={stackOverflow}
-              style={{ height: 40, width: 40 }}
-              alt={"Stack Overflow Profile link"}
-            />
-          </IconButton>
-          <IconButton
-            aria-label="GitHub Profile link"
-            style={{ ...socialBtnStyle, marginLeft: 11 }}
-            onClick={() => {
-              window.open(githubUrl, "_blank");
-            }}
-          >
-            <img
-              src={github}
-              style={{
-                height: 60,
-                width: 60
+            <IconButton
+              aria-label="LinkedIn Profile link"
+              style={socialBtnStyle}
+              onClick={() => {
+                window.open(linkedInUrl, "_blank");
               }}
-              alt={"GitHub Profile link"}
-            />
-          </IconButton>
-          <IconButton
-            aria-label="View source code"
-            style={{ ...socialBtnStyle, marginLeft: 11 }}
-            onClick={() => {
-              window.open(sourceCodeUrl, "_blank");
-            }}
-          >
-            <img
-              src={viewSource}
-              style={{
-                height: 40,
-                width: 40
+            >
+              <img
+                src={linkedIn}
+                style={{ height: 40, width: 40 }}
+                alt={"LinkedIn Profile link"}
+              />
+            </IconButton>
+            <IconButton
+              aria-label="Stack Overflow Profile link"
+              style={{ ...socialBtnStyle, marginLeft: 20 }}
+              onClick={() => {
+                window.open(stackOverflowUrl, "_blank");
               }}
-              alt={"View source code"}
-            />
-          </IconButton>
-        </Row>
+            >
+              <img
+                src={stackOverflow}
+                style={{ height: 40, width: 40 }}
+                alt={"Stack Overflow Profile link"}
+              />
+            </IconButton>
+            <IconButton
+              aria-label="GitHub Profile link"
+              style={{ ...socialBtnStyle, marginLeft: 11 }}
+              onClick={() => {
+                window.open(githubUrl, "_blank");
+              }}
+            >
+              <img
+                src={github}
+                style={{
+                  height: 60,
+                  width: 60
+                }}
+                alt={"GitHub Profile link"}
+              />
+            </IconButton>
+            <IconButton
+              aria-label="View source code"
+              style={{ ...socialBtnStyle, marginLeft: 11 }}
+              onClick={() => {
+                window.open(sourceCodeUrl, "_blank");
+              }}
+            >
+              <img
+                src={viewSource}
+                style={{
+                  height: 40,
+                  width: 40
+                }}
+                alt={"View source code"}
+              />
+            </IconButton>
+          </Row>
+        </Column>
       </Column>
     </Column>
   );
