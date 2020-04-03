@@ -74,12 +74,12 @@ export default function MobileView(props) {
             </Typography>
             <div style={dividerStyle}></div>
           </Column>
-          <Column flexGrow={1} style={cardStyle} justifyContent="center">
+          <Column flexGrow={1} style={cardStyle} justifyContent="flex-start">
             <form style={{ textAlign: "start" }}>
               <InputBase
                 placeholder="Name"
                 inputProps={{ "aria-label": "enter name" }}
-                style={{ ...inputContainer, marginLeft: 20, marginTop: 10 }}
+                style={{ ...inputContainer, marginLeft: 20, marginTop: 30 }}
                 required
               />
               <InputBase
