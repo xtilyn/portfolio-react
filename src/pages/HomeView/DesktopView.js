@@ -25,7 +25,7 @@ import CloseIcon from "@material-ui/icons/Close";
 const rootStyle = {
   background: colorPrimary,
   width: "100%",
-  height: "100%"
+  height: "100vh"
 };
 
 const borderStyle = {
@@ -55,8 +55,8 @@ export default class DesktopView extends Component {
 
   constructor(props) {
     super(props);
-    this.#imagePercentWidth = 642 / 1920;
-    this.#imagePercentHeight = 662 / 1080;
+    this.#imagePercentWidth = 542 / 1920;
+    this.#imagePercentHeight = 562 / 1080;
 
     this.state = {
       isMounted: false,

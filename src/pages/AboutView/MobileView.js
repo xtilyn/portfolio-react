@@ -106,7 +106,7 @@ export default function MobileView(props) {
             }}
             justifyContent="center"
           >
-            <Typography variant="body1" style={{ fontFamily: "Consolas", fontSize: 12, padding: 5 }}>
+            <Typography variant="body1" style={{ fontFamily: "Source Code Pro", fontSize: 12, padding: 5 }}>
               {icon.title}
             </Typography>
           </Column>

@@ -57,8 +57,6 @@ class ConnectedAppPreview extends Component {
       positionY: domRect.y,
       height: domRect.height
     });
-
-    console.log("temp: ", this.props);
   }
 
   componentWillUnmount() {
@@ -132,7 +130,7 @@ class ConnectedAppPreview extends Component {
     const portfolioItem = portfolioItems[appPreviewSelectedItem];
     // console.log('appPreviewSelectedItem: ', appPreviewSelectedItem);
     return (
-      <Column style={{ ...appPreview }} justifyContent="center">
+      <Column style={{ ...appPreview, transform: `translate(0px, ${translateY}px)` }} justifyContent="center">
         <Row>
           <Column flex={1} justifyContent="center">
             <Row alignItems="end">

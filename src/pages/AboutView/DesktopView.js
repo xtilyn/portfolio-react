@@ -21,7 +21,7 @@ const rootStyle = {
 };
 
 const aboutContainer = {
-  borderRadius: "32px",
+  borderRadius: "24px",
   background: "#3d3d3d",
   boxShadow: "0px 3px 99px rgba(0, 0, 0, 0.16)"
 };
@@ -32,13 +32,13 @@ const tile = {
 };
 
 const dot = {
-  height: "22px",
-  width: "22px",
+  height: 15,
+  width: 15,
   borderRadius: "50%"
 };
 
 const linesContainer = {
-  borderRadius: "0px 0px 0px 31px",
+  borderRadius: "0px 0px 0px 24px",
   background: "#373737"
 };
 
@@ -143,7 +143,7 @@ class DesktopView extends Component {
 
     const node = ReactDOM.findDOMNode(this.refs["aboutText"]);
     if (node) {
-      console.log('console node: ', node);
+      console.log("console node: ", node);
       const calculatedHeight = node.clientHeight;
       this.setState({
         aboutTextHeight: calculatedHeight
@@ -176,10 +176,10 @@ class DesktopView extends Component {
     if (node && node.clientHeight !== aboutTextHeight) {
       temp = node.clientHeight;
     } else {
-      temp = aboutTextHeight
+      temp = aboutTextHeight;
     }
-    
-    console.log('aboutTextheight: ', temp);
+
+    console.log("aboutTextheight: ", temp);
     let list = [];
     for (var i = 1; i <= Math.floor((temp - 30) / (14 * 1.42857)) + 1; i++) {
       list.push(
@@ -237,7 +237,7 @@ class DesktopView extends Component {
                   <Row
                     justifyContent="end"
                     style={{
-                      marginTop: 20,
+                      paddingTop: 20,
                       marginRight: 20,
                       cursor: "pointer"
                     }}
@@ -265,7 +265,11 @@ class DesktopView extends Component {
                     >
                       <Typography
                         variant="subtitle1"
-                        style={{ textAlign: "center", overflow: "hidden", marginBottom: 5 }}
+                        style={{
+                          textAlign: "center",
+                          overflow: "hidden",
+                          marginBottom: 5
+                        }}
                       >
                         {this.renderLineNumbers()}
                       </Typography>
@@ -284,8 +288,9 @@ class DesktopView extends Component {
                         }}
                       >
                         Primarily connected with native android app development
-                        using Kotlin/Java and Firebase with experience in full
-                        stack web development using React, Node, and Mongo.{" "}
+                        using Kotlin/Java and Firebase with experience in UI/UX
+                        design and full stack web development using React with
+                        Redux, Node, and Mongo.
                         <br></br>
                         <br></br>Interested in the mobile development world and
                         have played with various cross-platform technologies
@@ -341,7 +346,7 @@ class DesktopView extends Component {
                   >
                     <Typography
                       variant="body1"
-                      style={{ fontFamily: "Consolas" }}
+                      style={{ fontFamily: "Source Code Pro" }}
                     >
                       Firebase
                     </Typography>
@@ -397,7 +402,7 @@ class DesktopView extends Component {
                   <Typography
                     variant="body1"
                     style={{
-                      fontFamily: "Consolas",
+                      fontFamily: "Source Code Pro",
                       textAlign: "center"
                     }}
                   >
@@ -490,7 +495,7 @@ class DesktopView extends Component {
                       <Typography
                         variant="body1"
                         style={{
-                          fontFamily: "Consolas",
+                          fontFamily: "Source Code Pro",
                           textAlign: "center"
                         }}
                       >
@@ -551,7 +556,7 @@ class DesktopView extends Component {
                       <Typography
                         variant="body1"
                         style={{
-                          fontFamily: "Consolas",
+                          fontFamily: "Source Code Pro",
                           textAlign: "center"
                         }}
                       >
@@ -608,7 +613,7 @@ class DesktopView extends Component {
                       <Typography
                         variant="body1"
                         style={{
-                          fontFamily: "Consolas",
+                          fontFamily: "Source Code Pro",
                           textAlign: "center"
                         }}
                       >
@@ -664,7 +669,7 @@ class DesktopView extends Component {
                       <Typography
                         variant="body1"
                         style={{
-                          fontFamily: "Consolas",
+                          fontFamily: "Source Code Pro",
                           textAlign: "center"
                         }}
                       >
@@ -720,7 +725,7 @@ class DesktopView extends Component {
                       <Typography
                         variant="body1"
                         style={{
-                          fontFamily: "Consolas",
+                          fontFamily: "Source Code Pro",
                           textAlign: "center"
                         }}
                       >

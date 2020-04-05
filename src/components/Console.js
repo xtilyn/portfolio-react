@@ -100,8 +100,9 @@ export default function Console() {
           }}
         >
           Primarily connected with native android app development using
-          Kotlin/Java and Firebase with experience in full stack web development
-          using React, Node, and Mongo. <br></br>
+          Kotlin/Java and Firebase with experience in UI/UX design and full
+          stack web development using React with Redux, Node, and Mongo.
+          <br></br>
           <br></br>Interested in the mobile development world and have played
           with various cross-platform technologies such as Flutter, Xamarin, and
           React Native. <br></br>

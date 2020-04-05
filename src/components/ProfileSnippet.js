@@ -24,14 +24,14 @@ const rootStyle = {
   background: colorPrimary,
   boxShadow: "0px 0px 74px rgba(0, 0, 0, 0.16)",
   textAlign: "left",
-  paddingLeft: 80,
-  paddingBottom: 50,
+  paddingLeft: 60,
+  paddingBottom: 40,
   paddingTop: 40,
   minHeight: "65vh"
 };
 
 const borderStyle = {
-  width: "319px",
+  width: 200,
   height: "13px",
   background: colorAccent
 };
@@ -67,9 +67,9 @@ export default class ProfileSnippet extends Component {
     return (
       <Column flexGrow={1} style={rootStyle} justifyContent="center">
         <Typography
-          variant="h1"
+          variant="h2"
           style={{
-            fontSize: "3em",
+            fontSize: "2.5em",
             fontWeight: 600,
             marginBottom: 15,
             marginTop: 0
@@ -80,11 +80,11 @@ export default class ProfileSnippet extends Component {
         </Typography>
         <div style={borderStyle} />
         <Typography
-          variant="h5"
+          variant="h6"
           style={{
             fontWeight: 300,
             marginRight: 100,
-            marginBottom: 0,
+            marginBottom: 10,
             marginTop: 15
           }}
         >
