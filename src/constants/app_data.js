@@ -210,7 +210,7 @@ export const portfolioItems = [
          new PortfolioItem(
            "Jumpbox",
            "Desktop App",
-           "A Computer Science project implementation of a multiplayer drawing and guessing game implemented using TCP in which players are connected through single-server model.",
+           "A Computer Science project implementation of a multiplayer drawing and guessing game implemented over TCP using client-server model.",
            jumpbox,
            ["Desktop App", "Java", "JavaFx" ],
            "https://github.com/xtilyn/Jumpbox",
