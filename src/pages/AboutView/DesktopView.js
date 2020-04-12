@@ -288,14 +288,14 @@ class DesktopView extends Component {
                         }}
                       >
                         Primarily connected with native android app development
-                        using Kotlin/Java and have experience in back end
+                        using Kotlin/Java. Experience in back end
                         service integrations with Google Cloud and Firebase.
                         Also familiar in UI/UX design and full stack web
                         development using React with Redux, Node, and Mongo.
                         <br></br>
                         <br></br>Interested in the cloud and mobile development
                         world and have played with various cross-platform
-                        technologies such as Flutter, Xamarin, and React Native.{" "}
+                        technologies such as Flutter, Xamarin, and React Native.
                         <br></br>
                         <br></br>Love to work on ambitious projects, learn new
                         technologies, design and implement mobile applications.
