@@ -230,7 +230,7 @@ class DesktopView extends Component {
                     marginLeft: 50,
                     marginRight: 50,
                     marginBottom: 60,
-                    zIndex: 5
+                    zIndex: 5,
                   }}
                   className="box"
                 >
@@ -239,7 +239,7 @@ class DesktopView extends Component {
                     style={{
                       paddingTop: 20,
                       marginRight: 20,
-                      cursor: "pointer"
+                      cursor: "pointer",
                     }}
                     onMouseDown={this.handleEvent}
                     onMouseUp={this.handleEvent}
@@ -260,7 +260,7 @@ class DesktopView extends Component {
                         ...linesContainer,
                         marginTop: 15,
                         width: linesContainerWidth,
-                        overflow: "hidden"
+                        overflow: "hidden",
                       }}
                     >
                       <Typography
@@ -268,7 +268,7 @@ class DesktopView extends Component {
                         style={{
                           textAlign: "center",
                           overflow: "hidden",
-                          marginBottom: 5
+                          marginBottom: 5,
                         }}
                       >
                         {this.renderLineNumbers()}
@@ -284,17 +284,19 @@ class DesktopView extends Component {
                           marginRight: 10,
                           overflow: "hidden",
                           marginBottom: 20,
-                          fontSize: 14
+                          fontSize: 14,
                         }}
                       >
                         Primarily connected with native android app development
-                        using Kotlin/Java and Firebase with experience in UI/UX
-                        design and full stack web development using React with
-                        Redux, Node, and Mongo.
+                        using Kotlin/Java and have experience in back end
+                        service integrations with Google Cloud and Firebase.
+                        Also familiar in UI/UX design and full stack web
+                        development using React with Redux, Node, and Mongo.
                         <br></br>
-                        <br></br>Interested in the mobile development world and
-                        have played with various cross-platform technologies
-                        such as Flutter, Xamarin, and React Native. <br></br>
+                        <br></br>Interested in the cloud and mobile development
+                        world and have played with various cross-platform
+                        technologies such as Flutter, Xamarin, and React Native.{" "}
+                        <br></br>
                         <br></br>Love to work on ambitious projects, learn new
                         technologies, design and implement mobile applications.
                       </Typography>
@@ -312,7 +314,7 @@ class DesktopView extends Component {
                   style={{
                     backgroundColor: "transparent",
                     boxShadow: "none",
-                    marginTop: 80
+                    marginTop: 80,
                   }}
                 >
                   <img
@@ -322,7 +324,7 @@ class DesktopView extends Component {
                     style={{
                       width: 131,
                       height: 126,
-                      cursor: "pointer"
+                      cursor: "pointer",
                     }}
                     alt=""
                   />
@@ -331,7 +333,7 @@ class DesktopView extends Component {
                 <BackSide
                   style={{
                     backgroundColor: "transparent",
-                    boxShadow: "none"
+                    boxShadow: "none",
                   }}
                 >
                   <Column
@@ -340,7 +342,7 @@ class DesktopView extends Component {
                       ...tile,
                       width: 131,
                       height: 126,
-                      cursor: "pointer"
+                      cursor: "pointer",
                     }}
                     justifyContent="center"
                   >
@@ -359,14 +361,14 @@ class DesktopView extends Component {
                 position: "absolute",
                 top: reactIconY,
                 left: reactIconX,
-                marginTop: 10
+                marginTop: 10,
               }}
             >
               <FrontSide
                 style={{
                   backgroundColor: "transparent",
                   boxShadow: "none",
-                  padding: 0
+                  padding: 0,
                 }}
               >
                 <img
@@ -375,7 +377,7 @@ class DesktopView extends Component {
                   style={{
                     width: 149,
                     height: 132,
-                    cursor: "pointer"
+                    cursor: "pointer",
                   }}
                   alt=""
                   className="techTile"
@@ -386,7 +388,7 @@ class DesktopView extends Component {
                 style={{
                   backgroundColor: "transparent",
                   boxShadow: "none",
-                  padding: 0
+                  padding: 0,
                 }}
               >
                 <Column
@@ -395,7 +397,7 @@ class DesktopView extends Component {
                     ...tile,
                     width: 149,
                     height: 132,
-                    cursor: "pointer"
+                    cursor: "pointer",
                   }}
                   justifyContent="center"
                 >
@@ -403,7 +405,7 @@ class DesktopView extends Component {
                     variant="body1"
                     style={{
                       fontFamily: "Source Code Pro",
-                      textAlign: "center"
+                      textAlign: "center",
                     }}
                   >
                     ReactJS / <br></br>React Native
@@ -413,7 +415,7 @@ class DesktopView extends Component {
             </Flippy>
             <Column
               style={{
-                marginBottom: 60
+                marginBottom: 60,
               }}
             >
               <img
@@ -422,7 +424,7 @@ class DesktopView extends Component {
                   width: 321,
                   height: 521,
                   marginBottom: 10,
-                  marginRight: 14
+                  marginRight: 14,
                 }}
                 alt=""
               />
@@ -431,7 +433,7 @@ class DesktopView extends Component {
                 style={{
                   color: "#BBBBBB",
                   fontSize: 20,
-                  textAlign: "center"
+                  textAlign: "center",
                 }}
               >
                 <RoomIcon />
@@ -453,14 +455,14 @@ class DesktopView extends Component {
                   style={{
                     marginBottom: 10,
                     width: 141,
-                    height: 122
+                    height: 122,
                   }}
                 >
                   <FrontSide
                     style={{
                       backgroundColor: "transparent",
                       boxShadow: "none",
-                      padding: 0
+                      padding: 0,
                     }}
                   >
                     <img
@@ -468,7 +470,7 @@ class DesktopView extends Component {
                       style={{
                         width: 141,
                         height: 122,
-                        cursor: "pointer"
+                        cursor: "pointer",
                       }}
                       alt=""
                       className="techTile"
@@ -479,7 +481,7 @@ class DesktopView extends Component {
                     style={{
                       backgroundColor: "transparent",
                       boxShadow: "none",
-                      padding: 0
+                      padding: 0,
                     }}
                   >
                     <Column
@@ -488,7 +490,7 @@ class DesktopView extends Component {
                         ...tile,
                         width: 141,
                         height: 122,
-                        cursor: "pointer"
+                        cursor: "pointer",
                       }}
                       justifyContent="center"
                     >
@@ -496,7 +498,7 @@ class DesktopView extends Component {
                         variant="body1"
                         style={{
                           fontFamily: "Source Code Pro",
-                          textAlign: "center"
+                          textAlign: "center",
                         }}
                       >
                         MongoDB
@@ -514,14 +516,14 @@ class DesktopView extends Component {
                   style={{
                     marginBottom: 10,
                     width: 152,
-                    height: 122
+                    height: 122,
                   }}
                 >
                   <FrontSide
                     style={{
                       backgroundColor: "transparent",
                       boxShadow: "none",
-                      padding: 0
+                      padding: 0,
                     }}
                   >
                     <img
@@ -529,7 +531,7 @@ class DesktopView extends Component {
                       style={{
                         width: 152,
                         height: 122,
-                        cursor: "pointer"
+                        cursor: "pointer",
                       }}
                       alt=""
                       className="techTile"
@@ -540,7 +542,7 @@ class DesktopView extends Component {
                     style={{
                       backgroundColor: "transparent",
                       boxShadow: "none",
-                      padding: 0
+                      padding: 0,
                     }}
                   >
                     <Column
@@ -549,7 +551,7 @@ class DesktopView extends Component {
                         ...tile,
                         width: 152,
                         height: 122,
-                        cursor: "pointer"
+                        cursor: "pointer",
                       }}
                       justifyContent="center"
                     >
@@ -557,7 +559,7 @@ class DesktopView extends Component {
                         variant="body1"
                         style={{
                           fontFamily: "Source Code Pro",
-                          textAlign: "center"
+                          textAlign: "center",
                         }}
                       >
                         NodeJS
@@ -575,14 +577,14 @@ class DesktopView extends Component {
                   style={{
                     width: 121,
                     height: 116,
-                    marginBottom: 10
+                    marginBottom: 10,
                   }}
                 >
                   <FrontSide
                     style={{
                       backgroundColor: "transparent",
                       boxShadow: "none",
-                      padding: 0
+                      padding: 0,
                     }}
                   >
                     <img
@@ -597,7 +599,7 @@ class DesktopView extends Component {
                     style={{
                       backgroundColor: "transparent",
                       boxShadow: "none",
-                      padding: 0
+                      padding: 0,
                     }}
                   >
                     <Column
@@ -606,7 +608,7 @@ class DesktopView extends Component {
                         ...tile,
                         width: 121,
                         height: 116,
-                        cursor: "pointer"
+                        cursor: "pointer",
                       }}
                       justifyContent="center"
                     >
@@ -614,7 +616,7 @@ class DesktopView extends Component {
                         variant="body1"
                         style={{
                           fontFamily: "Source Code Pro",
-                          textAlign: "center"
+                          textAlign: "center",
                         }}
                       >
                         Redux
@@ -632,14 +634,14 @@ class DesktopView extends Component {
                   style={{
                     width: 134,
                     height: 125,
-                    marginBottom: 10
+                    marginBottom: 10,
                   }}
                 >
                   <FrontSide
                     style={{
                       backgroundColor: "transparent",
                       boxShadow: "none",
-                      padding: 0
+                      padding: 0,
                     }}
                   >
                     <img
@@ -653,7 +655,7 @@ class DesktopView extends Component {
                     style={{
                       backgroundColor: "transparent",
                       boxShadow: "none",
-                      padding: 0
+                      padding: 0,
                     }}
                   >
                     <Column
@@ -662,7 +664,7 @@ class DesktopView extends Component {
                         ...tile,
                         width: 134,
                         height: 125,
-                        cursor: "pointer"
+                        cursor: "pointer",
                       }}
                       justifyContent="center"
                     >
@@ -670,7 +672,7 @@ class DesktopView extends Component {
                         variant="body1"
                         style={{
                           fontFamily: "Source Code Pro",
-                          textAlign: "center"
+                          textAlign: "center",
                         }}
                       >
                         Flutter
@@ -687,14 +689,14 @@ class DesktopView extends Component {
                 <Flippy
                   style={{
                     width: 121,
-                    height: 116
+                    height: 116,
                   }}
                 >
                   <FrontSide
                     style={{
                       backgroundColor: "transparent",
                       boxShadow: "none",
-                      padding: 0
+                      padding: 0,
                     }}
                   >
                     <img
@@ -709,7 +711,7 @@ class DesktopView extends Component {
                     style={{
                       backgroundColor: "transparent",
                       boxShadow: "none",
-                      padding: 0
+                      padding: 0,
                     }}
                   >
                     <Column
@@ -718,7 +720,7 @@ class DesktopView extends Component {
                         ...tile,
                         width: 121,
                         height: 116,
-                        cursor: "pointer"
+                        cursor: "pointer",
                       }}
                       justifyContent="center"
                     >
@@ -726,7 +728,7 @@ class DesktopView extends Component {
                         variant="body1"
                         style={{
                           fontFamily: "Source Code Pro",
-                          textAlign: "center"
+                          textAlign: "center",
                         }}
                       >
                         Adobe XD
