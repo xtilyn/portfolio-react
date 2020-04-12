@@ -101,7 +101,7 @@ export default function Console() {
         >
           Primarily connected with native android app development using
           Kotlin/Java. Experience in back end service integrations with Google
-          Cloud and Firebase. Also familiar in UI/UX design and full stack web
+          Cloud and Firebase. Also familiar with UI/UX design and full stack web
           development using React with Redux, Node, and Mongo.
           <br></br>
           <br></br>Interested in the cloud and mobile development world and have
