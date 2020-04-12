@@ -175,7 +175,7 @@ export default function MobileView(props) {
               color: "#E1E1E1"
             }}
           >
-            Currently working with:
+            I've worked with:
           </Typography>
           {renderTechTiles([
             { img: firebaseIcon, title: "Firebase" },
