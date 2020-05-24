@@ -19,13 +19,14 @@ import Tag from "../../components/Tag";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import PrimaryActionButton from "../../components/buttons/PrimaryActionButton";
 import OpenInNewOutlinedIcon from "@material-ui/icons/OpenInNewOutlined";
+import { getTotalProjectsByType } from "../../constants/app_data.js";
 import "./style.css";
 
 const rootStyle = {
   background: colorPrimary,
   width: "100vw",
   height: "100vh",
-  overflowY: "scroll"
+  overflowY: "scroll",
 };
 
 const portfolioTagStyle = {
@@ -40,7 +41,7 @@ const portfolioTagStyle = {
   marginTop: 3,
   marginRight: 3,
   textAlign: "center",
-  lineHeight: "26px"
+  lineHeight: "26px",
 };
 
 const dividerStyle = {
@@ -49,18 +50,18 @@ const dividerStyle = {
   background: colorAccent,
   marginLeft: 22,
   marginTop: 10,
-  marginBottom: 10
+  marginBottom: 10,
 };
 
 const tagStyle = {
   borderRadius: "43px",
   background: "#545454",
   border: "2px solid #707070",
-  padding: "3px 10px 3px 10px"
+  padding: "3px 10px 3px 10px",
 };
 
 const tagText = {
-  fontSize: "0.7em"
+  fontSize: "0.7em",
 };
 
 const slideStyle = {
@@ -70,13 +71,13 @@ const slideStyle = {
   height: "95%",
   marginTop: 10,
   flex: 1,
-  overflow: "hidden"
+  overflow: "hidden",
 };
 
 const stepperStyle = {
   width: "100vw",
   background: colorPrimary,
-  marginBottom: 30
+  marginBottom: 30,
 };
 
 export default function MobileView(props) {
@@ -89,7 +90,7 @@ export default function MobileView(props) {
     toggleDrawer(!isDrawerOpen);
   };
 
-  const onChangeIndexCallback = index => {
+  const onChangeIndexCallback = (index) => {
     setActiveStep(index);
   };
 
@@ -105,7 +106,7 @@ export default function MobileView(props) {
     setSwipeableIndex(current);
   };
 
-  const renderTag = tag => {
+  const renderTag = (tag) => {
     return (
       <Column style={portfolioTagStyle} justifyContent="center">
         <Typography variant="body2" style={{ fontSize: "0.7em" }}>
@@ -115,7 +116,7 @@ export default function MobileView(props) {
     );
   };
 
-  const renderPortfolioItem = portfolioItem => {
+  const renderPortfolioItem = (portfolioItem) => {
     return (
       <Column style={slideStyle} justifyContent="center">
         <Row justifyContent="center" style={{ marginTop: 10 }}>
@@ -130,7 +131,7 @@ export default function MobileView(props) {
           style={{
             textAlign: "start",
             marginLeft: 20,
-            fontWeight: 600
+            fontWeight: 600,
           }}
         >
           {portfolioItem.title}
@@ -143,7 +144,7 @@ export default function MobileView(props) {
             fontSize: "0.9em",
             marginLeft: 20,
             marginTop: 7,
-            marginRight: 20
+            marginRight: 20,
           }}
         >
           {portfolioItem.description}
@@ -156,7 +157,7 @@ export default function MobileView(props) {
           alignItems="flex-end"
           style={{ marginLeft: 20, marginTop: 10, marginRight: 20 }}
         >
-          {portfolioItem.tags.slice(0, 5).map(tag => renderTag(tag))}
+          {portfolioItem.tags.slice(0, 5).map((tag) => renderTag(tag))}
           {portfolioItem.tags.length > 5 ? (
             <Column justifyContent="center">
               <Typography
@@ -213,7 +214,7 @@ export default function MobileView(props) {
                 marginLeft: 20,
                 fontWeight: 600,
                 marginTop: 20,
-                textAlign: "start"
+                textAlign: "start",
               }}
             >
               Portfolio
@@ -228,7 +229,9 @@ export default function MobileView(props) {
             >
               <Row style={tagStyle}>
                 <Typography variant="body2" style={tagText}>
-                  6 Mobile
+                  {getTotalProjectsByType("android") +
+                    getTotalProjectsByType("ios")}{" "}
+                  Mobile
                 </Typography>
                 <PhoneAndroidIcon
                   style={{ marginLeft: 5, width: 15, height: 15 }}
@@ -236,13 +239,13 @@ export default function MobileView(props) {
               </Row>
               <Row style={{ ...tagStyle, marginLeft: 5, marginRight: 5 }}>
                 <Typography variant="body2" style={tagText}>
-                  4 Web
+                  {getTotalProjectsByType("web")} Web
                 </Typography>
                 <WebIcon style={{ marginLeft: 5, width: 15, height: 15 }} />
               </Row>
               <Row style={{ ...tagStyle }}>
                 <Typography variant="body2" style={tagText}>
-                  2 Desktop
+                  {getTotalProjectsByType("desktop")} Desktop
                 </Typography>
                 <LaptopIcon style={{ marginLeft: 5, width: 15, height: 15 }} />
               </Row>
@@ -255,7 +258,7 @@ export default function MobileView(props) {
                 className="swipeable"
                 style={{ paddingRight: "30px" }}
               >
-                {portfolioItems.map(item => renderPortfolioItem(item))}
+                {portfolioItems.map((item) => renderPortfolioItem(item))}
               </SwipeableViews>
               <MobileStepper
                 variant="dots"
