@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Row, Column } from "simple-flexbox";
 import { Typography } from "@material-ui/core";
+import { about1, about2, about3 } from "../constants/app_data.js";
 
 const linesContainer = {
   borderRadius: "0px 0px 0px 12px",
@@ -76,7 +77,7 @@ export default function Console() {
           ...linesContainer,
           marginTop: 15,
           width: linesContainerWidth,
-          overflow: "hidden"
+          overflow: "hidden",
         }}
       >
         <Typography
@@ -96,18 +97,16 @@ export default function Console() {
             marginRight: 10,
             overflow: "hidden",
             marginBottom: 20,
-            fontSize: 12
+            fontSize: 12,
           }}
         >
-          Primarily connected with native android app development using
-          Kotlin/Java and Firebase with experience in UI/UX design and full
-          stack web development using React with Redux, Node, and Mongo.
+          {about1}
           <br></br>
-          <br></br>Interested in the mobile development world and have played
-          with various cross-platform technologies such as Flutter, Xamarin, and
-          React Native. <br></br>
-          <br></br>Love to work on ambitious projects, learn new technologies,
-          design and implement mobile applications.
+          <br></br>
+          {about2}
+          <br></br>
+          <br></br>
+          {about3}
         </Typography>
       </Column>
     </Row>

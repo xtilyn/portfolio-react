@@ -29,6 +29,15 @@ export const sourceCodeUrl = "https://github.com/xtilyn/portfolio-react";
 export const description =
   "A Software Developer currently specializing in Native Android App Development, UI/UX Design, with experience in Full Stack Web Development.";
 
+export const about1 =
+  "Likes working with native android app development (primarily with Kotlin). Experience in deploying serverless apps with Google Cloud and Firebase. Also familiar with UI/UX design and full stack web development.";
+
+export const about2 = 
+  "Interested in the mobile development world and have played with various cross-platform technologies such as Flutter, Xamarin, and React Native."
+
+export const about3 =
+  "Love to work on ambitious projects, learn new technologies, design and implement mobile applications."
+
 class PortfolioItem {
   constructor(
     title,
@@ -62,19 +71,6 @@ class PortfolioItem {
 }
 
 export const portfolioItems = [
-  new PortfolioItem(
-    "NE2 Chat",
-    "Android & iOS",
-    "Powered by open source chat platform Rocket.Chat, NE2 Chat is a communication platform built for NE2 Group, featuring real-time voice, video, and text messages.",
-    ne2chat,
-    ["Android App", "iOS App", "MongoDB", "Jitsi Meet", "Rocket.Chat"],
-    "https://play.google.com/store/apps/details?id=chat.rocket.ne2.reactnative",
-    "2020",
-    "Ongoing",
-    "NE2 Group",
-    "https://www.ne2group.com/",
-    mobileNe2Chat
-  ),
   new PortfolioItem(
     "Neuwly",
     "Android App",
@@ -162,6 +158,19 @@ export const portfolioItems = [
     mobileCuiseek
   ),
   new PortfolioItem(
+    "NE2 Chat",
+    "Android & iOS",
+    "Powered by open source chat platform Rocket.Chat, NE2 Chat is a communication platform built for NE2 Group, featuring real-time voice, video, and text messages.",
+    ne2chat,
+    ["Android App", "iOS App", "MongoDB", "Jitsi Meet", "Rocket.Chat"],
+    "https://play.google.com/store/apps/details?id=chat.rocket.ne2.reactnative",
+    "2020",
+    "Ongoing",
+    "NE2 Group",
+    "https://www.ne2group.com/",
+    mobileNe2Chat
+  ),
+  new PortfolioItem(
     "MEDPass",
     "Web Application",
     "A Computer Science project implementation of an appointment scheduling system built for practitioners, patients, and admins. Developed with CSS, HTML, PHP and MySQL.",
@@ -237,3 +246,17 @@ export const portfolioItems = [
     mobileJumpbox
   ),
 ];
+
+export const getTotalProjectsByType = (type) => {
+  let count = 0;
+  portfolioItems.forEach((portfolioItem) => {
+    for (let i = 0; i < portfolioItem.tags.length; i++) {
+      const tag = portfolioItem.tags[i];
+      if (tag.toLowerCase().includes(type)) {
+        count++;
+        break;
+      }
+    };
+  });
+  return count;
+}

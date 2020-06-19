@@ -88,7 +88,7 @@ class ConnectedAppPreview extends Component {
 
     const { positionY } = this.state ?? 0;
     if (!positionY) return;
-    const temp = window.pageYOffset + 50;
+    const temp = window.pageYOffset + 130;
     if (temp > positionY) {
       const diff = temp - positionY;
       this.setState({
@@ -125,12 +125,19 @@ class ConnectedAppPreview extends Component {
 
   render() {
     const { tooltipOpen, translateY } = this.state;
-    console.log("translateY: ", translateY);
+    // console.log("translateY: ", translateY);
     const { appPreviewSelectedItem } = this.props;
     const portfolioItem = portfolioItems[appPreviewSelectedItem];
     // console.log('appPreviewSelectedItem: ', appPreviewSelectedItem);
     return (
-      <Column style={{ ...appPreview, transform: `translate(0px, ${translateY}px)` }} justifyContent="center">
+      <Column
+        style={{
+          ...appPreview,
+          transform: `translate(0px, ${translateY}px)`,
+          transition: `transform 150ms ease-in`,
+        }}
+        justifyContent="center"
+      >
         <Row>
           <Column flex={1} justifyContent="center">
             <Row alignItems="end">
@@ -141,7 +148,7 @@ class ConnectedAppPreview extends Component {
                   fontWeight: 600,
                   marginLeft: 38,
                   marginBottom: 8,
-                  marginTop: 15
+                  marginTop: 15,
                 }}
               >
                 {portfolioItem?.title ?? ""}{" "}
@@ -151,12 +158,12 @@ class ConnectedAppPreview extends Component {
                   style={{
                     width: 50,
                     height: 50,
-                    marginBottom: 10
+                    marginBottom: 10,
                   }}
                 >
                   <Tooltip
                     PopperProps={{
-                      disablePortal: true
+                      disablePortal: true,
                     }}
                     onClose={this.handleTooltipClose}
                     open={tooltipOpen}
@@ -174,7 +181,7 @@ class ConnectedAppPreview extends Component {
                           color="inherit"
                           style={{
                             fontSize: 20,
-                            marginBottom: 20
+                            marginBottom: 20,
                           }}
                         >
                           {portfolioItem.projectLength}
@@ -187,7 +194,7 @@ class ConnectedAppPreview extends Component {
                           style={{
                             fontSize: 20,
                             marginBottom: 20,
-                            lineHeight: 1.2
+                            lineHeight: 1.2,
                           }}
                         >
                           {portfolioItem.associatedWith}
@@ -197,7 +204,7 @@ class ConnectedAppPreview extends Component {
                           style={{
                             fontSize: 18,
                             marginBottom: 10,
-                            fontWeight: 300
+                            fontWeight: 300,
                           }}
                         >
                           {portfolioItem.year}
@@ -222,17 +229,17 @@ class ConnectedAppPreview extends Component {
               style={{
                 marginLeft: 38,
                 width: "68%",
-                marginBottom: 20
+                marginBottom: 20,
               }}
               justifyContent="center"
             >
               <Typography
-              variant="body1"
+                variant="body1"
                 style={{
                   fontWeight: 300,
                   textAlign: "start",
                   marginTop: 10,
-                  fontSize: "0.7em"
+                  fontSize: "0.7em",
                 }}
               >
                 {portfolioItem?.description ?? ""}
@@ -240,11 +247,7 @@ class ConnectedAppPreview extends Component {
             </Column>
           </Column>
 
-          <Column
-            justifyContent="center"
-            style={{ marginTop: 15 }}
-            flex={1}
-          >
+          <Column justifyContent="center" style={{ marginTop: 15 }} flex={1}>
             <img
               src={portfolioItem.imagePath}
               alt="app images"
@@ -261,7 +264,7 @@ class ConnectedAppPreview extends Component {
           alignItems="flex-end"
           style={{ marginLeft: 38, marginTop: 20 }}
         >
-          {portfolioItem.tags.map(tag => {
+          {portfolioItem.tags.map((tag) => {
             return <Tag title={tag} />;
           })}
         </Row>

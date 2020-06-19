@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import { Column, Row } from "simple-flexbox";
 import SimpleHeader from "../../components/SimpleHeader";
 import Fade from "@material-ui/core/Fade";
-import { Slide } from "@material-ui/core";
+import { Slide, Typography } from "@material-ui/core";
 import PortfolioItemsList from "../../components/PortfolioItemsList";
 import { portfolioItemHeight } from "../../constants/shared_variables";
 import AppPreview from "../../components/AppPreview";
 import { connect } from "react-redux";
-import { StickyContainer, Sticky } from "react-sticky";
+import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
+import WebIcon from "@material-ui/icons/Web";
+import LaptopIcon from "@material-ui/icons/Laptop";
+import { getTotalProjectsByType } from "../../constants/app_data.js";
 
 const rootStyle = {
   width: "100%",
-  height: "100%"
+  height: "100%",
 };
 
 const circleIndicator = {
@@ -19,8 +22,24 @@ const circleIndicator = {
   height: 30,
   background: "#acdb75",
   borderRadius: "50%",
-  marginRight: 15
+  marginRight: 15,
 };
+
+const tagStyle = {
+  borderRadius: "43px",
+  background: "#545454",
+  border: "2px solid #707070",
+  padding: "3px 10px 3px 10px",
+};
+
+const tagText = {
+  fontSize: "0.6em",
+};
+
+const projectTypeIcons = {
+  width: 25, 
+  height: 25,
+}
 
 class DesktopViewConnected extends Component {
   constructor(props) {
@@ -28,13 +47,13 @@ class DesktopViewConnected extends Component {
 
     this.state = {
       isMounted: false,
-      circleIndicatorY: 0
+      circleIndicatorY: 0,
     };
   }
 
   componentDidMount() {
     this.setState({
-      isMounted: true
+      isMounted: true,
     });
     this.updateCircleIndicator(0);
   }
@@ -46,7 +65,7 @@ class DesktopViewConnected extends Component {
     }
   }
 
-  updateCircleIndicator = selectedItemIndex => {
+  updateCircleIndicator = (selectedItemIndex) => {
     const { circleIndicatorY } = this.state;
     const marginTop = 54;
     const newCircleIndicatorY =
@@ -55,8 +74,16 @@ class DesktopViewConnected extends Component {
     console.log(diff);
     this.setState({
       circleIndicatorY: newCircleIndicatorY,
-      animDuration: diff > 700 ? 0 : 150
+      animDuration: diff > 700 ? 0 : 150,
     });
+  };
+
+  onMouseEnterTagItem = () => {
+    // TODO update tag
+  };
+
+  onMouseLeaveTagItem = () => {
+    // TODO update tag
   };
 
   render() {
@@ -64,8 +91,39 @@ class DesktopViewConnected extends Component {
 
     return (
       <Column flexGrow={1} style={rootStyle}>
-        <Row horizontal="center">
+        <Row horizontal="center" style={{ marginTop: 50 }}>
           <SimpleHeader title="Portfolio" />
+        </Row>
+        <Row
+          alignItems="center"
+          justifyContent="center"
+          wrap
+          style={{ marginLeft: 20, marginBottom: 5, marginTop: 10 }}
+        >
+          <Row
+            style={tagStyle}
+            onMouseEnter={this.onMouseEnterTagItem}
+            onMouseLeave={this.onMouseLeaveTagItem}
+          >
+            <Typography variant="body2" style={tagText}>
+              {getTotalProjectsByType("android") +
+                getTotalProjectsByType("ios")}{" "}
+              Mobile
+            </Typography>
+            <PhoneAndroidIcon style={{ marginLeft: 5, ...projectTypeIcons }} />
+          </Row>
+          <Row style={{ ...tagStyle, marginLeft: 5, marginRight: 5 }}>
+            <Typography variant="body2" style={tagText}>
+              {getTotalProjectsByType("web")} Web
+            </Typography>
+            <WebIcon style={{ marginLeft: 5, ...projectTypeIcons }} />
+          </Row>
+          <Row style={{ ...tagStyle }}>
+            <Typography variant="body2" style={tagText}>
+              {getTotalProjectsByType("desktop")} Desktop
+            </Typography>
+            <LaptopIcon style={{ marginLeft: 5, ...projectTypeIcons }} />
+          </Row>
         </Row>
         <Row vertical="start" flex={1}>
           <Column flex={1} horizontal="center" style={{ paddingTop: 20 }}>
@@ -76,7 +134,7 @@ class DesktopViewConnected extends Component {
                     style={{
                       ...circleIndicator,
                       transform: `translate(${0}px, ${circleIndicatorY}px)`,
-                      transition: `transform ${animDuration}ms ${animDuration}ms ease-in`
+                      transition: `transform ${animDuration}ms ${animDuration}ms ease-in`,
                     }}
                   />
                   <PortfolioItemsList />
@@ -84,7 +142,11 @@ class DesktopViewConnected extends Component {
               </div>
             </Fade>
           </Column>
-          <Column flex={1} horizontal="center" style={{ height: "100vh", paddingRight: 50 }}>
+          <Column
+            flex={1}
+            horizontal="center"
+            style={{ height: "100vh", paddingRight: 50 }}
+          >
             <Slide in={isMounted} direction="left" timeout={800}>
               <div>
                 <AppPreview />
@@ -97,8 +159,8 @@ class DesktopViewConnected extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  appPreviewSelectedItem: state.appPreviewSelectedItem
+const mapStateToProps = (state) => ({
+  appPreviewSelectedItem: state.appPreviewSelectedItem,
 });
 
 const DesktopView = connect(mapStateToProps)(DesktopViewConnected);
