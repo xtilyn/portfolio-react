@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "daba044f0a4bc3fc9cef0e2de29b4449",
+    "revision": "b7fc4930dd9896aa9b4f046c0cb5e121",
     "url": "/portfolio-react/index.html"
   },
   {
-    "revision": "b372dc66d54d0b5795e5",
+    "revision": "c42e83c3b38c7e0be151",
     "url": "/portfolio-react/static/css/2.c2baa3df.chunk.css"
   },
   {
-    "revision": "f6bff8950229e01f2356",
-    "url": "/portfolio-react/static/css/main.b580f3a1.chunk.css"
+    "revision": "899e3028ef5a3a34150d",
+    "url": "/portfolio-react/static/css/main.3924c010.chunk.css"
   },
   {
-    "revision": "b372dc66d54d0b5795e5",
-    "url": "/portfolio-react/static/js/2.3cb56e74.chunk.js"
+    "revision": "c42e83c3b38c7e0be151",
+    "url": "/portfolio-react/static/js/2.d262472f.chunk.js"
   },
   {
     "revision": "f2e468b2a9e5e062245a55e7492c93dc",
-    "url": "/portfolio-react/static/js/2.3cb56e74.chunk.js.LICENSE.txt"
+    "url": "/portfolio-react/static/js/2.d262472f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f6bff8950229e01f2356",
-    "url": "/portfolio-react/static/js/main.c4005462.chunk.js"
+    "revision": "899e3028ef5a3a34150d",
+    "url": "/portfolio-react/static/js/main.e0af7a61.chunk.js"
   },
   {
     "revision": "38cc46e1fd5c05c02767",
@@ -94,6 +94,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "4e210f93790077993c7203baf0f7fd39",
     "url": "/portfolio-react/static/media/mobile_medpass.4e210f93.png"
+  },
+  {
+    "revision": "0e76db16608494a6185b0005c591c220",
+    "url": "/portfolio-react/static/media/mobile_ne2chat.0e76db16.png"
   },
   {
     "revision": "39dd6e1303c7ef724127fa631de91076",
@@ -246,6 +250,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a8ec4957e1c24f5793305763ad9845b3",
     "url": "/portfolio-react/static/media/montserrat-latin-900italic.a8ec4957.woff"
+  },
+  {
+    "revision": "141036371f9e0470e6b80591dce62205",
+    "url": "/portfolio-react/static/media/ne2chat_group.14103637.png"
   },
   {
     "revision": "6296e2836a5f98bc92f98d2dc4156bd2",
