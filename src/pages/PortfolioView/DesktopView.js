@@ -14,7 +14,7 @@ import { getTotalProjectsByType } from "../../constants/app_data.js";
 
 const rootStyle = {
   width: "100%",
-  height: "100%",
+  height: "100vh"
 };
 
 const circleIndicator = {
@@ -67,7 +67,7 @@ class DesktopViewConnected extends Component {
 
   updateCircleIndicator = (selectedItemIndex) => {
     const { circleIndicatorY } = this.state;
-    const marginTop = 54;
+    const marginTop = Math.floor(portfolioItemHeight / 2);
     const newCircleIndicatorY =
       marginTop + selectedItemIndex * portfolioItemHeight;
     const diff = Math.abs(circleIndicatorY - newCircleIndicatorY);
@@ -91,7 +91,7 @@ class DesktopViewConnected extends Component {
 
     return (
       <Column flexGrow={1} style={rootStyle}>
-        <Row horizontal="center" style={{ marginTop: 50 }}>
+        <Row horizontal="center" style={{ marginTop: 0 }}>
           <SimpleHeader title="Portfolio" />
         </Row>
         <Row
