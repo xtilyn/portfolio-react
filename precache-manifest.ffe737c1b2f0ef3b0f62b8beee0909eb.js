@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f43701e8fd7bcaa93ebc432eda111e48",
+    "revision": "d3fcfe02ffdf19f34522cd59c96a4f25",
     "url": "/portfolio-react/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio-react/static/css/2.c2baa3df.chunk.css"
   },
   {
-    "revision": "29593e12c0a6eddd7e44",
+    "revision": "9c4962ab8b1b7188079b",
     "url": "/portfolio-react/static/css/main.3924c010.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio-react/static/js/2.d262472f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "29593e12c0a6eddd7e44",
-    "url": "/portfolio-react/static/js/main.5ef52da6.chunk.js"
+    "revision": "9c4962ab8b1b7188079b",
+    "url": "/portfolio-react/static/js/main.443dce11.chunk.js"
   },
   {
     "revision": "38cc46e1fd5c05c02767",
@@ -96,8 +96,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio-react/static/media/mobile_medpass.4e210f93.png"
   },
   {
-    "revision": "0e76db16608494a6185b0005c591c220",
-    "url": "/portfolio-react/static/media/mobile_ne2chat.0e76db16.png"
+    "revision": "d06c8d8ab561ac3eccd0eb2c3a4f1bed",
+    "url": "/portfolio-react/static/media/mobile_ne2chat.d06c8d8a.png"
   },
   {
     "revision": "39dd6e1303c7ef724127fa631de91076",
@@ -252,8 +252,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio-react/static/media/montserrat-latin-900italic.a8ec4957.woff"
   },
   {
-    "revision": "141036371f9e0470e6b80591dce62205",
-    "url": "/portfolio-react/static/media/ne2chat_group.14103637.png"
+    "revision": "ec5c9d7bf4874b5e77ee64c3c00caaf2",
+    "url": "/portfolio-react/static/media/ne2chat_group.ec5c9d7b.png"
   },
   {
     "revision": "6296e2836a5f98bc92f98d2dc4156bd2",
